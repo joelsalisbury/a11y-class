@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1600" viewBox="0 0 1200 1600" role="img" aria-labelledby="title desc">
+  <title id="title">Design Futures 2026 poster</title>
+  <desc id="desc">Promotional poster with event title, date, venue, keynote, and schedule highlights.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="45%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+    <linearGradient id="band" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="1600" fill="url(#bg)"/>
+  <rect x="70" y="70" width="1060" height="1460" rx="22" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.22)"/>
+  <rect x="70" y="70" width="1060" height="28" fill="url(#band)"/>
+
+  <g fill="#e2e8f0" font-family="Arial, Helvetica, sans-serif">
+    <text x="124" y="218" font-size="34" letter-spacing="5">STUDENT SHOWCASE + INTERACTIVE MEDIA SYMPOSIUM</text>
+    <text x="124" y="336" font-size="104" font-weight="700">DESIGN</text>
+    <text x="124" y="432" font-size="104" font-weight="700">FUTURES</text>
+    <text x="124" y="520" font-size="78" font-weight="700">2026</text>
+
+    <text x="124" y="636" font-size="30" letter-spacing="3">FRIDAY  OCTOBER 9</text>
+    <text x="124" y="688" font-size="30" letter-spacing="3">NORTH STUDIO COMMONS</text>
+
+    <rect x="124" y="758" width="952" height="2" fill="rgba(226,232,240,0.45)"/>
+
+    <text x="124" y="840" font-size="30" font-weight="700">FEATURED KEYNOTE</text>
+    <text x="124" y="892" font-size="44">Avery Holt</text>
+    <text x="124" y="934" font-size="28">Director, Emerging Media Lab</text>
+
+    <text x="124" y="1028" font-size="30" font-weight="700">PROGRAM TIMES</text>
+    <text x="124" y="1082" font-size="28">9:30 AM  Opening Gallery + Welcome</text>
+    <text x="124" y="1130" font-size="28">10:15 AM  Keynote Presentation</text>
+    <text x="124" y="1178" font-size="28">1:00 PM  Track Sessions Begin</text>
+    <text x="124" y="1226" font-size="28">3:30 PM  Lightning Talks + Closing</text>
+
+    <rect x="124" y="1298" width="952" height="160" rx="14" fill="rgba(15,23,42,0.5)" stroke="rgba(226,232,240,0.35)"/>
+    <text x="158" y="1372" font-size="34" font-weight="700">REGISTER ONLINE BEFORE ARRIVAL</text>
+    <text x="158" y="1420" font-size="24">Portfolio review sign-up closes at 11:20 AM.</text>
+  </g>
+</svg>

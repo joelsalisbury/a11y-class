@@ -1,11 +1,20 @@
 <x-layouts.app :title="'Module ' . str_pad((string) $module['number'], 2, '0', STR_PAD_LEFT)">
-    <x-page-heading
-        :label="'Module ' . str_pad((string) $module['number'], 2, '0', STR_PAD_LEFT)"
-        :title="$module['title']"
-        :subtitle="$module['central_question'] ?? null"
-    />
+    <div class="module-shell">
+        <x-course.module-navigation
+            :module="$module"
+            currentPage="overview"
+            resourcesHref="#module-resources"
+            classWorkHref="#module-class-work"
+        />
 
-    <div class="mt-10 grid gap-6 lg:grid-cols-12">
+        <div class="module-main">
+            <x-page-heading
+                :label="'Module ' . str_pad((string) $module['number'], 2, '0', STR_PAD_LEFT)"
+                :title="$module['title']"
+                :subtitle="$module['central_question'] ?? null"
+            />
+
+            <div class="mt-10 grid gap-6 lg:grid-cols-12">
         @if (count($module['sessions']))
             @foreach ($module['sessions'] as $number => $session)
                 <x-panel class="lg:col-span-6">
@@ -44,37 +53,83 @@
             </x-panel>
         @endif
 
-        @if (count($module['resources']))
-            <x-panel class="lg:col-span-6">
-                <x-section-heading title="Resources" description="Readings and references for this module" />
-                <div class="mt-4 space-y-2">
-                    @foreach ($module['resources'] as $resource)
-                        <x-resource-link :href="isset($resource['route']) ? route($resource['route']) : $resource['href']" :meta="$resource['meta'] ?? null">
-                            {{ $resource['label'] }}
-                        </x-resource-link>
-                    @endforeach
-                </div>
-            </x-panel>
+        @if (!empty($module['resource_collections']))
+            <section id="module-resources" class="module-anchor lg:col-span-6">
+                <x-panel>
+                    <x-section-heading title="Resources" description="Credible starting points for investigation" />
+
+                    <div class="mt-4 space-y-6">
+                        @foreach ($module['resource_collections'] as $collection)
+                            <section class="space-y-2">
+                                <h3 class="text-lg font-semibold text-ink">{{ $collection['title'] }}</h3>
+                                @if (!empty($collection['description']))
+                                    <p class="text-sm text-ink-muted">{{ $collection['description'] }}</p>
+                                @endif
+
+                                <div class="space-y-2">
+                                    @foreach ($collection['resources'] as $resource)
+                                        <article @class([
+                                            'rounded-lg border bg-surface-3 p-4',
+                                            'border-accent-cyan/60' => !empty($resource['prominent']),
+                                            'border-accent-violet/50' => !empty($resource['authoritative']),
+                                            'border-subtle' => empty($resource['prominent']) && empty($resource['authoritative']),
+                                        ])>
+                                            <p class="font-mono text-xs uppercase tracking-[0.14em] text-ink-muted">{{ $resource['source'] ?? 'Source' }}</p>
+                                            <a href="{{ isset($resource['route']) ? route($resource['route'], $resource['params'] ?? []) : $resource['href'] }}" class="mt-2 inline-flex items-start gap-2 text-sm font-medium text-accent-cyan hover:text-accent-cyan-strong focus-visible:focus-ring rounded-sm">
+                                                <span>{{ $resource['label'] }}</span>
+                                                <span aria-hidden="true">↗</span>
+                                            </a>
+                                            @if (!empty($resource['description']))
+                                                <p class="mt-2 text-sm leading-7 text-ink-muted">{{ $resource['description'] }}</p>
+                                            @endif
+                                        </article>
+                                    @endforeach
+                                </div>
+                            </section>
+                        @endforeach
+                    </div>
+                </x-panel>
+            </section>
+        @elseif (count($module['resources']))
+            <section id="module-resources" class="module-anchor lg:col-span-6">
+                <x-panel>
+                    <x-section-heading title="Resources" description="Readings and references for this module" />
+                    <div class="mt-4 space-y-2">
+                        @foreach ($module['resources'] as $resource)
+                            <x-resource-link :href="isset($resource['route']) ? route($resource['route']) : $resource['href']" :meta="$resource['meta'] ?? null">
+                                {{ $resource['label'] }}
+                            </x-resource-link>
+                        @endforeach
+                    </div>
+                </x-panel>
+            </section>
         @endif
 
         @if ($module['challenge'])
-            <x-panel class="lg:col-span-6">
-                <x-section-heading title="Class Work" description="Team submissions appear here after the challenge cycle" />
-                <div class="mt-4 grid gap-3 sm:grid-cols-3">
-                    @foreach ($module['challenge']['class_work'] as $work)
-                        <x-class-work-card
-                            :team="$work['team']"
-                            :shape="$work['shape']"
-                            :tone="$work['tone']"
-                            :title="$work['title'] ?? null"
-                            :artifact="$work['artifact'] ?? null"
-                            :description="$work['description'] ?? null"
-                            :instructorNote="$work['instructor_note'] ?? null"
-                            :date="$work['date'] ?? null"
-                        />
-                    @endforeach
-                </div>
-            </x-panel>
+            <section id="module-class-work" class="module-anchor lg:col-span-6">
+                <x-panel>
+                    <x-section-heading title="Class Work" description="Team submissions appear here after the challenge cycle" />
+                    <div class="mt-4 grid gap-3 sm:grid-cols-3">
+                        @foreach ($module['challenge']['class_work'] as $work)
+                            <x-class-work-card
+                                :team="$work['team']"
+                                :shape="$work['shape']"
+                                :tone="$work['tone']"
+                                :title="$work['title'] ?? null"
+                                :artifact="$work['artifact'] ?? null"
+                                :description="$work['description'] ?? null"
+                                :instructorNote="$work['instructor_note'] ?? null"
+                                :date="$work['date'] ?? null"
+                            />
+                        @endforeach
+                    </div>
+                </x-panel>
+            </section>
         @endif
+
+            </div>
+
+            <x-course.module-pagination :module="$module" currentPage="overview" />
+        </div>
     </div>
 </x-layouts.app>

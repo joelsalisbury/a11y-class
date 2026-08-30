@@ -31,6 +31,7 @@
     }
 
     body {
+        @apply text-base;
         background:
             radial-gradient(circle at 15% -10%, color-mix(in oklab, theme(--color-accent-cyan) 18%, transparent), transparent 32%),
             radial-gradient(circle at 100% 0%, color-mix(in oklab, theme(--color-accent-violet) 12%, transparent), transparent 34%),
@@ -211,7 +212,7 @@
     }
 
     .course-copy {
-        @apply text-sm leading-7 text-ink-muted;
+        @apply text-[1.0625rem] leading-[1.68] text-ink-muted;
     }
 
     .course-copy > p + p {
@@ -254,7 +255,7 @@
     }
 
     .course-panel-copy {
-        @apply text-sm leading-7 text-ink-muted;
+        @apply text-[1.0625rem] leading-[1.68] text-ink-muted;
     }
 
     .course-panel-copy > * + * {
@@ -275,7 +276,86 @@
     }
 
     .prose-shell {
-        @apply space-y-10 text-base leading-8 text-ink-muted md:space-y-14;
+        @apply space-y-10 text-[1.0625rem] leading-[1.68] text-ink-muted md:space-y-14;
+    }
+
+    .module-shell {
+        @apply grid gap-8 lg:grid-cols-[15.5rem_minmax(0,1fr)] lg:items-start;
+    }
+
+    .module-main {
+        @apply min-w-0;
+    }
+
+    .module-anchor {
+        scroll-margin-top: 7.5rem;
+    }
+
+    .module-nav-rail {
+        @apply sticky top-24 self-start;
+    }
+
+    .module-nav-rail-panel,
+    .module-nav-disclosure {
+        @apply rounded-xl border border-subtle bg-surface-2 p-4;
+    }
+
+    .module-nav-summary {
+        @apply flex cursor-pointer list-none items-start justify-between gap-3;
+    }
+
+    .module-nav-summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .module-nav-list {
+        @apply space-y-1;
+    }
+
+    .module-nav-link {
+        @apply flex items-center justify-between gap-3 rounded-md border border-transparent px-3 py-2 text-sm text-ink-muted transition;
+    }
+
+    .module-nav-link:hover {
+        @apply border-subtle bg-surface-3 text-ink;
+    }
+
+    .module-nav-link.is-active {
+        @apply border-subtle bg-surface-3 font-semibold text-ink;
+        box-shadow: inset 3px 0 0 theme(--color-accent-cyan);
+    }
+
+    .module-nav-current-mark {
+        @apply font-mono text-[0.65rem] uppercase tracking-[0.14em] text-ink-muted;
+    }
+
+    .module-nav-sublink {
+        @apply block rounded-md border border-transparent px-3 py-1.5 text-sm text-ink-muted transition;
+    }
+
+    .module-nav-sublink:hover {
+        @apply border-subtle bg-surface-3 text-ink;
+    }
+
+    .module-nav-sublink.is-active {
+        @apply border-subtle bg-surface-3 font-medium text-ink;
+        box-shadow: inset 2px 0 0 theme(--color-accent-cyan);
+    }
+
+    .module-pagination-link {
+        @apply block rounded-lg border border-subtle bg-surface-2 px-4 py-3 transition;
+    }
+
+    .module-pagination-link:hover {
+        @apply border-accent-cyan/50;
+    }
+
+    .module-pagination-eyebrow {
+        @apply block font-mono text-[0.65rem] uppercase tracking-[0.16em] text-ink-muted;
+    }
+
+    .module-pagination-title {
+        @apply mt-1 block text-sm font-medium text-ink;
     }
 
     .prose-shell h2 {

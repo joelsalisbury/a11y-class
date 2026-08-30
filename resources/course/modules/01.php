@@ -83,8 +83,9 @@ return [
                         'Your client has one question: Is this accessible?',
                     ],
                     'placeholder' => [
-                        'title' => 'Experience Under Review - Coming Next',
-                        'body' => 'A separate sample experience will be linked here in a later pass.',
+                        'title' => 'Experience Under Review',
+                        'body' => 'Design Futures 2026 Registration',
+                        'cta' => ['label' => 'Open the experience ->', 'route' => 'experiences.campus-event-registration', 'new_tab' => true],
                     ],
                     'paragraphs_after' => [
                         'You may:',
@@ -194,53 +195,159 @@ return [
             'overview' => 'Today the three investigations come back together. Each team has examined a different source of authority behind the word accessible. We will compare those perspectives, build a shared map of the accessibility landscape, and then return to the digital experience we evaluated during Session 01.',
             'sections' => [
                 [
-                    'title' => 'Compare the Lenses',
+                    'title' => 'Learn the Map',
                     'paragraphs' => [
-                        'These ideas overlap heavily, but they are not interchangeable.',
-                        'During class we will use each team\'s research to determine what each perspective can tell us, and what it cannot.',
+                        'Before returning to your team\'s research, spend a few minutes learning how the accessibility standards landscape is organized.',
+                        'Every student should open the WCAG Overview and the WCAG Quick Reference.',
                     ],
-                    'bullets' => [
-                        'Human access',
-                        'Technical conformance',
-                        'Institutional requirements',
-                        'Legal compliance',
+                    'actions' => [
+                        ['label' => 'Open WCAG Overview ->', 'href' => 'https://www.w3.org/WAI/standards-guidelines/wcag/', 'new_tab' => true],
+                        ['label' => 'Open How to Meet WCAG 2: Quick Reference ->', 'href' => 'https://www.w3.org/WAI/WCAG22/quickref/', 'new_tab' => true],
+                    ],
+                    'task_title' => 'Find these things',
+                    'ordered' => [
+                        'Find the four POUR principles.',
+                        'Find one WCAG success criterion.',
+                        'Determine its conformance level.',
+                        'Find the corresponding Understanding page.',
+                        'Find at least one technique or supporting resource associated with it.',
+                    ],
+                    'emphasis' => [
+                        'The goal is not to memorize WCAG. The goal is to learn how to navigate it.',
                     ],
                 ],
                 [
-                    'title' => 'The WCAG Map',
+                    'title' => 'Investigate Your Lens',
                     'paragraphs' => [
-                        'You do not need to memorize every WCAG success criterion today.',
-                        'The goal is to understand how WCAG is organized, how to find a relevant requirement, and how a technical standard becomes evidence during an accessibility evaluation.',
+                        'Students return to their assigned teams.',
+                        'Your team is responsible for becoming the room\'s temporary specialist in this perspective.',
+                        'You do not need to know everything.',
+                        'You do need to be able to explain:',
                     ],
                     'bullets' => [
-                        'P - Perceivable',
-                        'O - Operable',
-                        'U - Understandable',
-                        'R - Robust',
+                        'what your source of authority contributes;',
+                        'what it requires or helps us evaluate;',
+                        'what evidence supports your claims;',
+                        'what it cannot establish on its own.',
                     ],
-                    'placeholder' => [
-                        'title' => 'Instructor examples and resources - Coming Next',
-                        'body' => 'This space is intentionally reserved for in-class examples and resource links supplied later.',
+                    'emphasis' => [
+                        'Primary sources first.',
+                    ],
+                    'paragraphs_after' => [
+                        'Students may use AI, search, secondary articles, or summaries to help understand difficult material, but important claims must trace back to authoritative sources.',
+                    ],
+                    'team_panels' => [
+                        [
+                            'team' => 'Cyan Triangle',
+                            'shape' => 'triangle',
+                            'tone' => 'cyan',
+                            'lens' => 'Legal Lens',
+                            'description' => 'Start with federal and DOJ primary sources, then connect claims to higher-ed obligations.',
+                            'questions' => [
+                                'Which U.S. disability/accessibility laws are relevant to digital experiences?',
+                                'Which obligations are particularly relevant to a public university?',
+                                'What does the ADA require?',
+                                'What role does Section 504 play?',
+                                'Where do technical standards such as WCAG enter the legal framework?',
+                                'What can law tell us about the Design Futures experience?',
+                                'What can law alone not tell us?',
+                            ],
+                            'resources' => [
+                                ['label' => 'DOJ Title II web and mobile accessibility rule', 'href' => 'https://www.ada.gov/resources/2024-03-08-web-rule/'],
+                                ['label' => 'ADA.gov web accessibility guidance', 'href' => 'https://www.ada.gov/resources/web-guidance/'],
+                                ['label' => 'Section 504 (URL pending instructor verification)', 'href' => '#'],
+                            ],
+                        ],
+                        [
+                            'team' => 'Amber Circle',
+                            'shape' => 'circle',
+                            'tone' => 'amber',
+                            'lens' => 'Standards Lens',
+                            'description' => 'Use WCAG source documents directly and trace claims from criterion to understanding and techniques.',
+                            'questions' => [
+                                'What is WCAG?',
+                                'Who publishes and maintains it?',
+                                'What are POUR, success criteria, and conformance levels?',
+                                'What do Levels A, AA, and AAA mean?',
+                                'What is the relationship between WCAG 2.1 and WCAG 2.2?',
+                                'How can WCAG be used to evaluate Design Futures?',
+                                'What can WCAG conformance alone not tell us?',
+                            ],
+                            'resources' => [
+                                ['label' => 'WCAG 2.2', 'href' => 'https://www.w3.org/TR/WCAG22/'],
+                                ['label' => 'Understanding WCAG 2.2', 'href' => 'https://www.w3.org/WAI/WCAG22/Understanding/'],
+                                ['label' => 'How to Meet WCAG 2: Quick Reference', 'href' => 'https://www.w3.org/WAI/WCAG22/quickref/'],
+                            ],
+                        ],
+                        [
+                            'team' => 'Violet Square',
+                            'shape' => 'square',
+                            'tone' => 'violet',
+                            'lens' => 'Institutional Lens',
+                            'description' => 'Anchor claims in UConn policy language, procedures, and scope.',
+                            'questions' => [
+                                'What does UConn\'s Digital Accessibility Policy require?',
+                                'How does UConn describe accessible digital experiences?',
+                                'Who and what does the policy apply to?',
+                                'How does UConn policy connect to federal law and WCAG?',
+                                'What would UConn\'s requirements mean for Design Futures?',
+                                'What can institutional policy alone not tell us?',
+                            ],
+                            'resources' => [
+                                ['label' => 'UConn Digital Accessibility Policy', 'href' => 'https://policy.uconn.edu/2019/08/02/digital-accessibility-policy/'],
+                                ['label' => 'UConn ICT Accessibility Policy Procedures', 'href' => 'https://accessibility.its.uconn.edu/ict-policy-procedures/'],
+                            ],
+                        ],
                     ],
                 ],
                 [
-                    'title' => 'Can We Answer the Question Better Now?',
+                    'title' => 'Borrow the Other Lenses',
                     'paragraphs' => [
-                        'Return to the same digital experience from Session 01.',
-                        'As a team, reconsider your original answer: Is this accessible?',
+                        'This is not a presentation exercise.',
+                        'Teams should spend a short period talking informally with students from the other teams, using their resources, or exploring the other resource sets.',
+                        'Every team must be able to answer, at least provisionally:',
                     ],
-                    'bullets' => [
+                    'ordered' => [
+                        'Law: What does law contribute to our definition of accessibility?',
+                        'Standards: What does WCAG contribute?',
+                        'Institution: What does UConn policy contribute?',
+                    ],
+                    'emphasis' => [
+                        'Are these three answers identical? Why or why not?',
+                    ],
+                    'note' => 'No formal notes or separate submission are required for this activity.',
+                ],
+                [
+                    'title' => 'Can You Answer the Question Better Now?',
+                    'paragraphs' => [
+                        'Return to the same interface you evaluated in Session 01.',
+                        'Reconsider: Is this accessible?',
+                    ],
+                    'actions' => [
+                        ['label' => 'Design Futures 2026 Registration ->', 'route' => 'experiences.campus-event-registration', 'new_tab' => true],
+                    ],
+                    'ordered' => [
                         'Has your answer changed?',
                         'Is your evidence stronger?',
                         'What can you now support with an authoritative source?',
+                        'What did your original investigation miss?',
                         'What still requires direct testing?',
                         'What claims are you still unable to make?',
                     ],
+                    'paragraphs_after' => [
+                        'Try at least one method you did not use during Session 01.',
+                        'Examples may include keyboard-only use, browser inspection, an automated accessibility checker, zoom/reflow, examining semantic markup, asking an AI system to critique the interface, or comparing a finding against WCAG.',
+                        'Do not try to use every method. Use at least one new method intentionally.',
+                    ],
                 ],
                 [
-                    'title' => 'Finish Challenge 01',
+                    'title' => 'Build the Brief',
                     'paragraphs' => [
-                        'Teams use the remaining studio time to complete their Challenge 01 brief.',
+                        'Use the remainder of the session to turn your investigation into a concise brief that the rest of the class can learn from later.',
+                        'Your brief will become part of the Module 01 Class Work archive after submission.',
+                    ],
+                    'actions' => [
+                        ['label' => 'Open Challenge 01 brief ->', 'route' => 'modules.challenge', 'params' => ['module' => 1]],
                     ],
                     'emphasis' => [
                         'Challenge 01 is due EOD today.',
@@ -256,8 +363,8 @@ return [
                 ],
             ],
             'resources' => [
-                ['label' => 'Field Guide index', 'route' => 'field-guide', 'meta' => 'Course reference'],
-                ['label' => 'WCAG 2.2', 'href' => 'https://www.w3.org/TR/WCAG22/', 'meta' => 'W3C'],
+                ['label' => 'WCAG Overview', 'href' => 'https://www.w3.org/WAI/standards-guidelines/wcag/', 'meta' => 'W3C'],
+                ['label' => 'How to Meet WCAG 2: Quick Reference', 'href' => 'https://www.w3.org/WAI/WCAG22/quickref/', 'meta' => 'W3C'],
             ],
         ],
     ],
@@ -268,15 +375,12 @@ return [
         'status' => 'current',
         'question' => 'What gives us the authority to call a digital experience accessible?',
         'scenario' => 'A client asks: "Is our digital experience accessible?" That question cannot be answered responsibly without understanding what accessible means and whose standards or requirements are being applied. Each team will investigate one source of authority and contribute one part of the class\'s eventual answer.',
-        'shared_requirements' => [
-            'Explain your assigned lens in plain English.',
-            'Identify the most important concepts or requirements someone evaluating a digital product should understand.',
-            'Locate authoritative primary sources supporting important claims.',
-            'Explain how your lens would influence an evaluation of the sample digital experience.',
-            'Identify at least one question your investigation cannot answer by itself.',
-            'Briefly identify any generative AI tools used and describe what role they played.',
+        'problem' => 'A client asks: "Is our digital experience accessible?" That question cannot be answered responsibly without understanding what accessible means and whose requirements or standards are being applied. Each team will investigate one source of authority and contribute one part of the class\'s eventual answer.',
+        'experience_under_review' => [
+            'title' => 'Experience Under Review',
+            'name' => 'Design Futures 2026 Registration',
+            'link' => ['label' => 'Open the experience ->', 'route' => 'experiences.campus-event-registration', 'new_tab' => true],
         ],
-        'shared_requirements_note' => 'AI summaries, search snippets, blogs, and secondary explanations may help you get oriented. They do not replace authoritative sources.',
         'teams' => [
             [
                 'team' => 'Cyan Triangle',
@@ -286,12 +390,12 @@ return [
                 'description' => 'Investigate the legal framework for digital accessibility in U.S. higher education.',
                 'questions' => [
                     'Which U.S. disability/accessibility laws are relevant to digital experiences?',
-                    'Which obligations are especially relevant to a public university?',
+                    'Which obligations are particularly relevant to a public university?',
                     'What does the ADA require?',
                     'What role does Section 504 play?',
-                    'Where and how do technical standards such as WCAG enter the legal framework?',
-                    'What can the law tell us about whether the sample experience is accessible?',
-                    'What can the law alone not tell us?',
+                    'Where do technical standards such as WCAG enter the legal framework?',
+                    'What can law tell us about the Design Futures experience?',
+                    'What can law alone not tell us?',
                 ],
             ],
             [
@@ -303,11 +407,10 @@ return [
                 'questions' => [
                     'What is WCAG?',
                     'Who publishes and maintains it?',
-                    'What are the principles of Perceivable, Operable, Understandable, and Robust?',
-                    'What are success criteria?',
-                    'What do Level A, AA, and AAA mean?',
+                    'What are POUR, success criteria, and conformance levels?',
+                    'What do Levels A, AA, and AAA mean?',
                     'What is the relationship between WCAG 2.1 and WCAG 2.2?',
-                    'How would WCAG help us evaluate the sample experience?',
+                    'How can WCAG be used to evaluate Design Futures?',
                     'What can WCAG conformance alone not tell us?',
                 ],
             ],
@@ -319,26 +422,26 @@ return [
                 'description' => 'Investigate UConn policy requirements and institutional accountability.',
                 'questions' => [
                     'What does UConn\'s Digital Accessibility Policy require?',
-                    'How does UConn describe or define accessible digital experiences?',
+                    'How does UConn describe accessible digital experiences?',
                     'Who and what does the policy apply to?',
-                    'How does UConn\'s policy connect to federal law and WCAG?',
-                    'What would UConn\'s requirements mean for the sample experience?',
+                    'How does UConn policy connect to federal law and WCAG?',
+                    'What would UConn\'s requirements mean for Design Futures?',
                     'What can institutional policy alone not tell us?',
                 ],
             ],
         ],
         'deliverable' => [
-            'summary' => 'Create a concise team brief designed for other students to actually use later when studying this material.',
+            'summary' => 'Create a concise team brief containing:',
             'items' => [
-                'a plain-English explanation of your assigned lens;',
-                '3-5 key findings;',
-                'links to authoritative sources;',
-                'a short section applying your findings to the sample interface;',
-                'a section titled What We Still Don\'t Know;',
-                'a brief AI Use Note.',
+                'Plain-English explanation: Explain your assigned lens for someone encountering it for the first time.',
+                '3-5 key findings: Identify the most important things the class should understand.',
+                'Authoritative sources: Link directly to the primary sources supporting important claims.',
+                'Apply It: Explain how your findings affect the evaluation of the Design Futures registration experience.',
+                'What We Still Don\'t Know: Identify something your lens cannot establish by itself.',
+                'AI Use Note: Identify any generative AI tools used and briefly explain how they contributed.',
             ],
-            'note' => 'The deliverable should be concise enough to review together in class. Do not require a slide deck. The team may choose an appropriate format unless the instructor specifies otherwise.',
         ],
+        'format_note' => 'Do not require a slide presentation. The brief may use an appropriate concise format, but it must be easy for classmates to review later as study material.',
         'evaluation_criteria' => [
             [
                 'title' => 'Investigation',
@@ -361,6 +464,11 @@ return [
                 'description' => 'Is the resulting brief concise, understandable, and useful to the rest of the class?',
             ],
         ],
+        'evaluation_total' => 10,
+        'ai_note' => [
+            'title' => 'AI output is not evidence.',
+            'body' => 'AI may help your team research, interpret, organize, critique, or explore possible answers. Important claims must still be verified.',
+        ],
         'due' => 'Due: EOD after Session 02',
         'resources' => [
             ['label' => 'Americans with Disabilities Act guidance', 'href' => 'https://www.ada.gov/', 'meta' => 'U.S. Department of Justice'],
@@ -377,9 +485,117 @@ return [
         ],
     ],
 
+    'resource_collections' => [
+        [
+            'title' => 'Start Here',
+            'description' => 'Credible starting points for everyone. You do not need to read everything first.',
+            'resources' => [
+                [
+                    'source' => 'W3C',
+                    'label' => 'WCAG Overview',
+                    'href' => 'https://www.w3.org/WAI/standards-guidelines/wcag/',
+                    'meta' => 'Overview',
+                    'description' => 'A readable introduction to WCAG, its versions, structure, and relationship to accessibility practice.',
+                ],
+                [
+                    'source' => 'W3C',
+                    'label' => 'How to Meet WCAG 2: Quick Reference',
+                    'href' => 'https://www.w3.org/WAI/WCAG22/quickref/',
+                    'meta' => 'Quick Reference',
+                    'description' => 'An interactive reference for finding and filtering WCAG success criteria, techniques, and related guidance.',
+                    'prominent' => true,
+                ],
+            ],
+        ],
+        [
+            'title' => 'Legal Lens',
+            'description' => 'Starting points, not a complete legal answer.',
+            'resources' => [
+                [
+                    'source' => 'U.S. Department of Justice',
+                    'label' => 'Accessibility of Web Content and Mobile Apps Provided by State and Local Government Entities',
+                    'href' => 'https://www.ada.gov/resources/2024-03-08-web-rule/',
+                    'meta' => 'Title II Rule',
+                    'description' => 'DOJ guidance explaining the Title II rule governing web and mobile accessibility for state and local government entities.',
+                ],
+                [
+                    'source' => 'ADA.gov',
+                    'label' => 'Web Accessibility Guidance',
+                    'href' => 'https://www.ada.gov/resources/web-guidance/',
+                    'meta' => 'Guidance',
+                    'description' => 'Broader DOJ guidance on how the ADA applies to web accessibility.',
+                ],
+                [
+                    'source' => 'Federal Source (verify)',
+                    'label' => 'Section 504',
+                    'href' => '#',
+                    'meta' => 'URL pending verification',
+                    'description' => 'Reliable federal starting point for Section 504. Instructor should verify and replace this placeholder URL.',
+                ],
+            ],
+        ],
+        [
+            'title' => 'Standards Lens',
+            'description' => 'Use source documents directly and trace evidence.',
+            'resources' => [
+                [
+                    'source' => 'W3C',
+                    'label' => 'WCAG 2.2',
+                    'href' => 'https://www.w3.org/TR/WCAG22/',
+                    'meta' => 'Normative',
+                    'description' => 'The normative WCAG 2.2 Recommendation.',
+                ],
+                [
+                    'source' => 'W3C',
+                    'label' => 'Understanding WCAG 2.2',
+                    'href' => 'https://www.w3.org/WAI/WCAG22/Understanding/',
+                    'meta' => 'Supporting',
+                    'description' => 'Explanatory guidance for understanding individual WCAG success criteria.',
+                ],
+                [
+                    'source' => 'W3C',
+                    'label' => 'Understanding Conformance',
+                    'href' => 'https://www.w3.org/WAI/WCAG22/Understanding/conformance',
+                    'meta' => 'Conformance',
+                    'description' => 'Explanation of WCAG conformance and Levels A, AA, and AAA.',
+                ],
+                [
+                    'source' => 'W3C',
+                    'label' => 'How to Meet WCAG 2: Quick Reference',
+                    'href' => 'https://www.w3.org/WAI/WCAG22/quickref/',
+                    'meta' => 'Quick Reference',
+                    'description' => 'Use this to find criteria, techniques, and related resources quickly during investigation.',
+                    'prominent' => true,
+                ],
+            ],
+        ],
+        [
+            'title' => 'Institutional Lens',
+            'description' => 'Authoritative UConn policy sources.',
+            'resources' => [
+                [
+                    'source' => 'UConn',
+                    'label' => 'Digital Accessibility Policy',
+                    'href' => 'https://policy.uconn.edu/2019/08/02/digital-accessibility-policy/',
+                    'meta' => 'Policy',
+                    'description' => 'The University\'s policy governing digital accessibility.',
+                    'authoritative' => true,
+                ],
+                [
+                    'source' => 'UConn',
+                    'label' => 'ICT Accessibility Policy Procedures',
+                    'href' => 'https://accessibility.its.uconn.edu/ict-policy-procedures/',
+                    'meta' => 'Procedures',
+                    'description' => 'UConn procedures explaining how digital accessibility responsibilities are applied in practice.',
+                    'authoritative' => true,
+                ],
+            ],
+        ],
+    ],
+
     'resources' => [
-        ['label' => 'What is Web Accessibility?', 'href' => 'https://www.w3.org/WAI/fundamentals/accessibility-intro/', 'meta' => 'W3C'],
-        ['label' => 'WCAG and Supporting Documents', 'href' => 'https://www.w3.org/WAI/standards-guidelines/wcag/', 'meta' => 'W3C'],
+        ['label' => 'WCAG Overview', 'href' => 'https://www.w3.org/WAI/standards-guidelines/wcag/', 'meta' => 'W3C'],
+        ['label' => 'How to Meet WCAG 2: Quick Reference', 'href' => 'https://www.w3.org/WAI/WCAG22/quickref/', 'meta' => 'W3C'],
         ['label' => 'Field Guide index', 'route' => 'field-guide', 'meta' => 'Course reference'],
     ],
 ];
