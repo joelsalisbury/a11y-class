@@ -22,10 +22,13 @@
             $usedSectionIds[] = $id;
             $section['id'] = $id;
             $sessionSections[] = $section;
-            $sessionSectionLinks[] = [
-                'id' => $id,
-                'label' => $section['title'] ?? 'Section '.($index + 1),
-            ];
+
+            if (($section['nav'] ?? true) === true) {
+                $sessionSectionLinks[] = [
+                    'id' => $id,
+                    'label' => $section['nav_label'] ?? $section['title'] ?? 'Section '.($index + 1),
+                ];
+            }
         }
     @endphp
 
@@ -56,6 +59,32 @@
                                 <x-section-heading :title="$section['title']" />
 
                                 <div class="course-copy">
+                                    @if (!empty($section['subheading']))
+                                        <h3 class="text-lg font-semibold text-ink">{{ $section['subheading'] }}</h3>
+                                    @endif
+
+                                    @if (!empty($section['challenge_reference']))
+                                        @php
+                                            $challengeReference = is_array($section['challenge_reference']) ? $section['challenge_reference'] : [];
+                                        @endphp
+
+                                        <x-course.challenge-reference
+                                            :intro="$challengeReference['intro'] ?? null"
+                                            :title="$challengeReference['title'] ?? ($module['challenge']['title'] ?? null)"
+                                            :description="$challengeReference['description'] ?? null"
+                                            :href="route('modules.challenge', ['module' => $module['number']])"
+                                            :linkLabel="$challengeReference['link_label'] ?? null"
+                                        />
+                                    @endif
+
+                                    @if (!empty($section['emphasis']))
+                                        <div>
+                                            @foreach ($section['emphasis'] as $line)
+                                                <p class="course-emphasis">{{ $line }}</p>
+                                            @endforeach
+                                        </div>
+                                    @endif
+
                                     @foreach ($section['paragraphs'] ?? [] as $paragraph)
                                         <p>{{ $paragraph }}</p>
                                     @endforeach
@@ -110,7 +139,7 @@
                                         <div class="course-callout grid gap-4 md:grid-cols-3">
                                             @foreach ($section['team_panels'] as $team)
                                                 <article class="rounded-lg border border-subtle bg-surface-3 p-4">
-                                                    <x-team-identity :team="$team['team']" :shape="$team['shape']" :tone="$team['tone']" />
+                                                    <x-team-identity :team="$team['team']" :shape="$team['shape']" :tone="$team['tone']" :showShapeLabel="false" />
                                                     <p class="mt-3 text-sm text-ink-muted"><strong class="text-ink">{{ $team['lens'] }}:</strong> {{ $team['description'] }}</p>
 
                                                     @if (!empty($team['questions']))
@@ -131,14 +160,6 @@
                                                         </div>
                                                     @endif
                                                 </article>
-                                            @endforeach
-                                        </div>
-                                    @endif
-
-                                    @if (!empty($section['emphasis']))
-                                        <div>
-                                            @foreach ($section['emphasis'] as $line)
-                                                <p class="course-emphasis">{{ $line }}</p>
                                             @endforeach
                                         </div>
                                     @endif

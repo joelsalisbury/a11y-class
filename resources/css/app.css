@@ -293,6 +293,8 @@
 
     .module-nav-rail {
         @apply sticky top-24 self-start;
+        max-height: calc(100vh - 6rem);
+        overflow-y: auto;
     }
 
     .module-nav-rail-panel,

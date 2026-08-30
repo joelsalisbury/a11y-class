@@ -29,7 +29,7 @@ return [
                         'Your browser will remember your anonymous assignment. Once assigned, find the other students with the same shape and sit together.',
                     ],
                     'actions' => [
-                        ['label' => 'Open instructor join QR screen', 'route' => 'join.qr'],
+                        ['label' => 'Open instructor join QR screen ->', 'route' => 'join.qr'],
                     ],
                     'callout' => [
                         'title' => 'Why a color and a shape?',
@@ -77,18 +77,17 @@ return [
                     ],
                 ],
                 [
-                    'title' => 'Is This Accessible?',
+                    'title' => 'First Investigation',
                     'paragraphs' => [
                         'Your team has been asked to evaluate a digital experience.',
-                        'Your client has one question: Is this accessible?',
+                    ],
+                    'emphasis' => [
+                        'Is this accessible?',
                     ],
                     'placeholder' => [
                         'title' => 'Experience Under Review',
                         'body' => 'Design Futures 2026 Registration',
                         'cta' => ['label' => 'Open the experience ->', 'route' => 'experiences.campus-event-registration', 'new_tab' => true],
-                    ],
-                    'paragraphs_after' => [
-                        'You may:',
                     ],
                     'bullets' => [
                         'use the interface normally',
@@ -132,51 +131,25 @@ return [
                     ],
                 ],
                 [
-                    'title' => 'Accessible According to Whom?',
-                    'paragraphs' => [
-                        'Each team will investigate a different source of authority behind the word accessible.',
+                    'title' => 'Challenge 01 Begins',
+                    'paragraphs' => [],
+                    'challenge_reference' => [
+                        'title' => 'Accessible According to Whom?',
+                        'description' => 'Each team will investigate a different source of authority behind the word accessible.',
+                        'link_label' => 'Open Challenge 01 →',
                     ],
-                    'team_panels' => [
-                        [
-                            'team' => 'Cyan Triangle',
-                            'shape' => 'triangle',
-                            'tone' => 'cyan',
-                            'lens' => 'The Legal Lens',
-                            'description' => 'Investigate what U.S. law says about digital accessibility, particularly for an institution like a public university.',
-                        ],
-                        [
-                            'team' => 'Amber Circle',
-                            'shape' => 'circle',
-                            'tone' => 'amber',
-                            'lens' => 'The Standards Lens',
-                            'description' => 'Investigate what WCAG is, how it works, and what it means for a digital experience to conform to an accessibility standard.',
-                        ],
-                        [
-                            'team' => 'Violet Square',
-                            'shape' => 'square',
-                            'tone' => 'violet',
-                            'lens' => 'The Institutional Lens',
-                            'description' => 'Investigate what UConn itself requires and how University accessibility requirements relate to broader standards and law.',
-                        ],
-                    ],
-                    'emphasis' => [
-                        'You may use AI to begin your investigation. You must find the authoritative source behind important claims.',
-                    ],
-                    'note' => '"ChatGPT says..." is not sufficient evidence.',
                 ],
                 [
                     'title' => 'Before You Leave',
                     'paragraphs' => [
-                        'Your team should have:',
+                        'Before you leave, make sure your team has:',
                     ],
                     'bullets' => [
-                        'begun investigating its assigned lens;',
-                        'identified at least two authoritative sources;',
-                        'identified the major questions you still need to answer;',
-                        'saved notes somewhere all team members can access.',
-                    ],
-                    'emphasis' => [
-                        'Challenge 01 is due EOD after Session 02.',
+                        'opened the Challenge 01 brief;',
+                        'identified your assigned lens;',
+                        'started your research;',
+                        'found at least two promising authoritative sources;',
+                        'saved your notes somewhere the team can access.',
                     ],
                 ],
             ],
@@ -219,85 +192,8 @@ return [
                 [
                     'title' => 'Investigate Your Lens',
                     'paragraphs' => [
-                        'Students return to their assigned teams.',
-                        'Your team is responsible for becoming the room\'s temporary specialist in this perspective.',
-                        'You do not need to know everything.',
-                        'You do need to be able to explain:',
-                    ],
-                    'bullets' => [
-                        'what your source of authority contributes;',
-                        'what it requires or helps us evaluate;',
-                        'what evidence supports your claims;',
-                        'what it cannot establish on its own.',
-                    ],
-                    'emphasis' => [
-                        'Primary sources first.',
-                    ],
-                    'paragraphs_after' => [
-                        'Students may use AI, search, secondary articles, or summaries to help understand difficult material, but important claims must trace back to authoritative sources.',
-                    ],
-                    'team_panels' => [
-                        [
-                            'team' => 'Cyan Triangle',
-                            'shape' => 'triangle',
-                            'tone' => 'cyan',
-                            'lens' => 'Legal Lens',
-                            'description' => 'Start with federal and DOJ primary sources, then connect claims to higher-ed obligations.',
-                            'questions' => [
-                                'Which U.S. disability/accessibility laws are relevant to digital experiences?',
-                                'Which obligations are particularly relevant to a public university?',
-                                'What does the ADA require?',
-                                'What role does Section 504 play?',
-                                'Where do technical standards such as WCAG enter the legal framework?',
-                                'What can law tell us about the Design Futures experience?',
-                                'What can law alone not tell us?',
-                            ],
-                            'resources' => [
-                                ['label' => 'DOJ Title II web and mobile accessibility rule', 'href' => 'https://www.ada.gov/resources/2024-03-08-web-rule/'],
-                                ['label' => 'ADA.gov web accessibility guidance', 'href' => 'https://www.ada.gov/resources/web-guidance/'],
-                                ['label' => 'Section 504 (URL pending instructor verification)', 'href' => '#'],
-                            ],
-                        ],
-                        [
-                            'team' => 'Amber Circle',
-                            'shape' => 'circle',
-                            'tone' => 'amber',
-                            'lens' => 'Standards Lens',
-                            'description' => 'Use WCAG source documents directly and trace claims from criterion to understanding and techniques.',
-                            'questions' => [
-                                'What is WCAG?',
-                                'Who publishes and maintains it?',
-                                'What are POUR, success criteria, and conformance levels?',
-                                'What do Levels A, AA, and AAA mean?',
-                                'What is the relationship between WCAG 2.1 and WCAG 2.2?',
-                                'How can WCAG be used to evaluate Design Futures?',
-                                'What can WCAG conformance alone not tell us?',
-                            ],
-                            'resources' => [
-                                ['label' => 'WCAG 2.2', 'href' => 'https://www.w3.org/TR/WCAG22/'],
-                                ['label' => 'Understanding WCAG 2.2', 'href' => 'https://www.w3.org/WAI/WCAG22/Understanding/'],
-                                ['label' => 'How to Meet WCAG 2: Quick Reference', 'href' => 'https://www.w3.org/WAI/WCAG22/quickref/'],
-                            ],
-                        ],
-                        [
-                            'team' => 'Violet Square',
-                            'shape' => 'square',
-                            'tone' => 'violet',
-                            'lens' => 'Institutional Lens',
-                            'description' => 'Anchor claims in UConn policy language, procedures, and scope.',
-                            'questions' => [
-                                'What does UConn\'s Digital Accessibility Policy require?',
-                                'How does UConn describe accessible digital experiences?',
-                                'Who and what does the policy apply to?',
-                                'How does UConn policy connect to federal law and WCAG?',
-                                'What would UConn\'s requirements mean for Design Futures?',
-                                'What can institutional policy alone not tell us?',
-                            ],
-                            'resources' => [
-                                ['label' => 'UConn Digital Accessibility Policy', 'href' => 'https://policy.uconn.edu/2019/08/02/digital-accessibility-policy/'],
-                                ['label' => 'UConn ICT Accessibility Policy Procedures', 'href' => 'https://accessibility.its.uconn.edu/ict-policy-procedures/'],
-                            ],
-                        ],
+                        'Return to your assigned team and keep building your understanding of the lens you started in Session 01.',
+                        'Keep tracing important claims back to authoritative sources and compare what each source helps you prove.',
                     ],
                 ],
                 [
@@ -318,47 +214,25 @@ return [
                     'note' => 'No formal notes or separate submission are required for this activity.',
                 ],
                 [
-                    'title' => 'Can You Answer the Question Better Now?',
+                    'title' => 'Return to Design Futures',
                     'paragraphs' => [
                         'Return to the same interface you evaluated in Session 01.',
-                        'Reconsider: Is this accessible?',
+                        'Use a different method than you used before and compare what it reveals.',
                     ],
                     'actions' => [
                         ['label' => 'Design Futures 2026 Registration ->', 'route' => 'experiences.campus-event-registration', 'new_tab' => true],
                     ],
-                    'ordered' => [
-                        'Has your answer changed?',
-                        'Is your evidence stronger?',
-                        'What can you now support with an authoritative source?',
-                        'What did your original investigation miss?',
-                        'What still requires direct testing?',
-                        'What claims are you still unable to make?',
-                    ],
                     'paragraphs_after' => [
                         'Try at least one method you did not use during Session 01.',
-                        'Examples may include keyboard-only use, browser inspection, an automated accessibility checker, zoom/reflow, examining semantic markup, asking an AI system to critique the interface, or comparing a finding against WCAG.',
-                        'Do not try to use every method. Use at least one new method intentionally.',
                     ],
                 ],
                 [
-                    'title' => 'Build the Brief',
-                    'paragraphs' => [
-                        'Use the remainder of the session to turn your investigation into a concise brief that the rest of the class can learn from later.',
-                        'Your brief will become part of the Module 01 Class Work archive after submission.',
-                    ],
-                    'actions' => [
-                        ['label' => 'Open Challenge 01 brief ->', 'route' => 'modules.challenge', 'params' => ['module' => 1]],
-                    ],
-                    'emphasis' => [
-                        'Challenge 01 is due EOD today.',
-                    ],
-                ],
-                [
-                    'title' => 'What Happens Next',
-                    'paragraphs' => [
-                        'After Challenge 01 is submitted, all three team briefs will be added to this module\'s Class Work archive.',
-                        'At the beginning of the next module, we will compare the completed work and use it as part of our critique and review.',
-                        'Those submissions will remain available as course study material.',
+                    'title' => 'Finish Challenge 01',
+                    'paragraphs' => [],
+                    'challenge_reference' => [
+                        'intro' => 'Use the remainder of class to complete your team brief.',
+                        'description' => 'Return to the canonical Challenge 01 page for your team\'s investigation questions, authoritative starting resources, deliverable requirements, evaluation criteria, AI expectations, and due information.',
+                        'link_label' => 'Open Challenge 01 →',
                     ],
                 ],
             ],
@@ -478,10 +352,38 @@ return [
         ],
 
         // Populated manually after the challenge cycle completes. No upload/submission functionality.
+        // Each entry can support: team, shape, tone, title, description, artifact, instructor_note, date.
         'class_work' => [
-            ['team' => 'Cyan Triangle', 'shape' => 'triangle', 'tone' => 'cyan'],
-            ['team' => 'Amber Circle', 'shape' => 'circle', 'tone' => 'amber'],
-            ['team' => 'Violet Square', 'shape' => 'square', 'tone' => 'violet'],
+            [
+                'team' => 'Cyan Triangle',
+                'shape' => 'triangle',
+                'tone' => 'cyan',
+                'title' => null,
+                'description' => null,
+                'artifact' => null,
+                'instructor_note' => null,
+                'date' => null,
+            ],
+            [
+                'team' => 'Amber Circle',
+                'shape' => 'circle',
+                'tone' => 'amber',
+                'title' => null,
+                'description' => null,
+                'artifact' => null,
+                'instructor_note' => null,
+                'date' => null,
+            ],
+            [
+                'team' => 'Violet Square',
+                'shape' => 'square',
+                'tone' => 'violet',
+                'title' => null,
+                'description' => null,
+                'artifact' => null,
+                'instructor_note' => null,
+                'date' => null,
+            ],
         ],
     ],
 

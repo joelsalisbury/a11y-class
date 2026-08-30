@@ -2,6 +2,7 @@
     'team',
     'shape',
     'tone' => 'cyan',
+    'showShapeLabel' => true,
 ])
 
 @php
@@ -31,6 +32,8 @@
 
     <div>
         <p class="font-medium text-ink">{{ $team }}</p>
-        <p class="text-xs uppercase tracking-[0.14em] text-ink-muted">{{ ucfirst($shape) }}</p>
+        @if ($showShapeLabel)
+            <p class="text-xs uppercase tracking-[0.14em] text-ink-muted">{{ ucfirst($shape) }}</p>
+        @endif
     </div>
 </div>

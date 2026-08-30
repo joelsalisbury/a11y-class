@@ -46,7 +46,7 @@
                         <div class="mt-5 grid gap-4 md:grid-cols-3">
                             @foreach ($challenge['teams'] as $team)
                                 <article class="rounded-lg border border-subtle bg-surface-3 p-4">
-                                    <x-team-identity :team="$team['team']" :shape="$team['shape']" :tone="$team['tone']" />
+                                    <x-team-identity :team="$team['team']" :shape="$team['shape']" :tone="$team['tone']" :showShapeLabel="false" />
                                     <p class="mt-3 text-sm text-ink-muted"><strong class="text-ink">{{ $team['lens'] }}:</strong> {{ $team['description'] }}</p>
 
                                     @if (!empty($team['questions']))
@@ -135,43 +135,28 @@
                         </div>
                     </x-panel>
                 </section>
+            </div>
 
-                <section id="challenge-resources" class="module-anchor lg:col-span-6">
-                    <x-panel>
-                        <x-section-heading title="Resources" />
-                        <div class="mt-4 space-y-2">
-                            @foreach ($challenge['resources'] as $resource)
-                                <x-resource-link :href="isset($resource['route']) ? route($resource['route']) : $resource['href']" :meta="$resource['meta'] ?? null">
-                                    {{ $resource['label'] }}
-                                </x-resource-link>
-                            @endforeach
-                        </div>
-                    </x-panel>
+            <div class="mt-10 space-y-12">
+                <section id="challenge-resources" class="module-anchor space-y-5">
+                    <x-section-heading title="Resources" description="Readings and references for this challenge" />
+
+                    <div class="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+                        @foreach ($challenge['resources'] as $resource)
+                            <x-resource-link :href="isset($resource['route']) ? route($resource['route']) : $resource['href']" :meta="$resource['meta'] ?? null">
+                                {{ $resource['label'] }}
+                            </x-resource-link>
+                        @endforeach
+                    </div>
                 </section>
 
-                <section id="challenge-class-work" class="module-anchor lg:col-span-12">
-                    <x-panel>
-                        <div class="flex items-center justify-between gap-4">
-                            <x-section-heading title="Class Work" description="Team submissions appear here after the challenge cycle. Public standings are intentionally not part of this course site." />
-                            <x-status-badge status="upcoming" />
-                        </div>
-                        <div class="mt-5 grid gap-3 md:grid-cols-3">
-                            @foreach ($challenge['class_work'] as $work)
-                                <x-class-work-card
-                                    :team="$work['team']"
-                                    :shape="$work['shape']"
-                                    :tone="$work['tone']"
-                                    :title="$work['title'] ?? null"
-                                    :artifact="$work['artifact'] ?? null"
-                                    :description="$work['description'] ?? null"
-                                    :instructorNote="$work['instructor_note'] ?? null"
-                                    :date="$work['date'] ?? null"
-                                />
-                            @endforeach
-                        </div>
-                    </x-panel>
-                </section>
-
+                <x-course.class-work-section
+                    id="challenge-class-work"
+                    :submissions="$challenge['class_work']"
+                    title="Class Work"
+                    description="Permanent archive of team deliverables from the challenge cycle."
+                    emptyMessage="Team deliverables will be archived here after Challenge 01."
+                />
             </div>
 
             <x-course.module-pagination :module="$module" currentPage="challenge" />
