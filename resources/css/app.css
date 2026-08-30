@@ -1,0 +1,248 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-sans: 'Instrument Sans', 'Avenir Next', 'Segoe UI', sans-serif;
+    --font-mono: 'JetBrains Mono', 'SFMono-Regular', 'Menlo', monospace;
+
+    --color-surface-1: oklch(14% 0.01 260);
+    --color-surface-2: oklch(18% 0.012 260);
+    --color-surface-3: oklch(22% 0.015 260);
+    --color-subtle: oklch(32% 0.015 260);
+
+    --color-ink: oklch(93% 0.01 260);
+    --color-ink-muted: oklch(72% 0.013 260);
+
+    --color-accent-cyan: oklch(76% 0.14 210);
+    --color-accent-cyan-strong: oklch(82% 0.16 210);
+    --color-accent-amber: oklch(82% 0.16 85);
+    --color-accent-violet: oklch(72% 0.18 305);
+}
+
+@layer base {
+    :root {
+        color-scheme: dark;
+    }
+
+    * {
+        border-color: theme(--color-subtle);
+    }
+
+    body {
+        background:
+            radial-gradient(circle at 15% -10%, color-mix(in oklab, theme(--color-accent-cyan) 18%, transparent), transparent 32%),
+            radial-gradient(circle at 100% 0%, color-mix(in oklab, theme(--color-accent-violet) 12%, transparent), transparent 34%),
+            theme(--color-surface-1);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        text-wrap: balance;
+    }
+
+    a {
+        color: inherit;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    [tabindex]:focus-visible {
+        outline: 2px solid theme(--color-accent-cyan);
+        outline-offset: 2px;
+        border-radius: 0.35rem;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+}
+
+@layer components {
+    .site-grid {
+        @apply min-h-screen;
+    }
+
+    .shell {
+        @apply mx-auto w-full max-w-6xl px-5 md:px-8;
+    }
+
+    .skip-link {
+        @apply sr-only;
+    }
+
+    .skip-link:focus-visible {
+        @apply not-sr-only fixed left-4 top-4 z-50 rounded-md border border-subtle bg-surface-2 px-4 py-2 text-sm font-medium text-ink;
+    }
+
+    .meta-label {
+        @apply font-mono text-xs uppercase tracking-[0.2em] text-ink-muted;
+    }
+
+    .site-title-link {
+        @apply mt-2 inline-block text-base font-semibold tracking-tight text-ink;
+    }
+
+    .site-title-link:hover {
+        color: theme(--color-accent-cyan);
+    }
+
+    .nav-link {
+        @apply rounded-md border border-transparent px-3 py-2 text-sm font-medium text-ink-muted transition;
+    }
+
+    .nav-link:hover {
+        @apply border-subtle bg-surface-2 text-ink;
+    }
+
+    .nav-link.is-active {
+        @apply border-subtle bg-surface-2 text-ink;
+    }
+
+    .panel {
+        @apply rounded-xl border border-subtle bg-surface-2 p-5 md:p-6;
+    }
+
+    .cta-link {
+        @apply inline-flex items-center gap-2 rounded-md bg-accent-cyan px-4 py-2.5 text-sm font-semibold text-surface-1 transition;
+    }
+
+    .cta-link:hover {
+        @apply bg-accent-cyan-strong;
+    }
+
+    .badge {
+        @apply inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-medium uppercase tracking-[0.12em];
+    }
+
+    .badge-dot {
+        @apply inline-block size-2 rounded-full;
+        background-color: currentColor;
+    }
+
+    .badge-current {
+        @apply border-accent-cyan text-accent-cyan;
+    }
+
+    .badge-completed {
+        @apply border-ink-muted text-ink-muted;
+    }
+
+    .badge-upcoming {
+        @apply border-subtle text-ink-muted;
+    }
+
+    .resource-link {
+        @apply flex items-start justify-between gap-4 rounded-lg border border-subtle bg-surface-3 px-4 py-3 transition;
+    }
+
+    .resource-link:hover {
+        @apply border-accent-cyan/50;
+    }
+
+    .resource-link-arrow {
+        @apply text-ink-muted;
+    }
+
+    .team-chip {
+        @apply flex items-center gap-3 rounded-lg border border-subtle bg-surface-3 px-3 py-3;
+    }
+
+    .shape-mark {
+        @apply grid size-8 place-items-center rounded-md border border-current;
+    }
+
+    .shape-mark svg {
+        @apply size-5;
+    }
+
+    .team-tone-cyan {
+        color: theme(--color-accent-cyan);
+    }
+
+    .team-tone-amber {
+        color: theme(--color-accent-amber);
+    }
+
+    .team-tone-violet {
+        color: theme(--color-accent-violet);
+    }
+
+    .module-card {
+        @apply flex h-full flex-col rounded-xl border border-subtle bg-surface-2 p-5;
+    }
+
+    .module-card-link {
+        @apply mt-5 inline-flex items-center gap-2 text-sm font-medium text-accent-cyan;
+    }
+
+    .module-card-link:hover {
+        @apply text-accent-cyan-strong;
+    }
+
+    .callout {
+        @apply rounded-xl border border-accent-cyan/40 bg-surface-2 p-5;
+    }
+
+    .callout-title {
+        @apply font-mono text-xs uppercase tracking-[0.2em] text-accent-cyan;
+    }
+
+    .prose-shell {
+        @apply space-y-6 text-base leading-8 text-ink-muted;
+    }
+
+    .prose-shell h2 {
+        @apply text-2xl font-semibold tracking-tight text-ink;
+    }
+
+    .prose-shell ul {
+        @apply list-disc space-y-2 pl-5;
+    }
+
+    .prose-shell table {
+        @apply w-full border-collapse overflow-hidden rounded-lg border border-subtle text-left text-sm;
+    }
+
+    .prose-shell th,
+    .prose-shell td {
+        @apply border-b border-subtle px-4 py-3 align-top;
+    }
+
+    .prose-shell th {
+        @apply text-ink;
+    }
+
+    .focus-ring:focus-visible {
+        outline: 2px solid theme(--color-accent-cyan);
+        outline-offset: 2px;
+    }
+
+    .team-reveal-panel {
+        @apply rounded-2xl border-2 p-8 text-center md:p-14;
+        border-color: currentColor;
+        background-color: color-mix(in oklab, currentColor 14%, transparent);
+    }
+
+    .team-reveal-symbol {
+        @apply text-6xl leading-none md:text-8xl;
+    }
+
+    .team-reveal-name {
+        @apply mt-4 text-4xl font-semibold tracking-tight text-ink md:text-6xl;
+    }
+
+    .qr-card {
+        @apply mx-auto grid place-items-center rounded-2xl bg-white p-6 shadow-lg md:p-10;
+    }
+}
