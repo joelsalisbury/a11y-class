@@ -9,12 +9,14 @@
         @if (count($module['sessions']))
             @foreach ($module['sessions'] as $number => $session)
                 <x-panel class="lg:col-span-6">
-                    <x-meta-label>Session {{ str_pad((string) $number, 2, '0', STR_PAD_LEFT) }}</x-meta-label>
-                    <h2 class="mt-3 text-xl font-semibold text-ink">{{ $session['title'] }}</h2>
-                    <p class="mt-2 text-sm text-ink-muted">{{ $session['overview'] }}</p>
-                    <a href="{{ route('modules.session', ['module' => $module['number'], 'session' => $number]) }}" class="mt-5 inline-flex text-sm font-medium text-accent-cyan hover:text-accent-cyan-strong focus-visible:focus-ring rounded-sm">
-                        Open Session {{ str_pad((string) $number, 2, '0', STR_PAD_LEFT) }}
-                    </a>
+                    <div class="course-panel-copy">
+                        <x-meta-label>Session {{ str_pad((string) $number, 2, '0', STR_PAD_LEFT) }}</x-meta-label>
+                        <h2 class="text-xl font-semibold text-ink">{{ $session['title'] }}</h2>
+                        <p>{{ $session['overview'] }}</p>
+                        <a href="{{ route('modules.session', ['module' => $module['number'], 'session' => $number]) }}" class="inline-flex text-sm font-medium text-accent-cyan hover:text-accent-cyan-strong focus-visible:focus-ring rounded-sm">
+                            Open Session {{ str_pad((string) $number, 2, '0', STR_PAD_LEFT) }}
+                        </a>
+                    </div>
                 </x-panel>
             @endforeach
         @else
@@ -33,10 +35,12 @@
                     </div>
                     <x-status-badge :status="$module['challenge']['status']" />
                 </div>
-                <p class="mt-3 max-w-3xl text-sm leading-7 text-ink-muted">{{ $module['challenge']['scenario'] }}</p>
-                <a href="{{ route('modules.challenge', $module['number']) }}" class="mt-5 inline-flex text-sm font-medium text-accent-cyan hover:text-accent-cyan-strong focus-visible:focus-ring rounded-sm">
-                    Open Challenge {{ str_pad((string) $module['number'], 2, '0', STR_PAD_LEFT) }} brief
-                </a>
+                <div class="course-panel-copy mt-3 course-measure">
+                    <p>{{ $module['challenge']['scenario'] }}</p>
+                    <a href="{{ route('modules.challenge', $module['number']) }}" class="inline-flex text-sm font-medium text-accent-cyan hover:text-accent-cyan-strong focus-visible:focus-ring rounded-sm">
+                        Open Challenge {{ str_pad((string) $module['number'], 2, '0', STR_PAD_LEFT) }} brief
+                    </a>
+                </div>
             </x-panel>
         @endif
 

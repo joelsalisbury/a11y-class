@@ -12,6 +12,9 @@
                 @if ($session)
                     <h2 class="text-2xl font-semibold text-ink">Session {{ str_pad((string) $sessionNumber, 2, '0', STR_PAD_LEFT) }}: {{ $session['title'] }}</h2>
                     <p class="text-ink-muted">{{ $session['overview'] }}</p>
+                    @if (!empty($session['question']))
+                        <p class="text-sm font-medium text-ink">{{ $session['question'] }}</p>
+                    @endif
                 @else
                     <h2 class="text-2xl font-semibold text-ink">Session content coming soon</h2>
                 @endif
@@ -19,7 +22,7 @@
 
             @if ($session)
                 <a href="{{ route('modules.session', ['module' => $module['number'], 'session' => $sessionNumber]) }}" class="cta-link">
-                    Enter current session
+                    Open Session {{ str_pad((string) $sessionNumber, 2, '0', STR_PAD_LEFT) }}
                     <span aria-hidden="true">→</span>
                 </a>
             @endif
@@ -29,7 +32,11 @@
             <x-meta-label>Current Challenge</x-meta-label>
             @if ($challenge)
                 <h2 class="mt-3 text-xl font-semibold text-ink">{{ $challenge['title'] }}</h2>
-                <p class="mt-3 text-sm leading-7 text-ink-muted">{{ $challenge['deliverable'] }}</p>
+                @if (is_array($challenge['deliverable'] ?? null))
+                    <p class="mt-3 text-sm leading-7 text-ink-muted">{{ $challenge['deliverable']['summary'] ?? '' }}</p>
+                @else
+                    <p class="mt-3 text-sm leading-7 text-ink-muted">{{ $challenge['deliverable'] }}</p>
+                @endif
                 <a href="{{ route('modules.challenge', $module['number']) }}" class="mt-5 inline-flex text-sm font-medium text-accent-cyan hover:text-accent-cyan-strong focus-visible:focus-ring rounded-sm">
                     Open challenge brief
                 </a>

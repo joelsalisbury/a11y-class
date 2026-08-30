@@ -17,7 +17,7 @@ return [
         1 => [
             'title' => 'Accessible According to Whom?',
             'status' => 'current',
-            'summary' => 'Define accessibility through legal, standards, and institutional lenses.',
+            'summary' => 'Accessibility sounds simple until someone asks you to prove it.',
         ],
         2 => [
             'title' => 'Can You See What Matters?',

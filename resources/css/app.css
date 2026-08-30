@@ -198,16 +198,109 @@
         @apply font-mono text-xs uppercase tracking-[0.2em] text-accent-cyan;
     }
 
+    .course-measure {
+        @apply max-w-3xl;
+    }
+
+    .course-flow {
+        @apply space-y-10 md:space-y-14;
+    }
+
+    .course-section {
+        @apply space-y-4 md:space-y-5;
+    }
+
+    .course-copy {
+        @apply text-sm leading-7 text-ink-muted;
+    }
+
+    .course-copy > p + p {
+        @apply mt-4;
+    }
+
+    .course-copy > ul,
+    .course-copy > ol {
+        @apply mt-4 pl-5;
+    }
+
+    .course-copy > ul {
+        @apply list-disc space-y-2.5 marker:text-ink;
+    }
+
+    .course-copy > ol {
+        @apply list-decimal space-y-2.5 marker:text-ink;
+    }
+
+    .course-copy > p + ul,
+    .course-copy > p + ol,
+    .course-copy > ul + p,
+    .course-copy > ol + p {
+        @apply mt-4;
+    }
+
+    .course-copy > h3 {
+        @apply mt-6 text-lg font-semibold text-ink;
+    }
+
+    .course-copy > .panel,
+    .course-copy > .callout,
+    .course-copy > .course-callout,
+    .course-copy > .course-emphasis {
+        @apply mt-6;
+    }
+
+    .course-emphasis {
+        @apply text-lg font-semibold text-ink;
+    }
+
+    .course-panel-copy {
+        @apply text-sm leading-7 text-ink-muted;
+    }
+
+    .course-panel-copy > * + * {
+        @apply mt-3;
+    }
+
+    .course-panel-copy > ul,
+    .course-panel-copy > ol {
+        @apply pl-5;
+    }
+
+    .course-panel-copy > ul {
+        @apply list-disc space-y-2.5 marker:text-ink;
+    }
+
+    .course-panel-copy > ol {
+        @apply list-decimal space-y-2.5 marker:text-ink;
+    }
+
     .prose-shell {
-        @apply space-y-6 text-base leading-8 text-ink-muted;
+        @apply space-y-10 text-base leading-8 text-ink-muted md:space-y-14;
     }
 
     .prose-shell h2 {
         @apply text-2xl font-semibold tracking-tight text-ink;
     }
 
+    .prose-shell h2 + p,
+    .prose-shell h2 + ul,
+    .prose-shell h2 + table,
+    .prose-shell h2 + .callout {
+        @apply mt-3;
+    }
+
+    .prose-shell p + p,
+    .prose-shell p + ul,
+    .prose-shell ul + p,
+    .prose-shell p + table,
+    .prose-shell table + p,
+    .prose-shell table + .callout,
+    .prose-shell .callout + h2 {
+        @apply mt-4;
+    }
+
     .prose-shell ul {
-        @apply list-disc space-y-2 pl-5;
+        @apply list-disc space-y-2.5 pl-5;
     }
 
     .prose-shell table {

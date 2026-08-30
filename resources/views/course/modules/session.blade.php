@@ -5,17 +5,103 @@
         :subtitle="$session['question'] ?? null"
     />
 
-    <div class="mt-10 max-w-3xl space-y-8">
-        <p class="text-sm leading-7 text-ink-muted">{{ $session['overview'] }}</p>
+    <div class="course-measure mt-10">
+        <p class="course-copy">{{ $session['overview'] }}</p>
 
-        @if (!empty($session['run_of_show']))
-            <div class="space-y-3">
+        @if (!empty($session['sections']))
+            <div class="course-flow mt-10">
+                @foreach ($session['sections'] as $section)
+                    <section class="course-section">
+                        <x-section-heading :title="$section['title']" />
+
+                        <div class="course-copy">
+                            @foreach ($section['paragraphs'] ?? [] as $paragraph)
+                                <p>{{ $paragraph }}</p>
+                            @endforeach
+
+                            @if (!empty($section['actions']))
+                                <div>
+                                    @foreach ($section['actions'] as $action)
+                                        <a href="{{ isset($action['route']) ? route($action['route']) : $action['href'] }}" class="inline-flex text-sm font-medium text-accent-cyan hover:text-accent-cyan-strong focus-visible:focus-ring rounded-sm">
+                                            {{ $action['label'] }}
+                                        </a>
+                                    @endforeach
+                                </div>
+                            @endif
+
+                            @if (!empty($section['placeholder']))
+                                <x-panel class="course-callout space-y-2.5" as="div">
+                                    <x-meta-label>{{ $section['placeholder']['title'] }}</x-meta-label>
+                                    <p>{{ $section['placeholder']['body'] }}</p>
+                                </x-panel>
+                            @endif
+
+                            @if (!empty($section['bullets']))
+                                <ul>
+                                    @foreach ($section['bullets'] as $item)
+                                        <li>{{ $item }}</li>
+                                    @endforeach
+                                </ul>
+                            @endif
+
+                            @foreach ($section['paragraphs_after'] ?? [] as $paragraph)
+                                <p>{{ $paragraph }}</p>
+                            @endforeach
+
+                            @if (!empty($section['task_title']))
+                                <h3>{{ $section['task_title'] }}</h3>
+                            @endif
+
+                            @if (!empty($section['ordered']))
+                                <ol>
+                                    @foreach ($section['ordered'] as $item)
+                                        <li>{{ $item }}</li>
+                                    @endforeach
+                                </ol>
+                            @endif
+
+                            @if (!empty($section['team_panels']))
+                                <div class="course-callout grid gap-4 md:grid-cols-3">
+                                    @foreach ($section['team_panels'] as $team)
+                                        <article class="rounded-lg border border-subtle bg-surface-3 p-4">
+                                            <x-team-identity :team="$team['team']" :shape="$team['shape']" :tone="$team['tone']" />
+                                            <p class="mt-3 text-sm text-ink-muted"><strong class="text-ink">{{ $team['lens'] }}:</strong> {{ $team['description'] }}</p>
+                                        </article>
+                                    @endforeach
+                                </div>
+                            @endif
+
+                            @if (!empty($section['emphasis']))
+                                <div>
+                                    @foreach ($section['emphasis'] as $line)
+                                        <p class="course-emphasis">{{ $line }}</p>
+                                    @endforeach
+                                </div>
+                            @endif
+
+                            @if (!empty($section['note']))
+                                <p class="course-emphasis">{{ $section['note'] }}</p>
+                            @endif
+
+                            @if (!empty($section['callout']))
+                                <x-callout :title="$section['callout']['title']">
+                                    {{ $section['callout']['body'] }}
+                                </x-callout>
+                            @endif
+                        </div>
+                    </section>
+                @endforeach
+            </div>
+        @elseif (!empty($session['run_of_show']))
+            <div class="course-section mt-10">
                 <x-section-heading title="Run of Show" />
-                <ol class="list-decimal space-y-2 pl-5 text-sm text-ink-muted marker:text-ink">
-                    @foreach ($session['run_of_show'] as $item)
-                        <li>{{ $item }}</li>
-                    @endforeach
-                </ol>
+                <div class="course-copy">
+                    <ol>
+                        @foreach ($session['run_of_show'] as $item)
+                            <li>{{ $item }}</li>
+                        @endforeach
+                    </ol>
+                </div>
             </div>
         @endif
     </div>

@@ -28,12 +28,14 @@
     <div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         @foreach ($entries as $entry)
             <x-panel as="article" class="h-full">
-                <x-meta-label>Reference Entry</x-meta-label>
-                <h2 class="mt-3 text-lg font-semibold text-ink">{{ $entry }}</h2>
-                <p class="mt-2 text-sm leading-7 text-ink-muted">Placeholder summary text for scope, key terms, and recommended references.</p>
-                <a href="#" class="mt-4 inline-flex text-sm font-medium text-accent-cyan hover:text-accent-cyan-strong focus-visible:focus-ring rounded-sm">
-                    Open entry
-                </a>
+                <div class="course-panel-copy">
+                    <x-meta-label>Reference Entry</x-meta-label>
+                    <h2 class="text-lg font-semibold text-ink">{{ $entry }}</h2>
+                    <p>Placeholder summary text for scope, key terms, and recommended references.</p>
+                    <a href="#" class="inline-flex text-sm font-medium text-accent-cyan hover:text-accent-cyan-strong focus-visible:focus-ring rounded-sm">
+                        Open entry
+                    </a>
+                </div>
             </x-panel>
         @endforeach
     </div>
