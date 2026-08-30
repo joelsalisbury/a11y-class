@@ -23,6 +23,10 @@ Route::get('/modules/{module}/challenge', [CourseController::class, 'challenge']
 
 Route::get('/field-guide', [CourseController::class, 'fieldGuide'])->name('field-guide');
 
+Route::get('/field-guide/{entry}', [CourseController::class, 'fieldGuideEntry'])
+    ->where('entry', '[a-z0-9-]+')
+    ->name('field-guide.entry');
+
 Route::get('/syllabus', [CourseController::class, 'syllabus'])->name('syllabus');
 
 Route::get('/join', [JoinController::class, 'qr'])->name('join.qr');

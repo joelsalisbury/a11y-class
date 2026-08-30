@@ -60,7 +60,22 @@ class CourseController extends Controller
 
     public function fieldGuide()
     {
-        return view('course.field-guide');
+        return view('course.field-guide', [
+            'guide' => Course::fieldGuide(),
+        ]);
+    }
+
+    public function fieldGuideEntry(string $entry)
+    {
+        $entryData = Course::fieldGuideEntry($entry);
+
+        return view('course.field-guide-entry', [
+            'guideCategories' => $entryData['categories'],
+            'category' => $entryData['category'],
+            'entry' => $entryData['entry'],
+            'previousEntry' => $entryData['previous'],
+            'nextEntry' => $entryData['next'],
+        ]);
     }
 
     public function syllabus()

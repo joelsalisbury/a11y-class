@@ -1,0 +1,264 @@
+<?php
+
+return [
+    'intro' => 'A non-linear reference library for concepts, methods, and standards used throughout DMD 3998.',
+    'categories' => [
+        [
+            'title' => 'Foundations',
+            'entries' => [
+                [
+                    'slug' => 'accessibility',
+                    'title' => 'Accessibility',
+                    'summary' => 'A quality standard for digital experiences: people with disabilities should be able to perceive, understand, navigate, and complete tasks with comparable independence.',
+                    'in_this_course' => [
+                        ['label' => 'Used in Module 01 - Accessible According to Whom?', 'route' => 'modules.show', 'params' => ['module' => 1]],
+                        ['label' => 'Session 01 - Is This Accessible?', 'route' => 'modules.session', 'params' => ['module' => 1, 'session' => 1]],
+                        ['label' => 'Challenge 01 brief', 'route' => 'modules.challenge', 'params' => ['module' => 1]],
+                        ['label' => 'Design Futures 2026 Registration experience', 'route' => 'experiences.campus-event-registration'],
+                    ],
+                    'overview' => 'Accessibility is the practice of designing and evaluating digital experiences so disabled people can use them effectively in real contexts, not just pass a checklist.',
+                    'why_it_matters' => 'If accessibility is treated as a vague opinion, teams ship barriers and cannot defend quality claims. Shared definitions help teams make accountable decisions.',
+                    'what_to_look_for' => [
+                        'Can people complete the primary task with a keyboard only?',
+                        'Is critical information still clear at 200% zoom and in high-contrast conditions?',
+                        'Are labels, instructions, and error messages explicit and persistent?',
+                        'Do findings cite a source of authority, not only intuition or AI output?',
+                    ],
+                    'standards_guidance' => [
+                        'WCAG gives technical conformance criteria that can support evidence.',
+                        'Institutional and legal requirements determine accountability context.',
+                        'No single source answers every accessibility question; triangulate evidence.',
+                    ],
+                    'resource_refs' => [
+                        ['module' => 1, 'collection' => 'Start Here'],
+                        ['module' => 1, 'collection' => 'Standards Lens'],
+                        ['module' => 1, 'collection' => 'Legal Lens'],
+                        ['module' => 1, 'collection' => 'Institutional Lens'],
+                    ],
+                    'related_entries' => ['wcag', 'pour', 'law-policy'],
+                ],
+                [
+                    'slug' => 'disability-inclusive-design',
+                    'title' => 'Disability & Inclusive Design',
+                    'summary' => 'Designing with disability perspectives from the start improves outcomes for many users, not only edge cases.',
+                    'status_note' => 'Expanded guidance will be added when we reach this topic.',
+                    'related_entries' => ['accessibility', 'cognitive-accessibility'],
+                ],
+                [
+                    'slug' => 'wcag',
+                    'title' => 'WCAG',
+                    'summary' => 'The Web Content Accessibility Guidelines provide testable success criteria used internationally to evaluate conformance.',
+                    'in_this_course' => [
+                        ['label' => 'Used in Module 01 - Accessible According to Whom?', 'route' => 'modules.show', 'params' => ['module' => 1]],
+                        ['label' => 'Session 02 - Build the Definition', 'route' => 'modules.session', 'params' => ['module' => 1, 'session' => 2]],
+                        ['label' => 'Challenge 01 brief', 'route' => 'modules.challenge', 'params' => ['module' => 1]],
+                    ],
+                    'overview' => 'WCAG is a technical standard that helps teams evaluate whether web content meets accessibility requirements at Levels A, AA, and AAA.',
+                    'why_it_matters' => 'WCAG gives consistent language for testing and remediation. It strengthens claims with criteria instead of preference-based debate.',
+                    'what_to_look_for' => [
+                        'Which success criterion is relevant to the issue you found?',
+                        'What conformance level (A, AA, AAA) applies?',
+                        'Can you connect your finding to the Understanding page or technique guidance?',
+                        'What does the criterion cover, and what does it not prove?',
+                    ],
+                    'standards_guidance' => [
+                        'Use WCAG 2.2 as the normative technical standard reference.',
+                        'Use Understanding and Quick Reference to interpret and apply criteria.',
+                        'Conformance evidence should include observed behavior and criterion mapping.',
+                    ],
+                    'resource_refs' => [
+                        ['module' => 1, 'collection' => 'Start Here'],
+                        ['module' => 1, 'collection' => 'Standards Lens'],
+                    ],
+                    'related_entries' => ['pour', 'testing-tools', 'accessibility'],
+                ],
+                [
+                    'slug' => 'pour',
+                    'title' => 'POUR',
+                    'summary' => 'POUR (Perceivable, Operable, Understandable, Robust) is a practical map for organizing accessibility investigations.',
+                    'in_this_course' => [
+                        ['label' => 'Used in Module 01 - Accessible According to Whom?', 'route' => 'modules.show', 'params' => ['module' => 1]],
+                        ['label' => 'Session 02 - Learn the Map', 'route' => 'modules.session', 'params' => ['module' => 1, 'session' => 2]],
+                    ],
+                    'overview' => 'POUR is the organizational structure behind WCAG. It helps you locate where an issue belongs before selecting specific criteria.',
+                    'why_it_matters' => 'Without a clear map, teams miss issue classes and over-focus on what automated tools happen to detect.',
+                    'what_to_look_for' => [
+                        'Perceivable: Is important content presented in ways users can perceive?',
+                        'Operable: Can users navigate and operate controls with available input methods?',
+                        'Understandable: Are instructions, behavior, and errors predictable and clear?',
+                        'Robust: Is content structured for compatibility across assistive technologies?',
+                    ],
+                    'standards_guidance' => [
+                        'POUR principles are conceptual groupings, not pass/fail checks on their own.',
+                        'Evidence is established at success-criterion level, then interpreted in context.',
+                    ],
+                    'resource_refs' => [
+                        ['module' => 1, 'resource_label' => 'POUR Principles'],
+                        ['module' => 1, 'collection' => 'Start Here'],
+                        ['module' => 1, 'collection' => 'Standards Lens'],
+                    ],
+                    'related_entries' => ['wcag', 'accessibility'],
+                ],
+                [
+                    'slug' => 'law-policy',
+                    'title' => 'Law & Policy',
+                    'summary' => 'Legal and institutional requirements define accountability, obligations, and risk for accessibility decisions.',
+                    'in_this_course' => [
+                        ['label' => 'Used in Module 01 - Accessible According to Whom?', 'route' => 'modules.show', 'params' => ['module' => 1]],
+                        ['label' => 'Session 02 - Investigate Your Lens', 'route' => 'modules.session', 'params' => ['module' => 1, 'session' => 2]],
+                        ['label' => 'Challenge 01 brief', 'route' => 'modules.challenge', 'params' => ['module' => 1]],
+                    ],
+                    'overview' => 'Accessibility work operates within legal and institutional frameworks. These frameworks set requirements and consequences, while technical standards support implementation evidence.',
+                    'why_it_matters' => 'Design choices are not only usability decisions; they are also compliance and equity obligations in higher education contexts.',
+                    'what_to_look_for' => [
+                        'Which legal sources are directly authoritative for this context?',
+                        'What does policy require from teams building or publishing digital content?',
+                        'How do technical standards such as WCAG connect to those obligations?',
+                        'Which conclusions can be supported by law/policy alone, and which need testing evidence?',
+                    ],
+                    'standards_guidance' => [
+                        'Federal and DOJ sources should anchor legal claims before secondary commentary.',
+                        'Institutional policy clarifies local scope, roles, and operational expectations.',
+                    ],
+                    'resource_refs' => [
+                        ['module' => 1, 'collection' => 'Legal Lens'],
+                        ['module' => 1, 'collection' => 'Institutional Lens'],
+                    ],
+                    'related_entries' => ['accessibility', 'wcag'],
+                ],
+            ],
+        ],
+        [
+            'title' => 'Content & Perception',
+            'entries' => [
+                [
+                    'slug' => 'color-contrast',
+                    'title' => 'Color & Contrast',
+                    'summary' => 'How color choices and contrast ratios affect readability and information access.',
+                    'status_note' => 'Expanded guidance will be added when we reach this topic.',
+                    'related_entries' => ['typography-reflow', 'accessibility-audits'],
+                ],
+                [
+                    'slug' => 'typography-reflow',
+                    'title' => 'Typography & Reflow',
+                    'summary' => 'Readable type, spacing, and responsive reflow are critical to sustained comprehension.',
+                    'status_note' => 'Expanded guidance will be added when we reach this topic.',
+                    'related_entries' => ['color-contrast'],
+                ],
+                [
+                    'slug' => 'alternative-text',
+                    'title' => 'Alternative Text',
+                    'summary' => 'Writing text alternatives that communicate the purpose and meaning of non-text content.',
+                    'status_note' => 'Expanded guidance will be added when we reach this topic.',
+                    'related_entries' => ['screen-readers', 'semantic-html'],
+                ],
+                [
+                    'slug' => 'audio-video-captions',
+                    'title' => 'Audio, Video & Captions',
+                    'summary' => 'Making time-based media understandable and navigable through captions, transcripts, and structure.',
+                    'status_note' => 'Expanded guidance will be added when we reach this topic.',
+                    'related_entries' => ['cognitive-accessibility'],
+                ],
+            ],
+        ],
+        [
+            'title' => 'Interaction',
+            'entries' => [
+                [
+                    'slug' => 'keyboard',
+                    'title' => 'Keyboard',
+                    'summary' => 'Ensuring all core functionality works without a mouse.',
+                    'status_note' => 'Expanded guidance will be added when we reach this topic.',
+                    'related_entries' => ['focus', 'forms-errors'],
+                ],
+                [
+                    'slug' => 'focus',
+                    'title' => 'Focus',
+                    'summary' => 'Visible, predictable focus behavior supports navigation confidence and task completion.',
+                    'status_note' => 'Expanded guidance will be added when we reach this topic.',
+                    'related_entries' => ['keyboard', 'forms-errors'],
+                ],
+                [
+                    'slug' => 'forms-errors',
+                    'title' => 'Forms & Errors',
+                    'summary' => 'Labels, instructions, and error handling determine whether forms are actually usable.',
+                    'status_note' => 'Expanded guidance will be added when we reach this topic.',
+                    'related_entries' => ['keyboard', 'focus'],
+                ],
+                [
+                    'slug' => 'touch-mobile',
+                    'title' => 'Touch & Mobile',
+                    'summary' => 'Mobile interaction patterns must remain perceivable and operable across device contexts.',
+                    'status_note' => 'Expanded guidance will be added when we reach this topic.',
+                    'related_entries' => ['motion-timing'],
+                ],
+            ],
+        ],
+        [
+            'title' => 'Structure & Assistive Technology',
+            'entries' => [
+                [
+                    'slug' => 'semantic-html',
+                    'title' => 'Semantic HTML',
+                    'summary' => 'Document structure and native semantics are foundational for robust accessibility.',
+                    'status_note' => 'Expanded guidance will be added when we reach this topic.',
+                    'related_entries' => ['screen-readers', 'aria'],
+                ],
+                [
+                    'slug' => 'screen-readers',
+                    'title' => 'Screen Readers',
+                    'summary' => 'How assistive technology users perceive structure, controls, announcements, and link purpose.',
+                    'status_note' => 'Expanded guidance will be added when we reach this topic.',
+                    'related_entries' => ['semantic-html', 'alternative-text'],
+                ],
+                [
+                    'slug' => 'aria',
+                    'title' => 'ARIA',
+                    'summary' => 'ARIA can improve custom UI semantics when native HTML cannot represent interaction patterns.',
+                    'status_note' => 'Expanded guidance will be added when we reach this topic.',
+                    'related_entries' => ['semantic-html', 'screen-readers'],
+                ],
+            ],
+        ],
+        [
+            'title' => 'Broader Practice',
+            'entries' => [
+                [
+                    'slug' => 'cognitive-accessibility',
+                    'title' => 'Cognitive Accessibility',
+                    'summary' => 'Reducing unnecessary cognitive load through language, structure, and interaction clarity.',
+                    'status_note' => 'Expanded guidance will be added when we reach this topic.',
+                    'related_entries' => ['motion-timing'],
+                ],
+                [
+                    'slug' => 'motion-timing',
+                    'title' => 'Motion & Timing',
+                    'summary' => 'Animation, timing limits, and interruption behavior can create barriers if not carefully designed.',
+                    'status_note' => 'Expanded guidance will be added when we reach this topic.',
+                    'related_entries' => ['touch-mobile', 'cognitive-accessibility'],
+                ],
+                [
+                    'slug' => 'ai-accessibility',
+                    'title' => 'AI & Accessibility',
+                    'summary' => 'AI can accelerate analysis and prototyping, but outputs must be verified with authoritative evidence.',
+                    'status_note' => 'Expanded guidance will be added when we reach this topic.',
+                    'related_entries' => ['testing-tools', 'accessibility-audits'],
+                ],
+                [
+                    'slug' => 'testing-tools',
+                    'title' => 'Testing Tools',
+                    'summary' => 'Automated and manual tools support investigation, but no single tool can prove full accessibility.',
+                    'status_note' => 'Expanded guidance will be added when we reach this topic.',
+                    'related_entries' => ['accessibility-audits', 'wcag'],
+                ],
+                [
+                    'slug' => 'accessibility-audits',
+                    'title' => 'Accessibility Audits',
+                    'summary' => 'A structured evaluation process combining standards mapping, manual testing, and prioritization.',
+                    'status_note' => 'Expanded guidance will be added when we reach this topic.',
+                    'related_entries' => ['testing-tools', 'accessibility'],
+                ],
+            ],
+        ],
+    ],
+];

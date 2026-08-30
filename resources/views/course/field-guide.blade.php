@@ -2,59 +2,46 @@
     <x-page-heading
         label="Reference"
         title="Field Guide"
-        subtitle="A documentation-style index of concepts, methods, and tools used throughout the course."
+        subtitle="A non-linear documentation index for concepts, standards, and methods used across the semester."
     />
 
-    @php
-        $entries = [
-            ['title' => 'Accessibility'],
-            ['title' => 'Disability & Inclusive Design'],
-            [
-                'title' => 'WCAG',
-                'summary' => 'Use WCAG Overview for orientation, then move to Quick Reference and Understanding pages while investigating claims.',
-                'link' => 'https://www.w3.org/WAI/standards-guidelines/wcag/',
-                'meta' => 'W3C',
-            ],
-            [
-                'title' => 'POUR',
-                'summary' => 'Treat POUR as a navigation map for accessibility evidence, not as a memorization list.',
-                'link' => 'https://www.w3.org/WAI/WCAG22/quickref/',
-                'meta' => 'W3C Quick Reference',
-            ],
-            [
-                'title' => 'Law & Policy',
-                'summary' => 'Start with DOJ web accessibility rule guidance and UConn policy sources before using secondary summaries.',
-                'link' => 'https://www.ada.gov/resources/2024-03-08-web-rule/',
-                'meta' => 'DOJ',
-            ],
-            ['title' => 'Visual Design'],
-            ['title' => 'Alternative Text'],
-            ['title' => 'Audio, Video & Captions'],
-            ['title' => 'Keyboard'],
-            ['title' => 'Forms'],
-            ['title' => 'Screen Readers'],
-            ['title' => 'Semantic HTML'],
-            ['title' => 'Cognitive Accessibility'],
-            ['title' => 'AI & Accessibility'],
-            ['title' => 'Testing Tools'],
-        ];
-    @endphp
+    <div class="course-measure mt-8">
+        <p class="course-copy">{{ $guide['intro'] }}</p>
+    </div>
 
-    <div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-        @foreach ($entries as $entry)
-            <x-panel as="article" class="h-full">
-                <div class="course-panel-copy">
-                    <x-meta-label>Reference Entry</x-meta-label>
-                    <h2 class="text-lg font-semibold text-ink">{{ $entry['title'] }}</h2>
-                    <p>{{ $entry['summary'] ?? 'Placeholder summary text for scope, key terms, and recommended references.' }}</p>
-                    <a href="{{ $entry['link'] ?? '#' }}" class="inline-flex text-sm font-medium text-accent-cyan hover:text-accent-cyan-strong focus-visible:focus-ring rounded-sm">
-                        Open entry
-                    </a>
-                    @if (!empty($entry['meta']))
-                        <p class="font-mono text-xs uppercase tracking-[0.14em] text-ink-muted">{{ $entry['meta'] }}</p>
-                    @endif
+    <div class="course-flow mt-10">
+        @foreach ($guide['categories'] as $category)
+            <section class="course-section">
+                <h2 class="text-2xl font-semibold tracking-tight text-ink">{{ $category['title'] }}</h2>
+
+                <div class="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                    @foreach ($category['entries'] as $entry)
+                        <x-panel as="article" class="h-full">
+                            <div class="course-panel-copy">
+                                <x-meta-label>{{ $category['title'] }}</x-meta-label>
+
+                                <h3 class="text-lg font-semibold text-ink">
+                                    <a href="{{ route('field-guide.entry', ['entry' => $entry['slug']]) }}" class="inline-flex items-start gap-2 text-ink hover:text-accent-cyan-strong focus-visible:focus-ring rounded-sm">
+                                        <span>{{ $entry['title'] }}</span>
+                                    </a>
+                                </h3>
+
+                                <p>{{ $entry['summary'] }}</p>
+
+                                @if (!empty($entry['in_this_course'][0]))
+                                    <p class="font-mono text-xs uppercase tracking-[0.14em] text-ink-muted">
+                                        {{ $entry['in_this_course'][0]['label'] }}
+                                    </p>
+                                @endif
+
+                                @if (!empty($entry['status_note']))
+                                    <p class="text-sm text-ink-muted">{{ $entry['status_note'] }}</p>
+                                @endif
+                            </div>
+                        </x-panel>
+                    @endforeach
                 </div>
-            </x-panel>
+            </section>
         @endforeach
     </div>
 </x-layouts.app>

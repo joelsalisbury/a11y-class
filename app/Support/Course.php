@@ -10,6 +10,7 @@ namespace App\Support;
 class Course
 {
     protected static ?array $config = null;
+    protected static ?array $fieldGuide = null;
 
     public static function config(): array
     {
@@ -65,5 +66,105 @@ class Course
         abort_if($summary === null, 404);
 
         return array_merge($defaults, $summary);
+    }
+
+    public static function fieldGuide(): array
+    {
+        $guide = static::$fieldGuide ??= require resource_path('course/field-guide.php');
+        $categories = [];
+
+        foreach ($guide['categories'] ?? [] as $category) {
+            $entries = [];
+
+            foreach ($category['entries'] ?? [] as $entry) {
+                $entries[] = static::resolveFieldGuideEntryResources($entry);
+            }
+
+            $categories[] = [
+                'title' => $category['title'],
+                'entries' => $entries,
+            ];
+        }
+
+        return [
+            'intro' => $guide['intro'] ?? null,
+            'categories' => $categories,
+        ];
+    }
+
+    public static function fieldGuideEntry(string $slug): array
+    {
+        $guide = static::fieldGuide();
+
+        foreach ($guide['categories'] as $categoryIndex => $category) {
+            foreach ($category['entries'] as $entryIndex => $entry) {
+                if (($entry['slug'] ?? null) !== $slug) {
+                    continue;
+                }
+
+                return [
+                    'entry' => $entry,
+                    'category' => $category,
+                    'previous' => $category['entries'][$entryIndex - 1] ?? null,
+                    'next' => $category['entries'][$entryIndex + 1] ?? null,
+                    'categories' => $guide['categories'],
+                    'category_index' => $categoryIndex,
+                ];
+            }
+        }
+
+        abort(404);
+    }
+
+    protected static function resolveFieldGuideEntryResources(array $entry): array
+    {
+        $resources = $entry['authoritative_resources'] ?? [];
+
+        foreach ($entry['resource_refs'] ?? [] as $reference) {
+            $module = static::module((int) $reference['module']);
+
+            if (!empty($reference['collection'])) {
+                foreach ($module['resource_collections'] ?? [] as $collection) {
+                    if (($collection['title'] ?? null) !== $reference['collection']) {
+                        continue;
+                    }
+
+                    foreach ($collection['resources'] ?? [] as $resource) {
+                        $resources[] = $resource;
+                    }
+                }
+            }
+
+            if (!empty($reference['resource_label'])) {
+                foreach ($module['resources'] ?? [] as $resource) {
+                    if (($resource['label'] ?? null) === $reference['resource_label']) {
+                        $resources[] = $resource;
+                    }
+                }
+            }
+        }
+
+        $entry['authoritative_resources'] = static::uniqueResources($resources);
+
+        return $entry;
+    }
+
+    protected static function uniqueResources(array $resources): array
+    {
+        $unique = [];
+        $seen = [];
+
+        foreach ($resources as $resource) {
+            $key = ($resource['href'] ?? '').'|'.($resource['route'] ?? '').'|'.($resource['label'] ?? '');
+
+            if (isset($seen[$key])) {
+                continue;
+            }
+
+            $seen[$key] = true;
+            $unique[] = $resource;
+        }
+
+        return $unique;
     }
 }
