@@ -13,7 +13,7 @@
                 :subtitle="'Central question: ' . ($challenge['question'] ?? $module['central_question'] ?? '')"
             />
 
-            <div class="course-flow mt-10">
+            <div class="course-flow">
                 <section id="challenge-problem" class="course-section module-anchor">
                     <x-section-heading title="The Problem" />
                     <div class="course-copy">

@@ -53,7 +53,7 @@
                 <p class="course-copy">{{ $session['overview'] }}</p>
 
                 @if (!empty($sessionSections))
-                    <div class="course-flow mt-10">
+                    <div class="course-flow">
                         @foreach ($sessionSections as $section)
                             <section id="{{ $section['id'] }}" class="course-section module-anchor">
                                 <x-section-heading :title="$section['title']" />

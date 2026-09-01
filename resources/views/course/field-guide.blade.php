@@ -9,7 +9,7 @@
         <p class="course-copy">{{ $guide['intro'] }}</p>
     </div>
 
-    <div class="course-flow mt-10">
+    <div class="course-flow">
         @foreach ($guide['categories'] as $category)
             <section class="course-section">
                 <h2 class="text-2xl font-semibold tracking-tight text-ink">{{ $category['title'] }}</h2>
