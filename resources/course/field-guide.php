@@ -1,7 +1,6 @@
 <?php
 
 return [
-    'intro' => 'A non-linear reference library for concepts, methods, and standards used throughout DMD 3998.',
     'categories' => [
         [
             'title' => 'Foundations',
