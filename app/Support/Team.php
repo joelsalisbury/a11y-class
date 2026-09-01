@@ -3,9 +3,8 @@
 namespace App\Support;
 
 /**
- * Centralized, machine-stable team identifiers for the Day 1 team assignment
- * feature. Color is never the sole identifier — every team also carries a
- * display name and a shape/symbol.
+ * Centralized, machine-stable course team identities. Color is never the sole
+ * identifier — every team also carries a display name and a shape/symbol.
  */
 enum Team: string
 {

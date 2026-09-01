@@ -23,15 +23,31 @@ return [
             'overview' => 'Welcome to Accessibility & Inclusion in Interactive Media. Today you will meet your team, get oriented to how the course works, and investigate a question that sounds much easier than it is: Is this digital experience accessible? The harder question is: How do you know?',
             'sections' => [
                 [
+                    'title' => 'Welcome',
+                    'paragraphs' => [
+                        'Welcome to Accessibility & Inclusion in Interactive Media.',
+                        'I\'m Joel Salisbury. I work at UConn on digital products, design, development, and institutional technology, and I also teach in DMD. A lot of my professional work involves making decisions about how real digital systems should work for real people — which is one reason I care about accessibility as more than a checklist.',
+                        'This course is about how we design, build, evaluate, and improve digital experiences so more people can actually use them.',
+                        'We\'ll work with design, code, standards, law and policy, assistive technology, testing tools, and AI. But the course is not primarily about memorizing rules.',
+                        'A question we\'ll return to all semester is:',
+                    ],
+                    'emphasis' => [
+                        'How do you know?',
+                    ],
+                    'paragraphs_after' => [
+                        'When we call something accessible (or inaccessible), what evidence supports that claim?',
+                    ],
+                ],
+                [
                     'title' => 'Find Your Team',
                     'paragraphs' => [
                         'Your team assignment is available in HuskyCT/Blackboard.',
                         'Find the other members of your team and sit together:',
                     ],
-                    'bullets' => [
-                        'Cyan Triangle',
-                        'Amber Circle',
-                        'Violet Square',
+                    'teams' => [
+                        ['team' => 'Cyan Triangle', 'shape' => 'triangle', 'tone' => 'cyan'],
+                        ['team' => 'Amber Circle', 'shape' => 'circle', 'tone' => 'amber'],
+                        ['team' => 'Violet Square', 'shape' => 'square', 'tone' => 'violet'],
                     ],
                     'callout' => [
                         'title' => 'Why a color and a shape?',
@@ -68,15 +84,12 @@ return [
                     'paragraphs_after' => [
                         'Most challenges follow a similar loop:',
                         'Encounter a problem -> investigate -> make something -> test it -> defend it -> critique it',
-                        'Generative AI is part of the course and may be used unless a particular assignment says otherwise.',
+                        'Generative AI is permitted unless an assignment says otherwise, but:',
                     ],
-                    'emphasis' => [
+                    'closing_emphasis' => [
                         'AI output is not evidence.',
                     ],
-                    'callout' => [
-                        'title' => 'Evidence reminder',
-                        'body' => 'AI can help you research, explain, design, code, critique, and explore possible solutions. You are still responsible for determining whether its claims are trustworthy and figuring out how important conclusions can actually be verified.',
-                    ],
+                    'note' => 'You are responsible for determining whether important claims are actually supported.',
                 ],
                 [
                     'title' => 'First Investigation',
@@ -86,72 +99,55 @@ return [
                     'emphasis' => [
                         'Is this accessible?',
                     ],
+                    'paragraphs_between_emphasis' => [
+                        'For now, think about that in plain language:',
+                    ],
+                    'secondary_emphasis' => [
+                        'Could all prospective users successfully navigate and use this digital experience?',
+                    ],
                     'placeholder' => [
                         'title' => 'Experience Under Review',
                         'body' => 'Design Futures 2026 Registration',
                         'cta' => ['label' => 'Open the experience ->', 'route' => 'experiences.campus-event-registration', 'new_tab' => true],
                     ],
-                    'bullets' => [
-                        'use the interface normally',
-                        'inspect it with browser tools',
-                        'use only a keyboard',
-                        'zoom the page',
-                        'ask an AI system to evaluate it',
-                        'search the web',
-                        'use accessibility testing tools if you know any',
-                        'try anything else that seems useful',
+                    'paragraphs_after' => [
+                        'Spend about 10 minutes using the experience as though you were actually trying to register for the event.',
+                        'Explore it however seems natural.',
+                        'When your team has an answer to the question “Is this accessible?”, raise your hand.',
                     ],
-                    'task_title' => 'Your task',
+                    'task_title' => 'Be Ready to Explain',
+                    'ordered_intro' => 'Your team should be able to answer:',
                     'ordered' => [
-                        'Your initial answer: Is it accessible?',
-                        'At least three reasons supporting your answer.',
-                        'How you determined those things.',
-                        'How confident you are in your conclusion.',
+                        'Is it accessible?',
+                        'What makes you say that?',
+                        'How did you arrive at that judgment?',
+                        'How confident are you?',
                     ],
                     'note' => 'Do not worry yet about producing a formal accessibility audit.',
                 ],
                 [
-                    'title' => 'According to Whom?',
+                    'title' => 'Challenge 01',
+                    'paragraphs' => [
+                        'You\'ve made an initial judgment about the Design Futures experience.',
+                        'Now ask a harder question:',
+                    ],
                     'emphasis' => [
                         'What gives you the authority to call something accessible or inaccessible?',
                     ],
-                    'paragraphs' => [
-                        'Is your answer based on:',
-                    ],
-                    'bullets' => [
-                        'your own experience?',
-                        'someone else\'s experience?',
-                        'a design principle?',
-                        'a technical standard?',
-                        'university policy?',
-                        'federal law?',
-                        'an automated tool?',
-                        'an AI model?',
-                    ],
                     'paragraphs_after' => [
-                        'Your team is about to investigate one of these sources of authority in greater depth.',
+                        'Was your answer based on your own experience? A technical standard? University policy? Federal law? An automated tool? AI?',
+                        'Challenge 01 asks each team to investigate one of those sources of authority more carefully.',
                     ],
-                ],
-                [
-                    'title' => 'Challenge 01 Begins',
-                    'paragraphs' => [],
                     'challenge_reference' => [
                         'title' => 'Accessible According to Whom?',
-                        'description' => 'Each team will investigate a different source of authority behind the word accessible.',
                         'link_label' => 'Open Challenge 01 →',
                     ],
-                ],
-                [
-                    'title' => 'Before You Leave',
-                    'paragraphs' => [
-                        'Before you leave, make sure your team has:',
-                    ],
-                    'bullets' => [
-                        'opened the Challenge 01 brief;',
-                        'identified your assigned lens;',
-                        'started your research;',
+                    'closing_bullets_intro' => 'Before you leave, make sure your team has:',
+                    'closing_bullets' => [
+                        'identified its assigned lens;',
+                        'begun its investigation;',
                         'found at least two promising authoritative sources;',
-                        'saved your notes somewhere the team can access.',
+                        'saved shared notes for Session 02.',
                     ],
                 ],
             ],

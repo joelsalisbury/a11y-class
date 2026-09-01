@@ -43,9 +43,8 @@
 
                     <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                         @foreach ($challenge['teams'] as $team)
-                            <article class="rounded-lg border border-subtle bg-surface-3 p-4">
-                                <x-team-identity :team="$team['team']" :shape="$team['shape']" :tone="$team['tone']" :showShapeLabel="false" />
-                                <p class="mt-3 text-sm text-ink-muted"><strong class="text-ink">{{ $team['lens'] }}:</strong> {{ $team['description'] }}</p>
+                            <x-team-card :team="$team['team']" :shape="$team['shape']" :tone="$team['tone']">
+                                <p><strong class="text-ink">{{ $team['lens'] }}:</strong> {{ $team['description'] }}</p>
 
                                 @if (!empty($team['questions']))
                                     <ul class="mt-3 list-disc space-y-1.5 pl-5 text-sm text-ink-muted marker:text-ink">
@@ -54,7 +53,7 @@
                                         @endforeach
                                     </ul>
                                 @endif
-                            </article>
+                            </x-team-card>
                         @endforeach
                     </div>
                 </section>

@@ -63,31 +63,29 @@
                                         <h3 class="text-lg font-semibold text-ink">{{ $section['subheading'] }}</h3>
                                     @endif
 
-                                    @if (!empty($section['challenge_reference']))
-                                        @php
-                                            $challengeReference = is_array($section['challenge_reference']) ? $section['challenge_reference'] : [];
-                                        @endphp
-
-                                        <x-course.challenge-reference
-                                            :intro="$challengeReference['intro'] ?? null"
-                                            :title="$challengeReference['title'] ?? ($module['challenge']['title'] ?? null)"
-                                            :description="$challengeReference['description'] ?? null"
-                                            :href="route('modules.challenge', ['module' => $module['number']])"
-                                            :linkLabel="$challengeReference['link_label'] ?? null"
-                                        />
-                                    @endif
+                                    @foreach ($section['paragraphs'] ?? [] as $paragraph)
+                                        <p>{{ $paragraph }}</p>
+                                    @endforeach
 
                                     @if (!empty($section['emphasis']))
-                                        <div>
+                                        <div class="course-emphasis-group">
                                             @foreach ($section['emphasis'] as $line)
                                                 <p class="course-emphasis">{{ $line }}</p>
                                             @endforeach
                                         </div>
                                     @endif
 
-                                    @foreach ($section['paragraphs'] ?? [] as $paragraph)
+                                    @foreach ($section['paragraphs_between_emphasis'] ?? [] as $paragraph)
                                         <p>{{ $paragraph }}</p>
                                     @endforeach
+
+                                    @if (!empty($section['secondary_emphasis']))
+                                        <div class="course-emphasis-group">
+                                            @foreach ($section['secondary_emphasis'] as $line)
+                                                <p class="course-emphasis">{{ $line }}</p>
+                                            @endforeach
+                                        </div>
+                                    @endif
 
                                     @if (!empty($section['actions']))
                                         <div>
@@ -111,6 +109,10 @@
                                         </x-panel>
                                     @endif
 
+                                    @if (!empty($section['bullets_intro']))
+                                        <p>{{ $section['bullets_intro'] }}</p>
+                                    @endif
+
                                     @if (!empty($section['bullets']))
                                         <ul>
                                             @foreach ($section['bullets'] as $item)
@@ -119,12 +121,58 @@
                                         </ul>
                                     @endif
 
+                                    @if (!empty($section['teams']))
+                                        <div class="course-callout grid gap-4 md:grid-cols-3">
+                                            @foreach ($section['teams'] as $team)
+                                                <x-team-card :team="$team['team']" :shape="$team['shape']" :tone="$team['tone']" :description="$team['description'] ?? null" />
+                                            @endforeach
+                                        </div>
+                                    @endif
+
                                     @foreach ($section['paragraphs_after'] ?? [] as $paragraph)
                                         <p>{{ $paragraph }}</p>
                                     @endforeach
 
+                                    @if (!empty($section['closing_emphasis']))
+                                        <div class="course-emphasis-group">
+                                            @foreach ($section['closing_emphasis'] as $line)
+                                                <p class="course-emphasis">{{ $line }}</p>
+                                            @endforeach
+                                        </div>
+                                    @endif
+
+                                    @if (!empty($section['challenge_reference']))
+                                        @php
+                                            $challengeReference = is_array($section['challenge_reference']) ? $section['challenge_reference'] : [];
+                                        @endphp
+
+                                        <x-course.challenge-reference
+                                            :intro="$challengeReference['intro'] ?? null"
+                                            :title="$challengeReference['title'] ?? ($module['challenge']['title'] ?? null)"
+                                            :description="$challengeReference['description'] ?? null"
+                                            :href="route('modules.challenge', ['module' => $module['number']])"
+                                            :linkLabel="$challengeReference['link_label'] ?? null"
+                                        />
+                                    @endif
+
+                                    @if (!empty($section['closing_bullets_intro']))
+                                        <p>{{ $section['closing_bullets_intro'] }}</p>
+                                    @endif
+
+                                    @if (!empty($section['closing_bullets']))
+                                        <ul>
+                                            @foreach ($section['closing_bullets'] as $item)
+                                                <li>{{ $item }}</li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
+
                                     @if (!empty($section['task_title']))
                                         <h3>{{ $section['task_title'] }}</h3>
+                                    @endif
+
+                                    @if (!empty($section['ordered_intro']))
+                                        <p>{{ $section['ordered_intro'] }}</p>
                                     @endif
 
                                     @if (!empty($section['ordered']))
@@ -138,9 +186,8 @@
                                     @if (!empty($section['team_panels']))
                                         <div class="course-callout grid gap-4 md:grid-cols-3">
                                             @foreach ($section['team_panels'] as $team)
-                                                <article class="rounded-lg border border-subtle bg-surface-3 p-4">
-                                                    <x-team-identity :team="$team['team']" :shape="$team['shape']" :tone="$team['tone']" :showShapeLabel="false" />
-                                                    <p class="mt-3 text-sm text-ink-muted"><strong class="text-ink">{{ $team['lens'] }}:</strong> {{ $team['description'] }}</p>
+                                                <x-team-card :team="$team['team']" :shape="$team['shape']" :tone="$team['tone']">
+                                                    <p><strong class="text-ink">{{ $team['lens'] }}:</strong> {{ $team['description'] }}</p>
 
                                                     @if (!empty($team['questions']))
                                                         <ul class="mt-3 list-disc space-y-1.5 pl-5 text-sm text-ink-muted marker:text-ink">
@@ -159,7 +206,7 @@
                                                             @endforeach
                                                         </div>
                                                     @endif
-                                                </article>
+                                                </x-team-card>
                                             @endforeach
                                         </div>
                                     @endif

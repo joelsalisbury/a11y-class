@@ -243,11 +243,32 @@
         @apply mt-6 text-lg font-semibold text-ink;
     }
 
+    .course-copy > .course-emphasis-group,
+    .course-copy > p + .course-emphasis,
+    .course-copy > p + .course-emphasis-group,
+    .course-copy > .course-emphasis + p,
+    .course-copy > .course-emphasis-group + p {
+        @apply mt-5 md:mt-6;
+    }
+
+    .course-emphasis-group {
+        @apply space-y-2;
+    }
+
     .course-copy > .panel,
     .course-copy > .callout,
     .course-copy > .course-callout,
     .course-copy > .course-emphasis {
         @apply mt-6;
+    }
+
+    .course-copy > .course-emphasis-group + .panel,
+    .course-copy > .course-emphasis-group + .callout,
+    .course-copy > .course-emphasis-group + .course-callout,
+    .course-copy > .panel + p,
+    .course-copy > .callout + p,
+    .course-copy > .course-callout + p {
+        @apply mt-7 md:mt-8;
     }
 
     .course-emphasis {
