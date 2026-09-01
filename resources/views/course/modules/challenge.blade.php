@@ -3,7 +3,6 @@
         <x-course.module-navigation
             :module="$module"
             currentPage="challenge"
-            resourcesHref="#challenge-resources"
         />
 
         <div class="module-main">
@@ -105,31 +104,6 @@
                             <h3 class="text-lg font-semibold text-ink">AI Use Note</h3>
                             <p class="mt-2 text-sm leading-7 text-ink-muted">Identify any generative AI tools used and briefly explain how they contributed.</p>
                         </section>
-                    </div>
-                </section>
-
-                <section id="challenge-resources" class="course-section module-anchor">
-                    <x-section-heading title="Starting Resources" description="These sources are intended to help you begin. They are not a complete reading list and they do not contain every answer your team may need." />
-
-                    <div class="space-y-8">
-                        @foreach (($challenge['starting_resources'] ?? []) as $group)
-                            <section class="space-y-4">
-                                <div class="space-y-2">
-                                    <h3 class="text-lg font-semibold text-ink">{{ $group['title'] }}</h3>
-                                    @if (!empty($group['description']))
-                                        <p class="text-sm leading-7 text-ink-muted">{{ $group['description'] }}</p>
-                                    @endif
-                                </div>
-
-                                <div class="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
-                                    @foreach ($group['resources'] as $resource)
-                                        <x-resource-link :href="isset($resource['route']) ? route($resource['route'], $resource['params'] ?? []) : $resource['href']" :meta="$resource['source'] ?? $resource['meta'] ?? null">
-                                            {{ $resource['label'] }}
-                                        </x-resource-link>
-                                    @endforeach
-                                </div>
-                            </section>
-                        @endforeach
                     </div>
                 </section>
 

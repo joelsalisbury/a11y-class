@@ -58,6 +58,15 @@ class CourseController extends Controller
         ]);
     }
 
+    public function resources(int $module)
+    {
+        $moduleData = Course::module($module);
+
+        return view('course.modules.resources', [
+            'module' => $moduleData,
+        ]);
+    }
+
     public function fieldGuide()
     {
         return view('course.field-guide', [

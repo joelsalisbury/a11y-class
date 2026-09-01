@@ -285,15 +285,22 @@
         scroll-margin-top: 7.5rem;
     }
 
+    .module-nav-shell {
+        @apply sticky top-24 self-start;
+    }
+
     .module-nav-rail {
         @apply sticky top-24 self-start;
-        max-height: calc(100vh - 6rem);
-        overflow-y: auto;
     }
 
     .module-nav-rail-panel,
     .module-nav-disclosure {
         @apply rounded-xl border border-subtle bg-surface-2 p-4;
+    }
+
+    .module-nav-rail-panel {
+        max-height: calc(100vh - 6rem);
+        overflow-y: auto;
     }
 
     .module-nav-summary {

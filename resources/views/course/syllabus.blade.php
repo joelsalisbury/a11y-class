@@ -1,17 +1,6 @@
 <x-layouts.app title="Syllabus">
     @php
-        $moduleRoadmap = [
-            ['number' => 1, 'title' => 'Accessible According to Whom?', 'question' => 'What does it actually mean to call a digital experience accessible?'],
-            ['number' => 2, 'title' => 'Can You See What Matters?', 'question' => null],
-            ['number' => 3, 'title' => 'What Does This Media Say?', 'question' => null],
-            ['number' => 4, 'title' => 'Can You Use It Your Way?', 'question' => null],
-            ['number' => 5, 'title' => 'What Happens When Something Goes Wrong?', 'question' => null],
-            ['number' => 6, 'title' => 'What Does the Interface Sound Like?', 'question' => null],
-            ['number' => 7, 'title' => 'Why Is This So Hard to Use?', 'question' => null],
-            ['number' => 8, 'title' => "The AI Says It's Accessible. Is It?", 'question' => null],
-            ['number' => 9, 'title' => 'Build the Accessible Version', 'question' => null],
-            ['number' => 10, 'title' => 'What Would You Fix First?', 'question' => null],
-        ];
+        $moduleRoadmap = array_values(\App\Support\Course::modules());
 
         $toc = [
             ['id' => 'overview', 'label' => 'Overview'],
@@ -258,8 +247,8 @@
                         @foreach ($moduleRoadmap as $module)
                             <section class="rounded-xl border border-subtle bg-surface-2 p-5">
                                 <h3 class="text-lg font-semibold text-ink">Module {{ str_pad((string) $module['number'], 2, '0', STR_PAD_LEFT) }} — {{ $module['title'] }}</h3>
-                                @if (!empty($module['question']))
-                                    <p class="mt-2 text-sm font-medium text-accent-cyan">Central question: {{ $module['question'] }}</p>
+                                @if (!empty($module['central_question']))
+                                    <p class="mt-2 text-sm font-medium text-accent-cyan">Central question: {{ $module['central_question'] }}</p>
                                 @endif
                             </section>
                         @endforeach

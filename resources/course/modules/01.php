@@ -11,7 +11,7 @@ return [
     'label' => 'MODULE 01',
     'title' => 'Accessible According to Whom?',
     'central_question' => 'What does it actually mean to call a digital experience accessible?',
-    'summary' => 'Accessibility sounds simple until someone asks you to prove it.',
+    'overview' => 'Accessibility sounds simple until someone asks you to explain what you mean — and provide evidence for the claim. This module introduces the different ways accessibility is defined, evaluated, and required.',
     'status' => 'current',
 
     'sessions' => [
@@ -19,6 +19,7 @@ return [
             'label' => 'SESSION 01',
             'title' => 'Is This Accessible?',
             'status' => 'current',
+            'summary' => 'Meet the class, learn how the course works, and make your first judgment about the accessibility of a digital experience.',
             'question' => 'What would give us enough evidence to call a digital experience accessible or inaccessible?',
             'overview' => 'Welcome to Accessibility & Inclusion in Interactive Media. Today you will meet your team, get oriented to how the course works, and investigate a question that sounds much easier than it is: Is this digital experience accessible? The harder question is: How do you know?',
             'sections' => [
@@ -162,6 +163,7 @@ return [
             'label' => 'SESSION 02',
             'title' => 'Build the Definition',
             'status' => 'upcoming',
+            'summary' => 'Learn how to navigate WCAG, deepen your team\'s investigation, compare different sources of authority, and return to the same experience with better evidence.',
             'question' => 'How do law, standards, institutional requirements, and human experience fit together?',
             'overview' => 'Today you\'ll deepen your team\'s investigation, learn how to navigate WCAG, borrow from the other teams\' perspectives, and then return to the digital experience from Session 01 with better evidence.',
             'sections' => [
@@ -241,6 +243,7 @@ return [
         'label' => 'CHALLENGE 01',
         'title' => 'Accessible According to Whom?',
         'status' => 'current',
+        'summary' => 'Investigate one source of authority behind the word accessible and help the class build a more defensible answer to the question.',
         'question' => 'What gives us the authority to call a digital experience accessible?',
         'scenario' => 'A client asks: "Is our digital experience accessible?" That question cannot be answered responsibly without understanding what accessible means and whose standards or requirements are being applied. Each team will investigate one source of authority and contribute one part of the class\'s eventual answer.',
         'problem' => 'A client asks: "Is our digital experience accessible?" That question cannot be answered responsibly without understanding what accessible means and whose requirements or standards are being applied. Each team will investigate one source of authority and contribute one part of the class\'s eventual answer.',
@@ -416,8 +419,8 @@ return [
                     ],
                     [
                         'source' => 'UConn',
-                        'label' => 'UConn ICT Accessibility Policy Procedures',
-                        'href' => 'https://accessibility.its.uconn.edu/ict-policy-procedures/',
+                        'label' => 'UConn Accessibility Policy Procedures',
+                        'href' => 'https://accessibility.its.uconn.edu/policy-procedures/',
                         'description' => 'University procedures describing how digital accessibility responsibilities are applied in practice.',
                     ],
                 ],
@@ -570,8 +573,8 @@ return [
                 ],
                 [
                     'source' => 'UConn',
-                    'label' => 'ICT Accessibility Policy Procedures',
-                    'href' => 'https://accessibility.its.uconn.edu/ict-policy-procedures/',
+                    'label' => 'UConnAccessibility Policy Procedures',
+                    'href' => 'https://accessibility.its.uconn.edu/policy-procedures/',
                     'meta' => 'Procedures',
                     'description' => 'UConn procedures explaining how digital accessibility responsibilities are applied in practice.',
                     'authoritative' => true,

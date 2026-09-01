@@ -13,7 +13,7 @@
     $moduleTitle = $module['nav_title'] ?? $module['title'] ?? 'Module';
     $moduleNumberLabel = 'Module '.str_pad((string) $moduleNumber, 2, '0', STR_PAD_LEFT);
 
-    $resourcesLink = $resourcesHref ?: route('modules.show', ['module' => $moduleNumber]).'#module-resources';
+    $resourcesLink = $resourcesHref ?: route('modules.resources', ['module' => $moduleNumber]);
     $classWorkLink = $classWorkHref ?: route('modules.show', ['module' => $moduleNumber]).'#module-class-work';
 
     $items = [
@@ -40,17 +40,14 @@
         ];
     }
 
-    $items[] = [
-        'label' => 'Resources',
-        'href' => $resourcesLink,
-        'active' => $currentAnchor === 'resources',
-    ];
+    if (!empty($module['resource_collections']) || !empty($module['resources'])) {
+        $items[] = [
+            'label' => 'Resources',
+            'href' => $resourcesLink,
+            'active' => $currentPage === 'resources' || $currentAnchor === 'resources',
+        ];
+    }
 
-    $items[] = [
-        'label' => 'Class Work',
-        'href' => $classWorkLink,
-        'active' => $currentAnchor === 'class-work',
-    ];
 @endphp
 
 <aside class="module-nav-shell" aria-label="Module navigation">

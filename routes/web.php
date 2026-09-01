@@ -20,6 +20,10 @@ Route::get('/modules/{module}/challenge', [CourseController::class, 'challenge']
     ->whereNumber('module')
     ->name('modules.challenge');
 
+Route::get('/modules/{module}/resources', [CourseController::class, 'resources'])
+    ->whereNumber('module')
+    ->name('modules.resources');
+
 Route::get('/field-guide', [CourseController::class, 'fieldGuide'])->name('field-guide');
 
 Route::get('/field-guide/{entry}', [CourseController::class, 'fieldGuideEntry'])

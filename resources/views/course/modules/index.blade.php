@@ -2,7 +2,7 @@
     <x-page-heading
         label="Semester Atlas"
         title="Course Modules"
-        subtitle="A studio-focused map of the semester. Modules are flexible instructional units — each may span any number of class meetings. Status is set manually by the instructor, not by calendar date."
+        subtitle="Each module centers on a different accessibility problem, building toward a more complete way to evaluate and design digital experiences."
     />
 
     <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -12,7 +12,7 @@
                 :title="$module['title']"
                 :status="$module['status']"
                 :href="route('modules.show', $module['number'])"
-                :summary="$module['summary'] ?? null"
+                :summary="$module['central_question'] ?? $module['summary'] ?? null"
             />
         @endforeach
     </div>

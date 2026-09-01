@@ -31,9 +31,18 @@
         ];
     }
 
+    if (!empty($module['resource_collections']) || !empty($module['resources'])) {
+        $sequence[] = [
+            'key' => 'resources',
+            'label' => 'Resources',
+            'href' => route('modules.resources', ['module' => $moduleNumber]),
+        ];
+    }
+
     $currentKey = match ($currentPage) {
         'session' => 'session-'.(int) $currentSessionNumber,
         'challenge' => 'challenge',
+        'resources' => 'resources',
         default => 'overview',
     };
 
