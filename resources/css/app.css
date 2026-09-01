@@ -295,11 +295,11 @@
     }
 
     .module-nav-shell {
-        @apply sticky top-24 self-start;
+        @apply sticky top-4 self-start md:top-24;
     }
 
     .module-nav-rail {
-        @apply sticky top-24 self-start;
+        @apply sticky top-4 self-start md:top-24;
     }
 
     .module-nav-rail-panel,
