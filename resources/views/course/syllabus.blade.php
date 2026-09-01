@@ -27,6 +27,12 @@
         The official course syllabus will be published in HuskyCT/Blackboard. This website is intended to provide a useful, current representation of the course structure, activities, and expectations. Any substantive changes to course requirements, grading, assignments, or policies will be communicated to students through the appropriate official course channels.
     </x-callout>
 
+    @php
+        $course = \App\Support\Course::config();
+        $courseMeta = $course['course'];
+        $instructor = $course['instructor'];
+    @endphp
+
     <div class="mt-10 grid gap-8 lg:grid-cols-[16rem_minmax(0,1fr)] lg:items-start">
         <aside class="module-nav-rail hidden lg:block" aria-label="Syllabus navigation">
             <div class="module-nav-rail-panel">
@@ -70,6 +76,30 @@
             </div>
 
             <article class="course-flow max-w-4xl">
+                <section id="course-information" class="course-section module-anchor">
+                    <h2 class="text-2xl font-semibold tracking-tight text-ink">Course Information</h2>
+                    <div class="course-copy">
+                        <p><strong class="text-ink">Instructor:</strong> {{ $instructor['name'] }}</p>
+                        <p><strong class="text-ink">Email:</strong> <a href="mailto:{{ $courseMeta['email'] }}" class="font-medium text-accent-cyan hover:text-accent-cyan-strong focus-visible:focus-ring rounded-sm">{{ $courseMeta['email'] }}</a></p>
+                        <p><strong class="text-ink">Meeting:</strong> {{ $courseMeta['meeting_days'] }}, {{ $courseMeta['meeting_time'] }}</p>
+                        <p><strong class="text-ink">Location:</strong> {{ $courseMeta['location'] }}</p>
+                        <p><strong class="text-ink">Office Hours:</strong> {{ $courseMeta['office_hours'] }}</p>
+                    </div>
+                </section>
+
+                <section id="about-your-instructor" class="course-section module-anchor">
+                    <h2 class="text-2xl font-semibold tracking-tight text-ink">About Your Instructor</h2>
+                    <div class="course-copy">
+                        @foreach ($instructor['bio'] as $paragraph)
+                            @if ($loop->first)
+                                <p>I’m <strong class="text-ink">{{ $instructor['name'] }}</strong>. I’m the Director of <a href="{{ $instructor['website'] }}" target="_blank" rel="noopener noreferrer" class="font-medium text-accent-cyan hover:text-accent-cyan-strong focus-visible:focus-ring rounded-sm">{{ $instructor['website_label'] }}</a> at UConn, where I lead a multidisciplinary team working across digital product design and development, institutional data, research, and emerging technology.</p>
+                            @else
+                                <p>{!! $paragraph !!}</p>
+                            @endif
+                        @endforeach
+                    </div>
+                </section>
+
                 <section id="overview" class="course-section module-anchor">
                     <h2 class="text-2xl font-semibold tracking-tight text-ink">Course Description</h2>
                     <div class="course-copy">

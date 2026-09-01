@@ -1,5 +1,9 @@
 <x-layouts.app title="Today">
     @php
+        $course = \App\Support\Course::config();
+        $courseMeta = $course['course'];
+        $instructor = $course['instructor'];
+
         $visibleClassWork = collect($module['challenge']['class_work'] ?? [])->filter(function ($submission) {
             return filled(data_get($submission, 'title'))
                 || filled(data_get($submission, 'description'))
@@ -12,9 +16,47 @@
     <div class="max-w-4xl space-y-6">
         <x-page-heading
             label="Course Home"
-            title="Accessibility & Inclusion in Interactive Media"
+            :title="$courseMeta['short_title']"
             subtitle="A studio course about designing, evaluating, and improving digital experiences for people with different abilities, technologies, and circumstances. We'll work through real accessibility problems using design, standards, testing, assistive technology, code, policy, and AI."
         />
+
+        <section class="rounded-xl border border-subtle bg-surface-2/70 p-5 md:p-6">
+            <div class="grid gap-5 md:grid-cols-2">
+                <div>
+                    <p class="meta-label">Course</p>
+                    <p class="mt-3 text-lg font-semibold text-ink">{{ $instructor['name'] }}</p>
+                    <p class="mt-1 text-sm leading-7 text-ink-muted">{{ $instructor['role'] }}</p>
+                </div>
+
+                <div>
+                    <p class="meta-label">Meets</p>
+                    <p class="mt-3 text-lg font-semibold text-ink">{{ $courseMeta['meeting_days'] }}</p>
+                    <p class="mt-1 text-sm leading-7 text-ink-muted">{{ $courseMeta['meeting_time'] }}</p>
+                    <p class="mt-1 text-sm leading-7 text-ink-muted">{{ $courseMeta['location'] }}</p>
+                </div>
+            </div>
+
+            <div class="mt-5 border-t border-subtle pt-5">
+                <p class="meta-label">Contact</p>
+                <div class="mt-3 flex flex-col gap-3 text-sm leading-7 text-ink-muted">
+                    <a href="mailto:{{ $courseMeta['email'] }}" class="inline-flex text-ink hover:text-accent-cyan focus-visible:focus-ring rounded-sm">{{ $courseMeta['email'] }}</a>
+                    <a href="{{ $courseMeta['website'] }}" target="_blank" rel="noopener noreferrer" class="inline-flex text-ink hover:text-accent-cyan focus-visible:focus-ring rounded-sm">{{ $courseMeta['website_label'] }}</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="max-w-4xl">
+            <h2 class="text-2xl font-semibold tracking-tight text-ink">About Your Instructor</h2>
+            <div class="mt-4 space-y-4 text-[1.0625rem] leading-[1.68] text-ink-muted">
+                @foreach ($instructor['bio'] as $paragraph)
+                    @if ($loop->first)
+                        <p>I’m <strong class="text-ink">{{ $instructor['name'] }}</strong>. I’m the Director of <a href="{{ $instructor['website'] }}" target="_blank" rel="noopener noreferrer" class="font-medium text-accent-cyan hover:text-accent-cyan-strong focus-visible:focus-ring rounded-sm">{{ $instructor['website_label'] }}</a> at UConn, where I lead a multidisciplinary team working across digital product design and development, institutional data, research, and emerging technology.</p>
+                    @else
+                        <p>{!! $paragraph !!}</p>
+                    @endif
+                @endforeach
+            </div>
+        </section>
 
     </div>
 

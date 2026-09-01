@@ -8,6 +8,33 @@
  * dates — instructors move the class forward by editing this file.
  */
 return [
+    'course' => [
+        'code' => 'DMD 3998',
+        'title' => 'DMD 3998 — Accessibility & Inclusion in Interactive Media',
+        'short_title' => 'Accessibility & Inclusion in Interactive Media',
+        'meeting_days' => 'Tuesdays & Thursdays',
+        'meeting_time' => '9:30 AM–10:45 AM',
+        'location' => 'Art Building 228',
+        'email' => 'joel@uconn.edu',
+        'office_hours' => 'By appointment, via Teams',
+        'website' => 'https://i3.uconn.edu',
+        'website_label' => 'Institutional Insights & Innovation (i3)',
+    ],
+
+    'instructor' => [
+        'name' => 'Joel Salisbury',
+        'role' => 'Director, Institutional Insights & Innovation (i3)',
+        'role_long' => 'Director of Institutional Insights & Innovation (i3) at UConn',
+        'email' => 'joel@uconn.edu',
+        'website' => 'https://i3.uconn.edu',
+        'website_label' => 'Institutional Insights & Innovation (i3)',
+        'bio' => [
+            'I’m Joel Salisbury. I’m the Director of Institutional Insights & Innovation (i3) at UConn, where I lead a multidisciplinary team working across digital product design and development, institutional data, research, and emerging technology.',
+            'I also teach in Digital Media & Design, and much of my professional work involves designing, building, and making decisions about digital systems that real people need to use. That makes accessibility relevant to me as a design and technology practice (as well as a legal requirement due to the nature of the work).',
+            'In this course, we’ll approach accessibility in much the same way: by investigating real problems, using evidence, testing assumptions, and making decisions we can defend.',
+        ],
+    ],
+
     'current' => [
         'module' => 1,
         'session' => 1,

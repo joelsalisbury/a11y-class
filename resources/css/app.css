@@ -91,15 +91,24 @@
     }
 
     .site-title-link {
-        @apply mt-2 inline-block text-base font-semibold tracking-tight text-ink;
+        @apply mt-2 text-base font-semibold tracking-tight text-ink leading-[1.2] md:text-lg;
     }
 
     .site-title-link:hover {
         color: theme(--color-accent-cyan);
     }
 
+    .primary-nav-row {
+        @apply flex w-full flex-nowrap items-center gap-1.5 overflow-x-auto whitespace-nowrap py-1 md:w-auto md:justify-end md:overflow-visible md:py-0;
+        scrollbar-width: none;
+    }
+
+    .primary-nav-row::-webkit-scrollbar {
+        display: none;
+    }
+
     .nav-link {
-        @apply rounded-md border border-transparent px-3 py-2 text-sm font-medium text-ink-muted transition;
+        @apply inline-flex min-h-11 shrink-0 items-center justify-center rounded-md border border-transparent px-3 py-2.5 text-sm font-medium text-ink-muted transition whitespace-nowrap;
     }
 
     .nav-link:hover {
