@@ -250,7 +250,11 @@
                             <tbody>
                                 <tr>
                                     <td>10 Team Challenges</td>
-                                    <td>40%</td>
+                                    <td>35%</td>
+                                </tr>
+                                <tr>
+                                    <td>Individual Team Contribution</td>
+                                    <td>5%</td>
                                 </tr>
                                 <tr>
                                     <td>3 Individual Quizzes</td>
@@ -270,6 +274,9 @@
                     <div class="course-copy">
                         <p>
                             The module sequence and pacing are subject to change based on class progress, emerging technologies, cancellations, and particularly productive areas of investigation. Modules are not tied to specific calendar weeks. All substantive changes will be communicated to students.
+                        </p>
+                        <p>
+                            <strong>Note:</strong> Team challenge grades normally apply to all members of the team. Individual grades may be adjusted when there is clear evidence that a student did not meaningfully participate.
                         </p>
                     </div>
 
