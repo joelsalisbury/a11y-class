@@ -1,74 +1,99 @@
 <x-layouts.app title="Today">
-    <x-page-heading
-        :label="'Module ' . str_pad((string) $module['number'], 2, '0', STR_PAD_LEFT)"
-        :title="$module['title']"
-        :subtitle="$module['central_question'] ?? null"
-    />
+    @php
+        $visibleClassWork = collect($module['challenge']['class_work'] ?? [])->filter(function ($submission) {
+            return filled(data_get($submission, 'title'))
+                || filled(data_get($submission, 'description'))
+                || filled(data_get($submission, 'artifact.url'))
+                || filled(data_get($submission, 'artifact'))
+                || filled(data_get($submission, 'artifact_url'));
+        })->values();
+    @endphp
 
-    <div class="mt-10 grid gap-6 lg:grid-cols-12">
-        <x-panel class="lg:col-span-8 space-y-6">
-            <div class="space-y-3">
-                <x-meta-label>Current Session</x-meta-label>
-                @if ($session)
-                    <h2 class="text-2xl font-semibold text-ink">Session {{ str_pad((string) $sessionNumber, 2, '0', STR_PAD_LEFT) }}: {{ $session['title'] }}</h2>
-                    <p class="text-ink-muted">{{ $session['overview'] }}</p>
-                    @if (!empty($session['question']))
-                        <p class="text-sm font-medium text-ink">{{ $session['question'] }}</p>
+    <div class="max-w-4xl space-y-6">
+        <x-page-heading
+            label="Course Home"
+            title="Accessibility & Inclusion in Interactive Media"
+            subtitle="A studio course about designing, evaluating, and improving digital experiences for people with different abilities, technologies, and circumstances. We'll work through real accessibility problems using design, standards, testing, assistive technology, code, policy, and AI."
+        />
+
+    </div>
+
+    <div class="mt-10 space-y-10">
+        <section>
+            <x-section-heading title="Right Now" />
+
+            <div class="mt-6 grid gap-6 lg:grid-cols-3">
+                <x-panel>
+                    <x-meta-label>Current Module</x-meta-label>
+                    <h2 class="mt-3 text-xl font-semibold text-ink">Module {{ str_pad((string) $module['number'], 2, '0', STR_PAD_LEFT) }} — {{ $module['title'] }}</h2>
+                    @if (!empty($module['central_question']))
+                        <p class="mt-3 text-sm font-medium text-ink">{{ $module['central_question'] }}</p>
                     @endif
-                @else
-                    <h2 class="text-2xl font-semibold text-ink">Session content coming soon</h2>
+                    <a href="{{ route('modules.show', ['module' => $module['number']]) }}" class="mt-5 inline-flex text-sm font-medium text-accent-cyan hover:text-accent-cyan-strong focus-visible:focus-ring rounded-sm">
+                        Open Module {{ str_pad((string) $module['number'], 2, '0', STR_PAD_LEFT) }} →
+                    </a>
+                </x-panel>
+
+                @if ($session)
+                    <x-panel>
+                        <x-meta-label>Current Session</x-meta-label>
+                        <h2 class="mt-3 text-xl font-semibold text-ink">Session {{ str_pad((string) $sessionNumber, 2, '0', STR_PAD_LEFT) }} — {{ $session['title'] }}</h2>
+                        <p class="mt-3 text-sm leading-7 text-ink-muted">{{ $session['summary'] ?? $session['overview'] ?? '' }}</p>
+                        <a href="{{ route('modules.session', ['module' => $module['number'], 'session' => $sessionNumber]) }}" class="mt-5 inline-flex text-sm font-medium text-accent-cyan hover:text-accent-cyan-strong focus-visible:focus-ring rounded-sm">
+                            Open Session {{ str_pad((string) $sessionNumber, 2, '0', STR_PAD_LEFT) }} →
+                        </a>
+                    </x-panel>
+                @endif
+
+                @if ($challenge)
+                    <x-panel>
+                        <x-meta-label>Current Challenge</x-meta-label>
+                        <h2 class="mt-3 text-xl font-semibold text-ink">Challenge {{ str_pad((string) $module['number'], 2, '0', STR_PAD_LEFT) }} — {{ $challenge['title'] }}</h2>
+                        <p class="mt-3 text-sm leading-7 text-ink-muted">{{ $challenge['summary'] ?? $challenge['scenario'] ?? '' }}</p>
+                        <a href="{{ route('modules.challenge', $module['number']) }}" class="mt-5 inline-flex text-sm font-medium text-accent-cyan hover:text-accent-cyan-strong focus-visible:focus-ring rounded-sm">
+                            Open Challenge {{ str_pad((string) $module['number'], 2, '0', STR_PAD_LEFT) }} →
+                        </a>
+                    </x-panel>
                 @endif
             </div>
+        </section>
 
-            @if ($session)
-                <a href="{{ route('modules.session', ['module' => $module['number'], 'session' => $sessionNumber]) }}" class="cta-link">
-                    Open Session {{ str_pad((string) $sessionNumber, 2, '0', STR_PAD_LEFT) }}
-                    <span aria-hidden="true">→</span>
-                </a>
-            @endif
-        </x-panel>
+        <section>
+            <x-section-heading title="Course" />
 
-        <x-panel class="lg:col-span-4">
-            <x-meta-label>Current Challenge</x-meta-label>
-            @if ($challenge)
-                <h2 class="mt-3 text-xl font-semibold text-ink">{{ $challenge['title'] }}</h2>
-                @if (is_array($challenge['deliverable'] ?? null))
-                    <p class="mt-3 text-sm leading-7 text-ink-muted">{{ $challenge['deliverable']['summary'] ?? '' }}</p>
-                @else
-                    <p class="mt-3 text-sm leading-7 text-ink-muted">{{ $challenge['deliverable'] }}</p>
-                @endif
-                <a href="{{ route('modules.challenge', $module['number']) }}" class="mt-5 inline-flex text-sm font-medium text-accent-cyan hover:text-accent-cyan-strong focus-visible:focus-ring rounded-sm">
-                    Open challenge brief
-                </a>
-            @else
-                <p class="mt-3 text-sm text-ink-muted">No challenge assigned to the current module yet.</p>
-            @endif
-        </x-panel>
+            <div class="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+                <x-panel>
+                    <a href="{{ route('modules.index') }}" class="text-lg font-semibold text-ink hover:text-accent-cyan">Modules</a>
+                    <p class="mt-3 text-sm leading-7 text-ink-muted">See the course roadmap, current module, and upcoming investigations.</p>
+                </x-panel>
 
-        <x-panel class="lg:col-span-12">
-            <x-meta-label>Useful Resources</x-meta-label>
-            <div class="mt-3 space-y-2">
-                @forelse ($module['resources'] as $resource)
-                    <x-resource-link :href="isset($resource['route']) ? route($resource['route'], $resource['params'] ?? []) : $resource['href']" :meta="$resource['meta'] ?? null">
-                        {{ $resource['label'] }}
-                    </x-resource-link>
-                @empty
-                    <x-resource-link href="{{ route('field-guide') }}" meta="Reference index">Field Guide</x-resource-link>
-                @endforelse
+                <x-panel>
+                    <a href="{{ route('field-guide') }}" class="text-lg font-semibold text-ink hover:text-accent-cyan">Field Guide</a>
+                    <p class="mt-3 text-sm leading-7 text-ink-muted">Reference material for accessibility concepts, standards, and terminology.</p>
+                </x-panel>
+
+                <x-panel>
+                    <a href="{{ route('field-guide.entry', ['entry' => 'toolkit']) }}" class="text-lg font-semibold text-ink hover:text-accent-cyan">Toolkit</a>
+                    <p class="mt-3 text-sm leading-7 text-ink-muted">Accessibility testing tools and methods used throughout the course.</p>
+                </x-panel>
+
+                <x-panel>
+                    <a href="{{ route('syllabus') }}" class="text-lg font-semibold text-ink hover:text-accent-cyan">Syllabus</a>
+                    <p class="mt-3 text-sm leading-7 text-ink-muted">Course structure, grading, expectations, policies, and module roadmap.</p>
+                </x-panel>
             </div>
-        </x-panel>
+        </section>
 
-        <x-panel class="lg:col-span-12">
-            <div class="flex items-center justify-between gap-4">
-                <div>
-                    <x-meta-label>Recent Class Work</x-meta-label>
-                    <h2 class="mt-2 text-xl font-semibold text-ink">Submission archive placeholder</h2>
+        @if ($visibleClassWork->isNotEmpty())
+            <section>
+                <x-section-heading title="Recent Class Work" />
+
+                <div class="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                    @foreach ($visibleClassWork->take(3) as $submission)
+                        <x-class-work-card :submission="$submission" />
+                    @endforeach
                 </div>
-                <x-status-badge status="upcoming" />
-            </div>
-            <p class="mt-3 text-sm text-ink-muted">
-                Team submissions from the current challenge will be archived here for study before quizzes.
-            </p>
-        </x-panel>
+            </section>
+        @endif
     </div>
 </x-layouts.app>
