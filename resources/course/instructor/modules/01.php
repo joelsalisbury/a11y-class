@@ -10,7 +10,7 @@ return [
             'label' => 'SESSION 01',
             'title' => 'Is This Accessible?',
             'run_of_show' => [
-                '0-8 min: QR join and find teams',
+                '0-8 min: find HuskyCT/Blackboard teams and sit together',
                 '8-23 min: student introductions',
                 '23-33 min: course orientation',
                 '33-36 min: reveal "Is this accessible?"',

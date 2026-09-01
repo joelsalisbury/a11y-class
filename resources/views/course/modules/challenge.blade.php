@@ -60,9 +60,21 @@
                 </section>
 
                 <section id="challenge-deliverable" class="course-section module-anchor">
-                    <x-section-heading title="Deliverable" description="Create one concise team brief, roughly 1-2 pages or equivalent, designed so your classmates can use it later as study material." />
+                    <x-section-heading title="Deliverable" :description="$challenge['deliverable']['summary'] ?? 'Create one concise team brief.'" />
 
                     <p class="course-emphasis">No slide deck or formal presentation is required.</p>
+
+                    @if (!empty($challenge['format_note']))
+                        <div class="course-copy">
+                            <p>{{ $challenge['format_note'] }}</p>
+                        </div>
+                    @endif
+
+                    @if (!empty($challenge['future_note']))
+                        <x-callout :title="$challenge['future_note']['title']">
+                            {{ $challenge['future_note']['body'] }}
+                        </x-callout>
+                    @endif
 
                     <div class="grid gap-4 lg:grid-cols-2">
                         <section class="rounded-lg border border-subtle bg-surface-3 p-4">
@@ -112,7 +124,7 @@
 
                                 <div class="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
                                     @foreach ($group['resources'] as $resource)
-                                        <x-resource-link :href="isset($resource['route']) ? route($resource['route']) : $resource['href']" :meta="$resource['source'] ?? $resource['meta'] ?? null">
+                                        <x-resource-link :href="isset($resource['route']) ? route($resource['route'], $resource['params'] ?? []) : $resource['href']" :meta="$resource['source'] ?? $resource['meta'] ?? null">
                                             {{ $resource['label'] }}
                                         </x-resource-link>
                                     @endforeach

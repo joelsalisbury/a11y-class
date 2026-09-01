@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ExperienceController;
-use App\Http\Controllers\JoinController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [CourseController::class, 'today'])->name('today');
@@ -28,9 +27,6 @@ Route::get('/field-guide/{entry}', [CourseController::class, 'fieldGuideEntry'])
     ->name('field-guide.entry');
 
 Route::get('/syllabus', [CourseController::class, 'syllabus'])->name('syllabus');
-
-Route::get('/join', [JoinController::class, 'qr'])->name('join.qr');
-Route::get('/join/{code}', [JoinController::class, 'show'])->name('join.show');
 
 Route::get('/experiences/campus-event-registration', [ExperienceController::class, 'campusEventRegistration'])
     ->name('experiences.campus-event-registration');

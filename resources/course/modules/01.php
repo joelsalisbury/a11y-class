@@ -23,13 +23,15 @@ return [
             'overview' => 'Welcome to Accessibility & Inclusion in Interactive Media. Today you will meet your team, get oriented to how the course works, and investigate a question that sounds much easier than it is: Is this digital experience accessible? The harder question is: How do you know?',
             'sections' => [
                 [
-                    'title' => 'Join Your Team',
+                    'title' => 'Find Your Team',
                     'paragraphs' => [
-                        'Scan the QR code on screen to join your team.',
-                        'Your browser will remember your anonymous assignment. Once assigned, find the other students with the same shape and sit together.',
+                        'Your team assignment is available in HuskyCT/Blackboard.',
+                        'Find the other members of your team and sit together:',
                     ],
-                    'actions' => [
-                        ['label' => 'Open instructor join QR screen ->', 'route' => 'join.qr'],
+                    'bullets' => [
+                        'Cyan Triangle',
+                        'Amber Circle',
+                        'Violet Square',
                     ],
                     'callout' => [
                         'title' => 'Why a color and a shape?',
@@ -154,7 +156,7 @@ return [
                 ],
             ],
             'resources' => [
-                ['label' => 'Join QR screen (instructor display)', 'route' => 'join.qr', 'meta' => 'In-class tool'],
+                ['label' => 'Accessibility Toolkit', 'route' => 'field-guide.entry', 'params' => ['entry' => 'toolkit'], 'meta' => 'Course reference'],
                 ['label' => 'Field Guide index', 'route' => 'field-guide', 'meta' => 'Course reference'],
                 ['label' => 'POUR Principles', 'href' => 'https://www.w3.org/WAI/fundamentals/accessibility-principles/', 'meta' => 'W3C'],
             ],
@@ -215,7 +217,8 @@ return [
                     'title' => 'Return to Design Futures',
                     'paragraphs' => [
                         'Return to the same experience you evaluated in Session 01. Use at least one investigation method you did not use before, then compare what the new evidence allows you to say.',
-                        'Try at least one different method, such as keyboard testing, zoom or reflow, browser inspection, automated accessibility testing, semantic markup inspection, AI critique, or mapping a suspected issue to WCAG.',
+                        'Try at least one different method, such as keyboard testing, zoom or reflow, browser inspection, WAVE (an automated accessibility testing tool), semantic markup inspection, or AI critique.',
+                        'If it fits naturally in the content, the instructor may demonstrate WAVE during this session as one possible method for gathering evidence.',
                     ],
                     'actions' => [
                         ['label' => 'Design Futures 2026 Registration ->', 'route' => 'experiences.campus-event-registration', 'new_tab' => true],
@@ -300,17 +303,18 @@ return [
             ],
         ],
         'deliverable' => [
-            'summary' => 'Create a concise team brief containing:',
+            'summary' => 'Create one concise team brief as a PDF (approximately 1–2 pages) with working links to authoritative sources.',
+            'format' => 'PDF submitted through HuskyCT/Blackboard',
             'items' => [
                 'Plain-English explanation: Explain your assigned lens for someone encountering it for the first time.',
-                '3-5 key findings: Identify the most important things the class should understand.',
+                '3–5 key findings: Identify the most important things the class should understand.',
                 'Authoritative sources: Link directly to the primary sources supporting important claims.',
                 'Apply It: Explain how your findings affect the evaluation of the Design Futures registration experience.',
                 'What We Still Don\'t Know: Identify something your lens cannot establish by itself.',
                 'AI Use Note: Identify any generative AI tools used and briefly explain how they contributed.',
             ],
         ],
-        'format_note' => 'Do not require a slide presentation. The brief may use an appropriate concise format, but it must be easy for classmates to review later as study material.',
+        'format_note' => 'Do not submit a slide presentation. Submit your brief as a concise PDF (approximately 1–2 pages) through HuskyCT/Blackboard. The PDF should contain working links to authoritative sources.',
         'evaluation_criteria' => [
             [
                 'title' => 'Investigation',
@@ -337,6 +341,10 @@ return [
         'ai_note' => [
             'title' => 'AI output is not evidence.',
             'body' => 'AI may help your team research, interpret, organize, critique, or explore possible answers. Important claims must still be verified.',
+        ],
+        'future_note' => [
+            'title' => 'A note about the documents we create.',
+            'body' => 'We will return later to the accessibility of the documents and artifacts we create ourselves. For now, focus on the research and evidence in your brief.',
         ],
         'due' => 'Due: EOD after Session 02',
         'starting_resources' => [

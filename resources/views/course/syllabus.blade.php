@@ -163,6 +163,9 @@
                             The class uses persistent teams for distributed inquiry followed by collective synthesis. Different teams may investigate different dimensions of a shared problem, such as legal requirements, technical standards, institutional policy, user impact, technical implementation, or testing.
                         </p>
                         <p>
+                            Team membership is assigned and managed in HuskyCT/Blackboard. The course website may refer to team identities and team challenge work, but it is not the source of team membership records.
+                        </p>
+                        <p>
                             The course includes 10 team challenges. These are team challenges or module challenges, not weekly challenges, and they are not tied to a rigid calendar schedule. Teams investigate, test, discuss, and then produce a concise deliverable that can later be archived as shared study material in the module's Class Work area.
                         </p>
                         <p>

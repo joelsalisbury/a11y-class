@@ -100,7 +100,7 @@
 
                         <div class="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
                             @foreach ($module['resources'] as $resource)
-                                <x-resource-link :href="isset($resource['route']) ? route($resource['route']) : $resource['href']" :meta="$resource['meta'] ?? null">
+                                <x-resource-link :href="isset($resource['route']) ? route($resource['route'], $resource['params'] ?? []) : $resource['href']" :meta="$resource['meta'] ?? null">
                                     {{ $resource['label'] }}
                                 </x-resource-link>
                             @endforeach

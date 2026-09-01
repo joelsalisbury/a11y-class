@@ -403,21 +403,4 @@
         outline-offset: 2px;
     }
 
-    .team-reveal-panel {
-        @apply rounded-2xl border-2 p-8 text-center md:p-14;
-        border-color: currentColor;
-        background-color: color-mix(in oklab, currentColor 14%, transparent);
-    }
-
-    .team-reveal-symbol {
-        @apply text-6xl leading-none md:text-8xl;
-    }
-
-    .team-reveal-name {
-        @apply mt-4 text-4xl font-semibold tracking-tight text-ink md:text-6xl;
-    }
-
-    .qr-card {
-        @apply mx-auto grid place-items-center rounded-2xl bg-white p-6 shadow-lg md:p-10;
-    }
 }
