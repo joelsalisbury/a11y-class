@@ -123,6 +123,11 @@
                     <a href="{{ route('syllabus') }}" class="text-lg font-semibold text-ink hover:text-accent-cyan">Syllabus</a>
                     <p class="mt-3 text-sm leading-7 text-ink-muted">Course structure, grading, expectations, policies, and module roadmap.</p>
                 </x-panel>
+
+                <x-panel>
+                    <a href="{{ route('changelog') }}" class="text-lg font-semibold text-ink hover:text-accent-cyan">Changelog</a>
+                    <p class="mt-3 text-sm leading-7 text-ink-muted">Notable updates and corrections to course materials, recorded in chronological order.</p>
+                </x-panel>
             </div>
         </section>
 

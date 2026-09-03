@@ -149,6 +149,9 @@
                         <p>
                             Module 01 introduces the Legal Lens, Standards Lens, and Institutional Lens. Later modules continue that pattern by connecting visual design, media, interaction, structure, cognition, and AI practice to standards-based evaluation and remediation.
                         </p>
+                        <p>
+                            In legal and policy terms, Section 504 remains relevant to federally funded educational programs and activities, ADA Title II applies to public entities such as public universities, and Section 508 governs federal-agency information and communication technology. These frameworks are related but not interchangeable, and UConn's Digital Accessibility Policy operationalizes relevant requirements within the institution's context.
+                        </p>
                     </div>
                 </section>
 

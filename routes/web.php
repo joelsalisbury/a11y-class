@@ -32,5 +32,7 @@ Route::get('/field-guide/{entry}', [CourseController::class, 'fieldGuideEntry'])
 
 Route::get('/syllabus', [CourseController::class, 'syllabus'])->name('syllabus');
 
+Route::get('/changelog', [CourseController::class, 'changelog'])->name('changelog');
+
 Route::get('/experiences/campus-event-registration', [ExperienceController::class, 'campusEventRegistration'])
     ->name('experiences.campus-event-registration');

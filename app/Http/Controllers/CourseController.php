@@ -91,4 +91,11 @@ class CourseController extends Controller
     {
         return view('course.syllabus');
     }
+
+    public function changelog()
+    {
+        return view('course.changelog', [
+            'entries' => Course::changelog(),
+        ]);
+    }
 }

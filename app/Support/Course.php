@@ -68,6 +68,15 @@ class Course
         return array_merge($defaults, $summary);
     }
 
+    public static function changelog(): array
+    {
+        $entries = require resource_path('course/changelog.php');
+
+        usort($entries, fn (array $a, array $b) => strtotime($b['date']) <=> strtotime($a['date']));
+
+        return $entries;
+    }
+
     public static function fieldGuide(): array
     {
         $guide = static::$fieldGuide ??= require resource_path('course/field-guide.php');

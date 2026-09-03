@@ -41,7 +41,10 @@
 
             <footer class="border-t border-subtle">
                 <div class="shell flex flex-col gap-3 py-6 text-sm text-ink-muted md:flex-row md:items-center md:justify-between">
-                    <p>Course field guide and studio headquarters for DMD 3998.</p>
+                    <div class="flex flex-wrap items-center gap-3">
+                        <p>Course field guide and studio headquarters for DMD 3998.</p>
+                        <a href="{{ route('changelog') }}" class="font-medium text-ink hover:text-accent-cyan">Changelog</a>
+                    </div>
                     <p>Grades, quizzes, and formal LMS workflows remain in HuskyCT.</p>
                 </div>
             </footer>
