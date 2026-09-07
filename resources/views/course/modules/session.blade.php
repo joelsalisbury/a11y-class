@@ -38,7 +38,6 @@
             currentPage="session"
             :currentSessionNumber="$sessionNumber"
             :sectionLinks="$sessionSectionLinks"
-            resourcesHref="#session-resources"
             :classWorkHref="route('modules.show', ['module' => $module['number']]).'#module-class-work'"
         />
 

@@ -12,13 +12,13 @@ return [
     'title' => 'Accessible According to Whom?',
     'central_question' => 'What does it actually mean to call a digital experience accessible?',
     'overview' => 'Accessibility sounds simple until someone asks you to explain what you mean — and provide evidence for the claim. This module introduces the different ways accessibility is defined, evaluated, and required.',
-    'status' => 'current',
+    'status' => 'complete',
 
     'sessions' => [
         1 => [
             'label' => 'SESSION 01',
             'title' => 'Is This Accessible?',
-            'status' => 'current',
+            'status' => 'complete',
             'summary' => 'Meet the class, learn how the course works, and make your first judgment about the accessibility of a digital experience.',
             'question' => 'What would give us enough evidence to call a digital experience accessible or inaccessible?',
             'overview' => 'Welcome to Accessibility & Inclusion in Interactive Media. Today you will meet your team, get oriented to how the course works, and investigate a question that sounds much easier than it is: Is this digital experience accessible? The harder question is: How do you know?',
@@ -162,7 +162,7 @@ return [
         2 => [
             'label' => 'SESSION 02',
             'title' => 'Build the Definition',
-            'status' => 'upcoming',
+            'status' => 'complete',
             'summary' => 'Learn how to navigate WCAG, deepen your team\'s investigation, compare different sources of authority, and return to the same experience with better evidence.',
             'question' => 'How do law, standards, institutional requirements, and human experience fit together?',
             'overview' => 'Today you\'ll deepen your team\'s investigation, learn how to navigate WCAG, borrow from the other teams\' perspectives, and then return to the digital experience from Session 01 with better evidence.',

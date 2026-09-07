@@ -16,10 +16,14 @@
                 <section id="challenge-problem" class="course-section module-anchor">
                     <x-section-heading title="The Problem" />
                     <div class="course-copy">
-                        <p>A client asks:</p>
-                        <p class="course-emphasis">“Is our digital experience accessible?”</p>
-                        <p>That question cannot be answered responsibly without understanding what accessible means and whose requirements or standards are being applied.</p>
-                        <p>Each team will investigate one source of authority and contribute one part of the class's eventual answer.</p>
+                        @if (!empty($challenge['problem']))
+                            <p>{{ $challenge['problem'] }}</p>
+                        @else
+                            <p>A client asks:</p>
+                            <p class="course-emphasis">“Is our digital experience accessible?”</p>
+                            <p>That question cannot be answered responsibly without understanding what accessible means and whose requirements or standards are being applied.</p>
+                            <p>Each team will investigate one source of authority and contribute one part of the class's eventual answer.</p>
+                        @endif
                     </div>
                 </section>
 
@@ -60,7 +64,9 @@
                 <section id="challenge-deliverable" class="course-section module-anchor">
                     <x-section-heading title="Deliverable" :description="$challenge['deliverable']['summary'] ?? 'Create one concise team brief.'" />
 
-                    <p class="course-emphasis">No slide deck or formal presentation is required.</p>
+                    @if (empty($challenge['deliverable']['items']))
+                        <p class="course-emphasis">No slide deck or formal presentation is required.</p>
+                    @endif
 
                     @if (!empty($challenge['format_note']))
                         <div class="course-copy">
@@ -75,37 +81,64 @@
                     @endif
 
                     <div class="grid gap-4 lg:grid-cols-2">
-                        <section class="rounded-lg border border-subtle bg-surface-3 p-4">
-                            <h3 class="text-lg font-semibold text-ink">Explain the Lens</h3>
-                            <p class="mt-2 text-sm leading-7 text-ink-muted">Explain your assigned perspective in plain English for someone encountering it for the first time.</p>
-                        </section>
-
-                        <section class="rounded-lg border border-subtle bg-surface-3 p-4">
-                            <h3 class="text-lg font-semibold text-ink">3-5 Key Findings</h3>
-                            <p class="mt-2 text-sm leading-7 text-ink-muted">Identify the most important things the rest of the class should understand.</p>
-                        </section>
-
-                        <section class="rounded-lg border border-subtle bg-surface-3 p-4">
-                            <h3 class="text-lg font-semibold text-ink">Evidence</h3>
-                            <p class="mt-2 text-sm leading-7 text-ink-muted">Link directly to authoritative sources supporting important claims.</p>
-                        </section>
-
-                        <section class="rounded-lg border border-subtle bg-surface-3 p-4">
-                            <h3 class="text-lg font-semibold text-ink">Apply It</h3>
-                            <p class="mt-2 text-sm leading-7 text-ink-muted">Explain how your findings affect the evaluation of the Design Futures registration experience.</p>
-                        </section>
-
-                        <section class="rounded-lg border border-subtle bg-surface-3 p-4">
-                            <h3 class="text-lg font-semibold text-ink">What We Still Don't Know</h3>
-                            <p class="mt-2 text-sm leading-7 text-ink-muted">Identify something your assigned lens cannot establish by itself.</p>
-                        </section>
-
-                        <section class="rounded-lg border border-subtle bg-surface-3 p-4">
-                            <h3 class="text-lg font-semibold text-ink">AI Use Note</h3>
-                            <p class="mt-2 text-sm leading-7 text-ink-muted">Identify any generative AI tools used and briefly explain how they contributed.</p>
-                        </section>
+                        @if (!empty($challenge['deliverable']['items']))
+                            @foreach ($challenge['deliverable']['items'] as $item)
+                                <section class="rounded-lg border border-subtle bg-surface-3 p-4">
+                                    <h3 class="text-lg font-semibold text-ink">{{ $item['title'] }}</h3>
+                                    <p class="mt-2 text-sm leading-7 text-ink-muted">{{ $item['description'] }}</p>
+                                </section>
+                            @endforeach
+                        @else
+                            <section class="rounded-lg border border-subtle bg-surface-3 p-4">
+                                <h3 class="text-lg font-semibold text-ink">Explain the Lens</h3>
+                                <p class="mt-2 text-sm leading-7 text-ink-muted">Explain your assigned perspective in plain English for someone encountering it for the first time.</p>
+                            </section>
+                            <section class="rounded-lg border border-subtle bg-surface-3 p-4">
+                                <h3 class="text-lg font-semibold text-ink">3-5 Key Findings</h3>
+                                <p class="mt-2 text-sm leading-7 text-ink-muted">Identify the most important things the rest of the class should understand.</p>
+                            </section>
+                            <section class="rounded-lg border border-subtle bg-surface-3 p-4">
+                                <h3 class="text-lg font-semibold text-ink">Evidence</h3>
+                                <p class="mt-2 text-sm leading-7 text-ink-muted">Link directly to authoritative sources supporting important claims.</p>
+                            </section>
+                            <section class="rounded-lg border border-subtle bg-surface-3 p-4">
+                                <h3 class="text-lg font-semibold text-ink">Apply It</h3>
+                                <p class="mt-2 text-sm leading-7 text-ink-muted">Explain how your findings affect the evaluation of the Design Futures registration experience.</p>
+                            </section>
+                            <section class="rounded-lg border border-subtle bg-surface-3 p-4">
+                                <h3 class="text-lg font-semibold text-ink">What We Still Don't Know</h3>
+                                <p class="mt-2 text-sm leading-7 text-ink-muted">Identify something your assigned lens cannot establish by itself.</p>
+                            </section>
+                            <section class="rounded-lg border border-subtle bg-surface-3 p-4">
+                                <h3 class="text-lg font-semibold text-ink">AI Use Note</h3>
+                                <p class="mt-2 text-sm leading-7 text-ink-muted">Identify any generative AI tools used and briefly explain how they contributed.</p>
+                            </section>
+                        @endif
                     </div>
                 </section>
+
+                @if (!empty($challenge['resource_collections']))
+                    <section id="challenge-resources" class="course-section module-anchor">
+                        <x-section-heading title="Resources" description="Start with the source that fits your team's investigation." />
+                        <div class="space-y-6">
+                            @foreach ($challenge['resource_collections'] as $collection)
+                                <section class="space-y-3">
+                                    <h3 class="text-lg font-semibold text-ink">{{ $collection['title'] }}</h3>
+                                    @if (!empty($collection['description']))
+                                        <p class="text-sm leading-7 text-ink-muted">{{ $collection['description'] }}</p>
+                                    @endif
+                                    <div class="grid gap-3 md:grid-cols-2">
+                                        @foreach ($collection['resources'] as $resource)
+                                            <x-resource-link :href="$resource['href']" :meta="$resource['source'] ?? null">
+                                                {{ $resource['label'] }}
+                                            </x-resource-link>
+                                        @endforeach
+                                    </div>
+                                </section>
+                            @endforeach
+                        </div>
+                    </section>
+                @endif
 
                 <section id="challenge-ai" class="course-section module-anchor">
                     <x-section-heading title="AI Use" />

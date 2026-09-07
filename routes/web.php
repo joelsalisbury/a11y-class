@@ -36,3 +36,6 @@ Route::get('/changelog', [CourseController::class, 'changelog'])->name('changelo
 
 Route::get('/experiences/campus-event-registration', [ExperienceController::class, 'campusEventRegistration'])
     ->name('experiences.campus-event-registration');
+
+Route::get('/experiences/campus-study-space-finder', [ExperienceController::class, 'campusStudySpaceFinder'])
+    ->name('experiences.campus-study-space-finder');

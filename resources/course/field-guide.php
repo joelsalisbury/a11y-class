@@ -261,6 +261,20 @@ return [
                             'limitations' => 'WAVE can identify many potential accessibility issues and expose page structure. Its output is not a determination that a page is accessible or inaccessible. WAVE cannot test keyboard interaction, zoom behavior, dynamic content, or real user experience.',
                         ],
                         [
+                            'title' => 'WebAIM Contrast Checker',
+                            'description' => 'A focused WebAIM tool for measuring a specific foreground and background color pair.',
+                            'use_for' => [
+                                'Calculating a contrast ratio for text and its background',
+                                'Checking a specific color pair against WCAG contrast requirements',
+                                'Supporting a visual judgment with a measurable result',
+                            ],
+                            'how_to_access' => 'Open the WebAIM Contrast Checker in your browser; no installation is required.',
+                            'resources' => [
+                                ['source' => 'WebAIM', 'label' => 'WebAIM Contrast Checker', 'href' => 'https://webaim.org/resources/contrastchecker/'],
+                            ],
+                            'limitations' => 'A contrast ratio applies to the color pair you measured. It does not determine whether the whole interface communicates meaning clearly or whether users can complete the task.',
+                        ],
+                        [
                             'title' => 'Keyboard Testing',
                             'description' => 'No installation required.',
                             'use_for' => [
@@ -323,8 +337,8 @@ return [
                     ],
                     'key_principle' => 'A tool can provide evidence. A tool does not determine whether an experience is accessible.',
                     'testing_sequence' => [
-                        'Session 01: Use whatever testing methods seem useful to you as you investigate accessibility.',
-                        'Session 02: Learn how WAVE, WCAG standards, and authoritative sources produce evidence.',
+                        'Module 01: Use whatever testing methods seem useful to you as you investigate accessibility.',
+                        'Module 02: Use WAVE, visual testing, WCAG standards, and authoritative sources as different kinds of evidence.',
                         'Later modules: Introduce screen readers and specialized methods as they become central to understanding the problems.',
                     ],
                     'related_entries' => ['testing-tools', 'keyboard', 'wcag', 'accessibility-audits'],

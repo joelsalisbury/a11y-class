@@ -36,19 +36,19 @@ return [
     ],
 
     'current' => [
-        'module' => 1,
-        'session' => 1,
+        'module' => 2,
+        'session' => 3,
     ],
 
     'modules' => [
         1 => [
             'title' => 'Accessible According to Whom?',
-            'status' => 'current',
+            'status' => 'complete',
             'central_question' => 'What does it actually mean to call a digital experience accessible?',
         ],
         2 => [
             'title' => 'Can You See What Matters?',
-            'status' => 'upcoming',
+            'status' => 'current',
             'central_question' => 'Can users perceive and understand the information an interface is trying to communicate?',
         ],
         3 => [

@@ -8,4 +8,9 @@ class ExperienceController extends Controller
     {
         return view('experiences.campus-event-registration');
     }
+
+    public function campusStudySpaceFinder()
+    {
+        return view('experiences.campus-study-space-finder');
+    }
 }
