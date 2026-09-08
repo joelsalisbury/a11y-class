@@ -39,6 +39,14 @@
             .finder-room[aria-pressed="true"] { border-color: var(--finder-accent); box-shadow: 0 0 0 2px color-mix(in srgb, var(--finder-accent) 25%, transparent); }
             .finder-details { height: 4.7rem; overflow: hidden; }
             .finder-results { min-width: 720px; }
+            .finder-room { position: relative; }
+            .finder-filter[aria-pressed="true"] { border-color: var(--finder-ink) !important; box-shadow: inset 0 -3px 0 var(--finder-accent); }
+            .finder-recommendation { position: absolute; top: 0; right: 0; width: 1.5rem; height: 1.5rem; border-bottom: 1px solid var(--finder-line); border-left: 1px solid var(--finder-line); background: var(--finder-bg); clip-path: polygon(100% 0, 100% 100%, 0 0); }
+            .finder-feature { display: inline-block; width: .75rem; height: .75rem; border: 1px solid currentColor; color: var(--finder-accent); }
+            .finder-feature-power { border-radius: 999px; }
+            .finder-feature-silent { transform: rotate(45deg); }
+            .finder-feature-accessible { border-radius: 2px; background: currentColor; }
+            .finder-feature-reserve { border-radius: 2px; border-width: 2px; border-top-color: transparent; }
             .finder-focus:focus-visible { outline: 3px solid #e5b84a; outline-offset: 3px; }
         </style>
     </head>
@@ -73,6 +81,7 @@
                     <span class="inline-flex items-center gap-2"><span class="finder-status finder-status-limited"></span>Limited</span>
                     <span class="inline-flex items-center gap-2"><span class="finder-status finder-status-full"></span>Nearly full</span>
                 </div>
+                <p class="mt-4 text-xs finder-muted">Small markers on a card indicate room features.</p>
             </section>
 
             <section class="mt-8 overflow-x-auto" aria-labelledby="results-heading">
@@ -86,12 +95,14 @@
 
                 <div class="finder-results grid gap-5 md:grid-cols-3">
                     <button type="button" class="finder-room finder-focus finder-card text-left transition" aria-pressed="false" data-tags="quiet power">
+                        <span class="finder-recommendation" aria-hidden="true" title="Recommended match"></span>
                         <div class="p-5">
                             <div class="flex items-start justify-between gap-4">
                                 <div><p class="text-xs uppercase tracking-[0.14em] finder-muted">Homer Babbidge Library</p><h3 class="mt-2 text-xl font-semibold">North Reading Room</h3></div>
                                 <span class="finder-status finder-status-open" title="Available now"></span>
                             </div>
                             <div class="finder-details mt-4 space-y-2 text-sm finder-muted"><p>Quiet · Individual tables</p><p>Power at every table · 4 min walk</p><p>Open until 11:00 PM</p></div>
+                            <div class="mt-4 flex items-center gap-3 text-xs finder-muted" aria-label="Room features"><span class="finder-feature finder-feature-silent" title="Silent zone" aria-label="Silent zone"></span><span class="finder-feature finder-feature-power" title="Power available" aria-label="Power available"></span></div>
                             <div class="mt-5 flex items-center justify-between text-sm"><span class="finder-muted">12 seats open</span><span style="color: var(--finder-accent);">View space</span></div>
                         </div>
                     </button>
@@ -103,6 +114,7 @@
                                 <span class="finder-status finder-status-limited" title="Limited availability"></span>
                             </div>
                             <div class="finder-details mt-4 space-y-2 text-sm finder-muted"><p>Conversation welcome · Group tables</p><p>Power near the windows · 7 min walk</p><p>Open until 9:00 PM</p></div>
+                            <div class="mt-4 flex items-center gap-3 text-xs finder-muted" aria-label="Room features"><span class="finder-feature finder-feature-power" title="Power available" aria-label="Power available"></span><span class="finder-feature finder-feature-reserve" title="Reservation required" aria-label="Reservation required"></span></div>
                             <div class="mt-5 flex items-center justify-between text-sm"><span class="finder-muted">3 tables open</span><span style="color: var(--finder-accent);">View space</span></div>
                         </div>
                     </button>
@@ -114,6 +126,7 @@
                                 <span class="finder-status finder-status-full" title="Nearly full"></span>
                             </div>
                             <div class="finder-details mt-4 space-y-2 text-sm finder-muted"><p>Quiet · Soft seating</p><p>Limited power · 11 min walk</p><p>Open until 8:00 PM</p></div>
+                            <div class="mt-4 flex items-center gap-3 text-xs finder-muted" aria-label="Room features"><span class="finder-feature finder-feature-silent" title="Silent zone" aria-label="Silent zone"></span><span class="finder-feature finder-feature-accessible" title="Accessible entrance" aria-label="Accessible entrance"></span></div>
                             <div class="mt-5 flex items-center justify-between text-sm"><span class="finder-muted">1 seat open</span><span style="color: var(--finder-accent);">View space</span></div>
                         </div>
                     </button>
