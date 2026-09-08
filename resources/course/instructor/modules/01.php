@@ -186,4 +186,57 @@ return [
             ],
         ],
     ],
+    'challenge_answer_key' => [
+        [
+            'team' => 'Cyan Triangle',
+            'lens' => 'Legal Lens',
+            'expected_findings' => [
+                'Section 504 can require equal access to federally funded university programs, services, and activities, including digital experiences.',
+                'ADA Title II applies to public universities as public entities; the current federal web and mobile rule identifies WCAG 2.1 Level AA as the technical standard for covered web content and mobile apps within its scope and timing.',
+                'Section 508 primarily governs federal agencies and should not be treated as the default legal requirement for UConn simply because it is an accessibility standard.',
+                'Law establishes obligations and risk, but it does not by itself prove which specific barrier exists in the Design Futures registration experience.',
+            ],
+            'authoritative_sources' => [
+                'ADA.gov: Accessibility of Web Content and Mobile Apps Provided by State and Local Government Entities',
+                'U.S. Department of Education OCR: Disability Discrimination and Technology Accessibility',
+                'Section508.gov: Do Section 508 Accessibility Standards Apply to My Website?',
+            ],
+            'can_conclude' => 'The team can explain which legal obligations and protected-access principles are relevant to a public university digital experience and what kind of access concern deserves further investigation.',
+            'cannot_conclude' => 'The team cannot conclude from law alone that the experience passes or fails every accessibility requirement, or that all users can successfully complete registration.',
+        ],
+        [
+            'team' => 'Amber Circle',
+            'lens' => 'Standards Lens',
+            'expected_findings' => [
+                'WCAG is a W3C technical standard organized around the POUR principles: perceivable, operable, understandable, and robust.',
+                'Success criteria are testable requirements with conformance levels A, AA, and AAA; conformance is evaluated against the applicable version and claim being made.',
+                'WCAG 2.2 extends the WCAG 2.1 family, but a team should identify the version and success criteria it is actually using rather than treating versions as interchangeable labels.',
+                'The Design Futures experience can be evaluated against specific criteria such as contrast, use of color, keyboard access, labels, focus, alternatives, and error handling.',
+            ],
+            'authoritative_sources' => [
+                'W3C: WCAG 2.2 Recommendation',
+                'W3C: Understanding WCAG 2.2',
+                'W3C: Understanding Conformance',
+            ],
+            'can_conclude' => 'The team can make narrower, evidence-based claims that a specific observed implementation does or does not satisfy a named WCAG success criterion at a stated conformance level.',
+            'cannot_conclude' => 'WCAG conformance alone cannot establish complete usability, successful real-world task completion, or the absence of barriers outside the tested criteria and conditions.',
+        ],
+        [
+            'team' => 'Violet Square',
+            'lens' => 'Institutional Lens',
+            'expected_findings' => [
+                'UConn Digital Accessibility Policy establishes university expectations and accountability for accessible digital content, systems, and services.',
+                'Institutional policy translates broad legal and accessibility commitments into responsibilities, procedures, and expectations for university work.',
+                'UConn policy connects to recognized accessibility standards such as WCAG, but the policy and its procedures remain the primary institutional sources for this team’s claim.',
+                'The policy makes accessibility a university responsibility; it does not replace direct testing of the Design Futures registration experience.',
+            ],
+            'authoritative_sources' => [
+                'UConn: Digital Accessibility Policy',
+                'UConn: Digital Accessibility Procedures',
+                'W3C: WCAG Overview, as supporting technical context rather than the institutional authority itself',
+            ],
+            'can_conclude' => 'The team can explain what UConn requires, who carries responsibility, and how the policy frames accountability for the experience.',
+            'cannot_conclude' => 'Institutional policy alone cannot identify every implementation defect, establish that registration is usable for every person, or substitute for testing and standards evidence.',
+        ],
+    ],
 ];
