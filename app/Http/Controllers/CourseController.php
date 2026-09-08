@@ -58,6 +58,13 @@ class CourseController extends Controller
         ]);
     }
 
+    public function instructorAnswerKey(int $module)
+    {
+        return view('course.instructor.answer-key', [
+            'module' => Course::instructorModule($module),
+        ]);
+    }
+
     public function resources(int $module)
     {
         $moduleData = Course::module($module);

@@ -10,6 +10,7 @@ namespace App\Support;
 class Course
 {
     protected static ?array $config = null;
+
     protected static ?array $fieldGuide = null;
 
     public static function config(): array
@@ -66,6 +67,19 @@ class Course
         abort_if($summary === null, 404);
 
         return array_merge($defaults, $summary);
+    }
+
+    public static function instructorModule(int $number): array
+    {
+        $path = resource_path(sprintf('course/instructor/modules/%02d.php', $number));
+
+        abort_unless(file_exists($path), 404);
+
+        $module = require $path;
+
+        abort_unless(($module['not_public'] ?? false) === true, 404);
+
+        return array_merge(['number' => $number], $module);
     }
 
     public static function changelog(): array
@@ -132,7 +146,7 @@ class Course
         foreach ($entry['resource_refs'] ?? [] as $reference) {
             $module = static::module((int) $reference['module']);
 
-            if (!empty($reference['collection'])) {
+            if (! empty($reference['collection'])) {
                 foreach ($module['resource_collections'] ?? [] as $collection) {
                     if (($collection['title'] ?? null) !== $reference['collection']) {
                         continue;
@@ -144,7 +158,7 @@ class Course
                 }
             }
 
-            if (!empty($reference['resource_label'])) {
+            if (! empty($reference['resource_label'])) {
                 foreach ($module['resources'] ?? [] as $resource) {
                     if (($resource['label'] ?? null) === $reference['resource_label']) {
                         $resources[] = $resource;
