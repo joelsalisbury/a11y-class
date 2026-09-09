@@ -145,7 +145,7 @@ return [
             ],
             [
                 'issue' => 'Text and action collision at enlarged scale',
-                'lens' => 'Amber Circle - Text, Scale & Reflow',
+                'lens' => 'Amber Circle - Text, Scale and Reflow',
                 'where' => 'The seat-count and "View space" row at the bottom of each card.',
                 'implemented' => 'The row uses a single no-wrap flex line, so enlarged text can compress, collide, or push the action out of the card.',
                 'initial_notice' => 'The short metadata and action align cleanly at the default desktop size.',
