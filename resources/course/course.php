@@ -37,7 +37,7 @@ return [
 
     'current' => [
         'module' => 2,
-        'session' => 3,
+        'session' => 4,
     ],
 
     'modules' => [

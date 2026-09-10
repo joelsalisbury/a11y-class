@@ -2,6 +2,13 @@
 
 return [
     [
+        'date' => '2026-09-10',
+        'title' => 'Updated Module 02 session count',
+        'description' => 'Updated Module 02 to reflect the addition of Session 04.',
+        'modules' => ['Module 02'],
+    ],
+
+    [
         'date' => '2026-09-07',
         'title' => 'Added Module 02 and WAVE evaluation resources',
         'description' => 'Added Module 02, **Can You See What Matters?**, including Sessions 03-04 and Challenge 02. Added WAVE and visual-accessibility testing resources for investigating color, contrast, text enlargement, reflow, and other visual cues.',
