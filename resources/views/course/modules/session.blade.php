@@ -96,6 +96,15 @@
                                         </div>
                                     @endif
 
+                                    @if (!empty($section['image']))
+                                        <figure class="mt-4">
+                                            <img src="{{ $section['image'] }}" alt="{{ $section['image_alt'] ?? '' }}" class="w-full rounded-lg border border-subtle bg-surface-3" />
+                                            @if (!empty($section['image_caption']))
+                                                <figcaption class="mt-2 text-sm leading-7 text-ink-muted">{{ $section['image_caption'] }}</figcaption>
+                                            @endif
+                                        </figure>
+                                    @endif
+
                                     @if (!empty($section['placeholder']))
                                         <x-panel class="course-callout space-y-2.5" as="div">
                                             <x-meta-label>{{ $section['placeholder']['title'] }}</x-meta-label>

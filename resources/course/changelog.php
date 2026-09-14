@@ -2,6 +2,12 @@
 
 return [
     [
+        'date' => '2026-09-14',
+        'title' => 'Refined Module 03 media examples and resources',
+        'description' => 'Expanded the Module 03 in-class media examples and clarified resources for image alternatives, complex visuals, captions, transcripts, and visual description.',
+        'modules' => ['Module 03'],
+    ],
+    [
         'date' => '2026-09-10',
         'title' => 'Updated Module 02 session count',
         'description' => 'Updated Module 02 to reflect the addition of Session 04.',

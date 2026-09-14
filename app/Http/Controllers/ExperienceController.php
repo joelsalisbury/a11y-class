@@ -13,4 +13,9 @@ class ExperienceController extends Controller
     {
         return view('experiences.campus-study-space-finder');
     }
+
+    public function universityResearchStory()
+    {
+        return view('experiences.university-research-story');
+    }
 }

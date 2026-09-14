@@ -36,8 +36,8 @@ return [
     ],
 
     'current' => [
-        'module' => 2,
-        'session' => 4,
+        'module' => 3,
+        'session' => 5,
     ],
 
     'modules' => [
@@ -48,12 +48,12 @@ return [
         ],
         2 => [
             'title' => 'Can You See What Matters?',
-            'status' => 'current',
+            'status' => 'complete',
             'central_question' => 'Can users perceive and understand the information an interface is trying to communicate?',
         ],
         3 => [
             'title' => 'What Does This Media Say?',
-            'status' => 'upcoming',
+            'status' => 'current',
             'central_question' => 'How should information conveyed through images, audio, video, and other media be made available in other forms?',
         ],
         4 => [

@@ -43,3 +43,10 @@ Route::get('/experiences/campus-event-registration', [ExperienceController::clas
 
 Route::get('/experiences/campus-study-space-finder', [ExperienceController::class, 'campusStudySpaceFinder'])
     ->name('experiences.campus-study-space-finder');
+
+Route::get('/experiences/university-research-story', [ExperienceController::class, 'universityResearchStory'])
+    ->name('experiences.university-research-story');
+
+Route::get('/demos/media-purpose', function () {
+    return view('demos.media-purpose');
+})->name('demos.media-purpose');
