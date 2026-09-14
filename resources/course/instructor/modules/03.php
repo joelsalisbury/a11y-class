@@ -8,8 +8,8 @@ return [
         5 => [
             'label' => 'SESSION 05',
             'run_of_show' => [
-                'Look back at Module 02: compare the green-blue trail sign and the role of color in communicating meaning.',
-                'Transition: move from interface cues to media that carries information in its own right.',
+                'Challenge 02 Review: project and compare the three Challenge 02 submissions before moving on.',
+                'One more real-world example: briefly revisit the green-blue bike-event sign as a final Module 02 example.',
                 'Media has a job: define the core question and the difference between a visual or audio element being decorative, informative, or essential to understanding.',
                 'In-class demo: project /demos/media-purpose and walk through the three examples.',
                 'First Look: students spend a few minutes using the University Research Feature / Digital Story before the challenge is introduced.',

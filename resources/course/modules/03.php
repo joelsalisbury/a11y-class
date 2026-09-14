@@ -17,18 +17,31 @@ return [
             'overview' => 'Last module focused on visual cues in an interface. This module asks a different question: what happens when the image, chart, audio, or video itself carries the information?',
             'sections' => [
                 [
+                    'title' => 'Challenge 02 Review',
+                    'paragraphs' => [
+                        'Before we move on, let’s take a look at the three Challenge 02 submissions.',
+                        'Each team investigated a different part of the same visual-accessibility problem. As we compare the work, pay attention to the evidence each team used, what they changed, and whether the redesign actually addressed the barrier they identified.',
+                    ],
+                    'ordered' => [
+                        'What did each team identify as the most important barrier?',
+                        'What evidence supported the finding?',
+                        'What changed in the redesign?',
+                        'How do we know the redesign is actually better?',
+                        'Where did the three team perspectives overlap?',
+                    ],
+
+                    'actions' => [
+                        ['label' => 'Open Module 02 Class Work →', 'href' => '/modules/02#module-class-work'],
+                    ],
+                ],
+                [
                     'title' => 'One More Thing About Color',
                     'paragraphs' => [
-                        'Before we leave visual presentation behind, look at this trail sign from a bike event. Two routes split here. One is marked with green arrows and one with blue arrows.',
+                        'Before we leave visual presentation behind, here is one more example from outside a web interface. Two routes split here. One is marked with green arrows and one with blue arrows.',
                     ],
-                    'image' => '/images/media-purpose-bike.jpg',
+                    'image' => '/images/sign-challenge.png',
                     'image_alt' => 'Trail junction sign with green and blue arrows marking two routes at a bike event.',
-                    'image_caption' => 'The route markers rely on color to distinguish the paths.',
-                    'bullets' => [
-                        'How is the sign communicating which route is which?',
-                        'What information depends on color?',
-                        'What could preserve the useful color coding while adding another cue?',
-                    ],
+                    'image_caption' => "What's wrong with this image?",
                 ],
                 [
                     'title' => 'Media Has a Job',
