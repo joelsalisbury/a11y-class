@@ -44,9 +44,14 @@ Route::get('/experiences/campus-event-registration', [ExperienceController::clas
 Route::get('/experiences/campus-study-space-finder', [ExperienceController::class, 'campusStudySpaceFinder'])
     ->name('experiences.campus-study-space-finder');
 
-Route::get('/experiences/university-research-story', [ExperienceController::class, 'universityResearchStory'])
-    ->name('experiences.university-research-story');
+Route::get('/modules/{module}/media-lab', [CourseController::class, 'mediaLab'])
+    ->whereNumber('module')
+    ->name('modules.media-lab');
 
-Route::get('/demos/media-purpose', function () {
-    return view('demos.media-purpose');
-})->name('demos.media-purpose');
+Route::get('/modules/{module}/key-concepts', [CourseController::class, 'keyConceptsIndex'])
+    ->whereNumber('module')
+    ->name('modules.key-concepts');
+
+Route::get('/modules/{module}/key-concepts/{slug}', [CourseController::class, 'keyConcept'])
+    ->whereNumber('module')
+    ->name('modules.key-concepts.show');

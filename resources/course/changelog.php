@@ -3,8 +3,8 @@
 return [
     [
         'date' => '2026-09-14',
-        'title' => 'Refined Module 03 media examples and resources',
-        'description' => 'Expanded the Module 03 in-class media examples and clarified resources for image alternatives, complex visuals, captions, transcripts, and visual description.',
+        'title' => 'Refined Module 03 media accessibility activities',
+        'description' => 'Simplified Module 03 around a focused Media Lab and five key concepts that now link directly to authoritative W3C and WCAG references for image purpose, accessible alternatives, complex visuals, and audio/video information.',
         'modules' => ['Module 03'],
     ],
     [

@@ -74,6 +74,43 @@ class CourseController extends Controller
         ]);
     }
 
+    public function mediaLab(int $module)
+    {
+        $moduleData = Course::module($module);
+
+        abort_unless(! empty($moduleData['media_lab']), 404);
+
+        return view('course.media-lab', [
+            'module' => $moduleData,
+            'items' => $moduleData['media_lab'],
+        ]);
+    }
+
+    public function keyConceptsIndex(int $module)
+    {
+        $collection = \App\Support\KeyConcepts::collection($module);
+
+        return view('course.key-concepts.index', [
+            'module' => $module,
+            'collection' => $collection,
+        ]);
+    }
+
+    public function keyConcept(int $module, string $slug)
+    {
+        $context = \App\Support\KeyConcepts::concept($module, $slug);
+
+        return view('course.key-concepts.show', [
+            'module' => $module,
+            'collection' => $context['collection'],
+            'concept' => $context['concept'],
+            'conceptIndex' => $context['index'],
+            'conceptTotal' => $context['total'],
+            'previousConcept' => $context['previous'],
+            'nextConcept' => $context['next'],
+        ]);
+    }
+
     public function fieldGuide()
     {
         return view('course.field-guide', [
