@@ -3,8 +3,8 @@
 return [
     [
         'date' => '2026-09-14',
-        'title' => 'Refined Module 03 media accessibility activities',
-        'description' => 'Simplified Module 03 around a focused Media Lab and five key concepts that now link directly to authoritative W3C and WCAG references for image purpose, accessible alternatives, complex visuals, and audio/video information.',
+        'title' => 'Updated Challenge 03 for Quiz 1 study guide',
+        'description' => 'Updated Challenge 03 to create a cumulative Quiz 1 study guide covering Modules 01–03, with new cross-module team assignments, evidence requirements, and workshop sessions.',
         'modules' => ['Module 03'],
     ],
     [

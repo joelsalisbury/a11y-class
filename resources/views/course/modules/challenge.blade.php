@@ -47,7 +47,20 @@
                     <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                         @foreach ($challenge['teams'] as $team)
                             <x-team-card :team="$team['team']" :shape="$team['shape']" :tone="$team['tone']">
-                                <p><strong class="text-ink">{{ $team['lens'] }}:</strong> {{ $team['description'] }}</p>
+                                @if (!empty($team['description']))
+                                    <p>{{ $team['description'] }}</p>
+                                @endif
+
+                                @if (!empty($team['topics']))
+                                    <div class="mt-4 space-y-5">
+                                        @foreach ($team['topics'] as $topic)
+                                            <section class="border-t border-subtle pt-4">
+                                                <h3 class="text-lg font-semibold text-ink">{{ $topic['module'] }}: {{ $topic['title'] }}</h3>
+                                                <p class="mt-2 text-sm leading-7 text-ink-muted">{{ $topic['description'] }}</p>
+                                            </section>
+                                        @endforeach
+                                    </div>
+                                @endif
 
                                 @if (!empty($team['questions']))
                                     <ul class="mt-3 list-disc space-y-1.5 pl-5 text-sm text-ink-muted marker:text-ink">
@@ -60,6 +73,19 @@
                         @endforeach
                     </div>
                 </section>
+
+                @if (!empty($challenge['shared_expectations']))
+                    <section id="challenge-shared-expectations" class="course-section module-anchor">
+                        <x-section-heading title="For Each Topic" />
+                        <div class="course-copy">
+                            <ul>
+                                @foreach ($challenge['shared_expectations'] as $expectation)
+                                    <li>{{ $expectation }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </section>
+                @endif
 
                 <section id="challenge-deliverable" class="course-section module-anchor">
                     <x-section-heading title="Deliverable" :description="$challenge['deliverable']['summary'] ?? 'Create one concise team brief.'" />

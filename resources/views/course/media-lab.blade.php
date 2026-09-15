@@ -42,6 +42,12 @@
                         </video>
                     @endif
 
+                    @if (($item['kind'] ?? null) === 'link' && !empty($item['src']))
+                        <a href="{{ $item['src'] }}" target="_blank" rel="noreferrer" class="mt-3 inline-flex text-sm font-semibold text-accent underline decoration-accent/40 underline-offset-4 hover:decoration-accent">
+                            Open resource
+                        </a>
+                    @endif
+
                     @if (!empty($item['context']))
                         <p class="mt-4 text-sm leading-7 text-ink-muted">{{ $item['context'] }}</p>
                     @endif

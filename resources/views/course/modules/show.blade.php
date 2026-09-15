@@ -66,8 +66,8 @@
                         id="module-class-work"
                         :submissions="$module['challenge']['class_work']"
                         title="Class Work"
-                        description="Team deliverables will be archived here after Challenge 01."
-                        emptyMessage="Team deliverables will be archived here after Challenge 01."
+                        description="The three Challenge 03 submissions will be archived here as review material for Quiz 1."
+                        emptyMessage="The three Challenge 03 submissions will be archived here as review material for Quiz 1."
                     />
                 @endif
             </div>
