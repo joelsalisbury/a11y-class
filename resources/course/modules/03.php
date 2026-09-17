@@ -138,14 +138,14 @@ return [
             'label' => 'SESSION 06',
             'title' => 'Is the Alternative Equivalent?',
             'status' => 'upcoming',
-            'summary' => 'Use a short image-alternative review to check the judgment behind your team’s Quiz 1 Study Guide section, then revise and finish Challenge 03.',
+            'summary' => 'Check your Quiz 1 Study Guide work, then revise and finish Challenge 03.',
             'question' => 'How do we know an accessible alternative preserves what matters?',
-            'overview' => 'This is the final working session for Module 03 and preparation for Quiz 1. Keep the image discussion short, then use most of the session to check and finish your team’s Challenge 03 work.',
+            'overview' => 'Final working session for Module 03. Check your study-guide explanations, then finish Challenge 03.',
             'sections' => [
                 [
                     'title' => 'Challenge 03 Check-In',
                     'paragraphs' => [
-                        'Open your team’s Quiz 1 Study Guide work. Before we move on, identify anything that still feels uncertain, oversimplified, or unsupported.',
+                        'Open your team’s Quiz 1 Study Guide. Check the strongest topic, the topic that needs work, and any claim that still needs an authoritative source.',
                     ],
                     'ordered' => [
                         'Which of your three topics feels strongest?',
@@ -156,14 +156,14 @@ return [
                 [
                     'title' => 'Alt Text Is a Judgment',
                     'paragraphs' => [
-                        'Alt text is not a visual inventory. It should communicate the relevant meaning or function of an image in its context.',
-                        'For an informative image, ask what a person who cannot see the image needs to know. For a decorative image, an empty alt attribute, written as `alt=""`, tells assistive technology that the image does not add meaningful information in this context.',
-                        'Context determines the decision. The same image could need different alt text in a different article, task, or interface. A chart, map, diagram, or other complex visual may require more than a short alt attribute so that its important relationships and data are available elsewhere.',
+                        'What would someone miss if this image were gone?',
+                        'For an informative image, write the meaning or function that matters. For a decorative image, use `alt=""`; in that context, the image adds no meaningful information.',
+                        'Context changes the answer. The same image may need different alt text elsewhere. A chart, map, diagram, or other complex visual may need a longer equivalent so its important relationships and data are available.',
                     ],
                     'image' => '/images/module-3-bus.png',
                     'image_alt' => 'A city street scene with a bus stop, traffic, and a row of storefronts.',
-                    'image_caption' => 'Existing Module 03 example: decide what matters about this image before writing its alternative. Compare the bus photo with the storefront illustration, map, and attendance chart in the Media Lab.',
-                    'ordered_intro' => 'Work through a few existing examples together:',
+                    'image_caption' => 'What matters about this image in context? Compare it with the storefront illustration, map, and attendance chart in the Media Lab.',
+                    'ordered_intro' => 'Discuss the existing examples:',
                     'ordered' => [
                         'For the bus-stop photograph, what information or function matters in the surrounding page?',
                         'For the storefront illustration, when would `alt=""` be appropriate because its use is decorative in that context?',
@@ -177,6 +177,23 @@ return [
                     ],
                 ],
                 [
+                    'title' => 'Media Alternatives in Practice',
+                    'paragraphs' => [
+                        'A short alt can identify a chart, map, diagram, or infographic and sometimes state its main point. If important information will not fit, add a longer equivalent: visible explanation, structured data, a table, directions, or another suitable representation. Preserve the information and relationships that matter, not every pixel.',
+                        'Captions stay synchronized with audio and video. They include speech and meaningful non-speech sounds. Transcripts make the content available as separate readable text, but a transcript does not normally replace captions for video.',
+                        'On a webpage, captions can use native HTML `<track kind="captions">` with a WebVTT file, or come from YouTube, Vimeo, Panopto, or a similar platform. Put a transcript below the media, inside native `<details>` / `<summary>`, or on a separate linked HTML page for longer content.',
+                    ],
+                    'emphasis' => [
+                        'Short alt identifies the visual. The accessible equivalent communicates the information.',
+                    ],
+                    'ordered_intro' => 'Discuss:',
+                    'ordered' => [
+                        'What information or relationships would a short alternative leave out of the map, chart, or video?',
+                        'Watch once without sound. What disappears? Now imagine you cannot see it. What disappears then?',
+                        'Which implementation would best preserve that information in this context?',
+                    ],
+                ],
+                [
                     'title' => 'Suggested Topics for the Study Guide',
                     'bullets' => [
                         'Module 01: Accessible According to Whom?',
@@ -186,7 +203,7 @@ return [
                         'POUR.',
                         'WCAG success criteria and A / AA / AAA conformance.',
                         'Authoritative sources and evidence.',
-                        'The limits of legal compliance, institutional policy, and WCAG conformance as complete measures of accessibility.',
+                        'The limits of legal compliance, institutional policy, and WCAG conformance as complete measures.',
                         'The recurring question: How do you know?',
                         'Module 02: Can You See What Matters?',
                         'Color dependence.',
@@ -195,7 +212,7 @@ return [
                         'Clipping, overlap, and loss of content or function.',
                         'Visual cues such as color, shape, position, boundaries, and state.',
                         'Testing with tools such as WAVE and contrast checkers.',
-                        'Automated and tool output is evidence to investigate, not a final accessibility verdict.',
+                        'Tool output is evidence to investigate, not a final accessibility verdict.',
                         'Redesigning and retesting a claim.',
                         'Module 03: What Does This Media Say?',
                         'Informative versus decorative images.',
@@ -210,13 +227,13 @@ return [
                         'Whether an alternative actually preserves what matters.',
                     ],
                     'paragraphs_after' => [
-                        'Use your Challenge 03 topics, earlier Challenges, course resources, and authoritative sources to decide what belongs in your study guide.',
+                        'Use your Challenge 03 topics, earlier Class Work, course resources, and authoritative sources to decide what belongs in your study guide.',
                     ],
                 ],
                 [
                     'title' => 'Cross-Check the Study Guide',
                     'paragraphs' => [
-                        'Exchange one of your three Challenge 03 topics with another team. No separate submission or formal peer-review form is required.',
+                        'Exchange one Challenge 03 topic with another team. No separate submission or formal peer-review form is required.',
                     ],
                     'ordered' => [
                         'Identify one thing that is clear.',
@@ -227,7 +244,7 @@ return [
                 [
                     'title' => 'Finish Challenge 03',
                     'paragraphs' => [
-                        'Use the remainder of class to revise and finish your Quiz 1 Study Guide section.',
+                        'Use the rest of class to revise and finish your Quiz 1 Study Guide section.',
                     ],
                     'challenge_reference' => [
                         'title' => 'Build the Quiz 1 Study Guide',
