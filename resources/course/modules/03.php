@@ -198,7 +198,6 @@ return [
                     'bullets' => [
                         'Module 01: Accessible According to Whom?',
                         'ADA Title II, Section 504, and the role and scope of Section 508.',
-                        'UConn Digital Accessibility Policy.',
                         'WCAG and W3C.',
                         'POUR.',
                         'WCAG success criteria and A / AA / AAA conformance.',
