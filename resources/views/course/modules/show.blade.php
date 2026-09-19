@@ -1,4 +1,14 @@
 <x-layouts.app :title="'Module ' . str_pad((string) $module['number'], 2, '0', STR_PAD_LEFT)">
+    @php
+        $classWorkSubmissions = collect($module['challenge']['class_work'] ?? [])->filter(function ($submission) {
+            return filled(data_get($submission, 'title'))
+                || filled(data_get($submission, 'description'))
+                || filled(data_get($submission, 'artifact.url'))
+                || filled(data_get($submission, 'artifact'))
+                || filled(data_get($submission, 'artifact_url'));
+        })->values();
+    @endphp
+
     <div class="module-shell">
         <x-course.module-navigation
             :module="$module"
@@ -61,13 +71,46 @@
                     </section>
                 @endif
 
+                @if ((int) $module['number'] === 3 && $classWorkSubmissions->isNotEmpty())
+                    <section class="max-w-3xl space-y-3">
+                        <x-section-heading title="Quiz 1 Study Guides" />
+
+                        <p class="text-sm leading-7 text-ink-muted">Challenge 03 produced three study guides covering the first three modules.</p>
+
+                        <div class="flex flex-col gap-2">
+                            @foreach ($classWorkSubmissions as $submission)
+                                @php
+                                    $artifact = $submission['artifact'] ?? [];
+
+                                    if (is_string($artifact)) {
+                                        $artifact = ['url' => $artifact];
+                                    }
+
+                                    $artifactUrl = is_array($artifact) ? ($artifact['url'] ?? ($submission['artifact_url'] ?? null)) : null;
+                                    $artifactNewTab = (bool) (($artifact['new_tab'] ?? $submission['artifact_new_tab'] ?? false));
+                                    $linkLabel = ($submission['team'] ?? 'Team').' Study Guide';
+                                @endphp
+
+                                @if ($artifactUrl)
+                                    <a href="{{ $artifactUrl }}" @if ($artifactNewTab) target="_blank" rel="noopener noreferrer" @endif class="inline-flex items-start gap-2 rounded-sm text-sm font-medium text-accent-cyan hover:text-accent-cyan-strong focus-visible:focus-ring">
+                                        <span>{{ $linkLabel }}</span>
+                                        @if ($artifactNewTab)
+                                            <span aria-hidden="true">↗</span>
+                                        @endif
+                                    </a>
+                                @endif
+                            @endforeach
+                        </div>
+                    </section>
+                @endif
+
                 @if ($module['challenge'])
                     <x-course.class-work-section
                         id="module-class-work"
                         :submissions="$module['challenge']['class_work']"
-                        title="Class Work"
-                        description="The three Challenge 03 submissions will be archived here as review material for Quiz 1."
-                        emptyMessage="The three Challenge 03 submissions will be archived here as review material for Quiz 1."
+                        :title="$module['challenge']['class_work_section_title'] ?? 'Class Work'"
+                        :description="$module['challenge']['class_work_section_description'] ?? 'The three Challenge '.str_pad((string) $module['number'], 2, '0', STR_PAD_LEFT).' submissions will be archived here as review material.'"
+                        :emptyMessage="$module['challenge']['class_work_empty_message'] ?? 'Team deliverables will appear here after the challenge cycle.'"
                     />
                 @endif
             </div>

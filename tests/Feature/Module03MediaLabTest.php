@@ -39,7 +39,12 @@ it('has a media lab route and a simplified Module 03 structure', function () {
 
     $this->get('/modules/3')
         ->assertOk()
-        ->assertSee('The three Challenge 03 submissions will be archived here as review material for Quiz 1.');
+        ->assertSee('Quiz 1 Study Guides')
+        ->assertSee('Each team created part of the Quiz 1 Study Guide covering material from Modules 01–03.')
+        ->assertSee('Challenge 03 produced three study guides covering the first three modules.')
+        ->assertSee('Cyan Triangle Study Guide')
+        ->assertSee('Amber Circle Study Guide')
+        ->assertSee('Violet Square Study Guide');
 
     expect(Course::module(3)['challenge']['experience_under_review'] ?? null)->toBeNull();
     expect(Course::module(3)['challenge']['teams'])->toHaveCount(3);
