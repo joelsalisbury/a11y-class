@@ -11,6 +11,28 @@
                 <p class="max-w-3xl text-xl leading-8 text-ink-muted">{{ $concept['summary'] }}</p>
             </header>
 
+            @if (!empty($concept['emphasis']))
+                <p class="text-2xl font-semibold leading-9 text-ink">{{ $concept['emphasis'] }}</p>
+            @endif
+
+            @if (!empty($concept['examples']))
+                <section class="space-y-3">
+                    <h2 class="text-lg font-semibold uppercase tracking-[0.12em] text-ink-muted">Try It</h2>
+                    <ul class="list-disc space-y-3 pl-5 text-lg leading-8 text-ink-muted marker:text-ink">
+                        @foreach ($concept['examples'] as $example)
+                            <li>{{ $example }}</li>
+                        @endforeach
+                    </ul>
+                </section>
+            @endif
+
+            @if (!empty($concept['quick_test']))
+                <section class="rounded-xl border border-accent-cyan/40 bg-surface-2 p-6 md:p-8">
+                    <h2 class="text-lg font-semibold uppercase tracking-[0.12em] text-ink-muted">Quick Test</h2>
+                    <p class="mt-4 text-2xl font-semibold leading-9 text-ink">{{ $concept['quick_test'] }}</p>
+                </section>
+            @endif
+
             @if (!empty($concept['references']))
                 <section class="rounded-xl border border-subtle bg-surface-2 p-6 md:p-8">
                     <h2 class="text-lg font-semibold uppercase tracking-[0.12em] text-ink-muted">Read / Reference</h2>

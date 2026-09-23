@@ -255,6 +255,26 @@ return [
                 ],
             ],
         ],
+        7 => [
+            'label' => 'SESSION 07',
+            'title' => 'Quiz 1',
+            'status' => 'complete',
+            'summary' => 'Complete Quiz 1 covering the first three modules.',
+            'question' => 'What do you need to remember to make and defend good accessibility decisions?',
+            'overview' => 'Quiz 1 covers the concepts, evidence, testing methods, and decisions from Modules 01, 02, and 03.',
+            'sections' => [
+                [
+                    'title' => 'Quiz 1',
+                    'paragraphs' => [
+                        'Use the time today to complete Quiz 1 through HuskyCT.',
+                        'The quiz draws on the first three modules, the course resources, and the work your teams completed for the study guide.',
+                    ],
+                    'emphasis' => [
+                        'AI output is not evidence.',
+                    ],
+                ],
+            ],
+        ],
     ],
 
     'challenge' => [

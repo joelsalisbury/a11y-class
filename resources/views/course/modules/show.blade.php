@@ -56,6 +56,21 @@
                     @endif
                 </section>
 
+                @if (!empty($module['key_concepts']))
+                    <section class="space-y-5">
+                        <x-section-heading title="Key Concepts" description="Six short concepts to revisit while you work through Module 04." />
+
+                        <div class="grid gap-3 md:grid-cols-2">
+                            @foreach ($module['key_concepts'] as $concept)
+                                <a href="{{ route('modules.key-concepts.show', ['module' => $module['number'], 'slug' => $concept['slug']]) }}" class="rounded-lg border border-subtle bg-surface-2 p-4 transition hover:border-accent-cyan/60 hover:bg-surface-3 focus-visible:focus-ring">
+                                    <p class="text-sm font-semibold text-ink">{{ $concept['title'] }}</p>
+                                    <span class="mt-2 inline-flex text-sm font-medium text-accent-cyan">Open concept →</span>
+                                </a>
+                            @endforeach
+                        </div>
+                    </section>
+                @endif
+
                 @if ($module['challenge'])
                     <section class="space-y-5">
                         <x-section-heading title="Challenge {{ str_pad((string) $module['number'], 2, '0', STR_PAD_LEFT) }} — {{ $module['challenge']['title'] }}" />

@@ -14,7 +14,7 @@
 
             <div class="course-flow">
                 <section id="challenge-problem" class="course-section module-anchor">
-                    <x-section-heading title="The Problem" />
+                    <x-section-heading :title="$challenge['problem_title'] ?? 'The Problem'" />
                     <div class="course-copy">
                         @if (!empty($challenge['problem']))
                             <p>{{ $challenge['problem'] }}</p>
@@ -26,6 +26,21 @@
                         @endif
                     </div>
                 </section>
+
+                @if (!empty($challenge['assigned_experiences']))
+                    <section id="challenge-assigned-experiences" class="course-section module-anchor">
+                        <x-section-heading title="Assigned Experiences" description="Each team receives one interactive experience and one task." />
+                        <div class="grid gap-4 md:grid-cols-3">
+                            @foreach ($challenge['assigned_experiences'] as $experience)
+                                <x-team-card :team="$experience['team']" :shape="$experience['shape']" :tone="$experience['tone']">
+                                    <h3 class="text-lg font-semibold text-ink">{{ $experience['title'] }}</h3>
+                                    <p class="mt-2 text-sm leading-7 text-ink-muted">{{ $experience['task'] }}</p>
+                                    <a href="{{ route($experience['route']) }}" class="mt-4 inline-flex text-sm font-medium text-accent-cyan hover:text-accent-cyan-strong focus-visible:focus-ring rounded-sm">Open experience →</a>
+                                </x-team-card>
+                            @endforeach
+                        </div>
+                    </section>
+                @endif
 
                 @if (!empty($challenge['experience_under_review']))
                     <section id="challenge-experience-under-review" class="course-section module-anchor">
@@ -41,38 +56,60 @@
                     </section>
                 @endif
 
-                <section id="challenge-team-assignments" class="course-section module-anchor">
-                    <x-section-heading title="Team Assignments" description="All three team assignments are visible below so you can see the full challenge structure." />
+                @if (!empty($challenge['team_assignment']))
+                    <section id="challenge-team-assignment" class="course-section module-anchor">
+                        <x-section-heading title="Team Assignment" />
+                        <div class="course-copy">
+                            <p>{{ $challenge['team_assignment'] }}</p>
 
-                    <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-                        @foreach ($challenge['teams'] as $team)
-                            <x-team-card :team="$team['team']" :shape="$team['shape']" :tone="$team['tone']">
-                                @if (!empty($team['description']))
-                                    <p>{{ $team['description'] }}</p>
-                                @endif
+                            @if (!empty($challenge['investigation']))
+                                <h3>Investigation</h3>
+                                <ol>
+                                    @foreach ($challenge['investigation'] as $item)
+                                        <li>{{ $item }}</li>
+                                    @endforeach
+                                </ol>
+                            @endif
 
-                                @if (!empty($team['topics']))
-                                    <div class="mt-4 space-y-5">
-                                        @foreach ($team['topics'] as $topic)
-                                            <section class="border-t border-subtle pt-4">
-                                                <h3 class="text-lg font-semibold text-ink">{{ $topic['module'] }}: {{ $topic['title'] }}</h3>
-                                                <p class="mt-2 text-sm leading-7 text-ink-muted">{{ $topic['description'] }}</p>
-                                            </section>
-                                        @endforeach
-                                    </div>
-                                @endif
+                            @if (!empty($challenge['investigation_note']))
+                                <p>{{ $challenge['investigation_note'] }}</p>
+                            @endif
+                        </div>
+                    </section>
+                @else
+                    <section id="challenge-team-assignments" class="course-section module-anchor">
+                        <x-section-heading title="Team Assignments" description="All three team assignments are visible below so you can see the full challenge structure." />
 
-                                @if (!empty($team['questions']))
-                                    <ul class="mt-3 list-disc space-y-1.5 pl-5 text-sm text-ink-muted marker:text-ink">
-                                        @foreach ($team['questions'] as $item)
-                                            <li>{{ $item }}</li>
-                                        @endforeach
-                                    </ul>
-                                @endif
-                            </x-team-card>
-                        @endforeach
-                    </div>
-                </section>
+                        <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                            @foreach ($challenge['teams'] as $team)
+                                <x-team-card :team="$team['team']" :shape="$team['shape']" :tone="$team['tone']">
+                                    @if (!empty($team['description']))
+                                        <p>{{ $team['description'] }}</p>
+                                    @endif
+
+                                    @if (!empty($team['topics']))
+                                        <div class="mt-4 space-y-5">
+                                            @foreach ($team['topics'] as $topic)
+                                                <section class="border-t border-subtle pt-4">
+                                                    <h3 class="text-lg font-semibold text-ink">{{ $topic['module'] }}: {{ $topic['title'] }}</h3>
+                                                    <p class="mt-2 text-sm leading-7 text-ink-muted">{{ $topic['description'] }}</p>
+                                                </section>
+                                            @endforeach
+                                        </div>
+                                    @endif
+
+                                    @if (!empty($team['questions']))
+                                        <ul class="mt-3 list-disc space-y-1.5 pl-5 text-sm text-ink-muted marker:text-ink">
+                                            @foreach ($team['questions'] as $item)
+                                                <li>{{ $item }}</li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
+                                </x-team-card>
+                            @endforeach
+                        </div>
+                    </section>
+                @endif
 
                 @if (!empty($challenge['shared_expectations']))
                     <section id="challenge-shared-expectations" class="course-section module-anchor">
@@ -83,6 +120,23 @@
                                     <li>{{ $expectation }}</li>
                                 @endforeach
                             </ul>
+                        </div>
+                    </section>
+                @endif
+
+                @if (!empty($challenge['redesign']) || !empty($challenge['retest']))
+                    <section id="challenge-solution" class="course-section module-anchor">
+                        <x-section-heading title="Redesign and Retest" />
+                        <div class="course-copy">
+                            @if (!empty($challenge['redesign']))
+                                <h3>Redesign</h3>
+                                <p>{{ $challenge['redesign'] }}</p>
+                            @endif
+
+                            @if (!empty($challenge['retest']))
+                                <h3>Retest</h3>
+                                <p>{{ $challenge['retest'] }}</p>
+                            @endif
                         </div>
                     </section>
                 @endif

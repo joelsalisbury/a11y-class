@@ -44,6 +44,18 @@ Route::get('/experiences/campus-event-registration', [ExperienceController::clas
 Route::get('/experiences/campus-study-space-finder', [ExperienceController::class, 'campusStudySpaceFinder'])
     ->name('experiences.campus-study-space-finder');
 
+Route::get('/modules/4/interaction-lab', [ExperienceController::class, 'module04Lab'])
+    ->name('experiences.module04.lab');
+
+Route::get('/experiences/module-04/course-finder', [ExperienceController::class, 'module04CourseFinder'])
+    ->name('experiences.module04.course-finder');
+
+Route::get('/experiences/module-04/task-prioritizer', [ExperienceController::class, 'module04TaskPrioritizer'])
+    ->name('experiences.module04.task-prioritizer');
+
+Route::get('/experiences/module-04/event-browser', [ExperienceController::class, 'module04EventBrowser'])
+    ->name('experiences.module04.event-browser');
+
 Route::get('/modules/{module}/media-lab', [CourseController::class, 'mediaLab'])
     ->whereNumber('module')
     ->name('modules.media-lab');

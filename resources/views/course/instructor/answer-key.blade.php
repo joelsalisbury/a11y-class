@@ -50,6 +50,33 @@
                 </section>
             @endif
 
+            @if (!empty($module['experience_notes']))
+                <section class="space-y-5">
+                    <x-section-heading title="Interaction Lab barrier notes" description="Intentional defects in the controlled Module 04 experiences." />
+
+                    @foreach ($module['experience_notes'] as $experience)
+                        <article class="panel space-y-5">
+                            <div>
+                                <p class="meta-label">{{ $experience['team'] }}</p>
+                                <h2 class="mt-2 text-xl font-semibold text-ink">{{ $experience['lens'] }}</h2>
+                            </div>
+
+                            <div class="grid gap-4 text-sm md:grid-cols-2">
+                                <div>
+                                    <h3 class="font-semibold text-ink">Intentional barriers</h3>
+                                    <ul class="mt-2 list-disc space-y-2 pl-5 leading-7 text-ink-muted">
+                                        @foreach ($experience['barriers'] as $barrier)
+                                            <li>{{ $barrier }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                                <p class="leading-7 text-ink-muted"><strong class="text-ink">Primary concepts:</strong> {{ $experience['concepts'] }}</p>
+                            </div>
+                        </article>
+                    @endforeach
+                </section>
+            @endif
+
             @if (empty($module['challenge_answer_key']) && !empty($module['sample_experience']['answer_key']))
                 <section class="space-y-5">
                     <x-section-heading title="Sample experience defect key" description="Intentional findings in the Design Futures registration experience." />

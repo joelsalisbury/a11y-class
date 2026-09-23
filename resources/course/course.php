@@ -36,8 +36,8 @@ return [
     ],
 
     'current' => [
-        'module' => 3,
-        'session' => 5,
+        'module' => 4,
+        'session' => 8,
     ],
 
     'modules' => [
@@ -53,12 +53,12 @@ return [
         ],
         3 => [
             'title' => 'What Does This Media Say?',
-            'status' => 'current',
+            'status' => 'complete',
             'central_question' => 'How should information conveyed through images, audio, video, and other media be made available in other forms?',
         ],
         4 => [
             'title' => 'Can You Use It Your Way?',
-            'status' => 'upcoming',
+            'status' => 'current',
             'central_question' => 'Can users successfully operate an interface using different methods of input and interaction?',
         ],
         5 => [

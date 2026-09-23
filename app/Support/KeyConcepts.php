@@ -111,6 +111,125 @@ class KeyConcepts
                     ],
                 ],
             ],
+            4 => [
+                'module' => 4,
+                'title' => 'Key Concepts: Operability',
+                'concepts' => [
+                    [
+                        'slug' => 'everything-interactive-needs-a-keyboard-path',
+                        'title' => 'Everything Interactive Needs a Keyboard Path',
+                        'summary' => 'If you can do it with a mouse, there should be a keyboard-accessible way to do the same thing.',
+                        'examples' => [
+                            'Links, buttons, menus, form controls, and custom interactive widgets all need a way to complete their task without a mouse.',
+                        ],
+                        'quick_test' => 'Put the mouse away. Can you still complete the task?',
+                        'references' => [
+                            [
+                                'label' => 'Understanding WCAG 2.2: 2.1.1 Keyboard',
+                                'href' => 'https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html',
+                                'description' => 'Functionality should be operable through a keyboard interface where applicable.',
+                            ],
+                        ],
+                    ],
+                    [
+                        'slug' => 'focus-has-to-be-visible',
+                        'title' => 'Focus Has to Be Visible',
+                        'summary' => 'Keyboard users need to know where they are before they can act.',
+                        'examples' => [
+                            'A clear outline or other effective change shows the element currently receiving keyboard input. A control can have focus and still be impossible to see.',
+                            'Removing the browser focus outline without providing an effective replacement creates a problem.',
+                        ],
+                        'quick_test' => 'When you press Tab, can you always tell where you landed?',
+                        'references' => [
+                            [
+                                'label' => 'Understanding WCAG 2.2: 2.4.7 Focus Visible',
+                                'href' => 'https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html',
+                                'description' => 'Keyboard-operable user interfaces need a visible focus indicator.',
+                            ],
+                        ],
+                    ],
+                    [
+                        'slug' => 'focus-order-should-follow-the-experience',
+                        'title' => 'Focus Order Should Follow the Experience',
+                        'summary' => 'Keyboard focus should move through the interface in an order that preserves meaning and usability.',
+                        'examples' => [
+                            'Normal keyboard navigation generally follows document and DOM order. A visual layout that says one thing while focus jumps around says another.',
+                            '`tabindex="0"` places an element in the normal sequential focus order according to its document position. `tabindex="-1"` removes it from normal Tab navigation but still allows programmatic focus. Positive values such as `tabindex="1"` or `tabindex="5"` create a custom order and should generally be avoided.',
+                        ],
+                        'quick_test' => 'Fix the document order before you fix the tab order.',
+                        'references' => [
+                            [
+                                'label' => 'Understanding WCAG 2.2: 2.4.3 Focus Order',
+                                'href' => 'https://www.w3.org/WAI/WCAG22/Understanding/focus-order.html',
+                                'description' => 'Focus order should preserve meaning and operability as users move through the content.',
+                            ],
+                        ],
+                    ],
+                    [
+                        'slug' => 'focusable-does-not-mean-usable',
+                        'title' => 'Focusable Does Not Mean Usable',
+                        'summary' => 'Adding `tabindex="0"` does not turn a generic element into a button.',
+                        'examples' => [
+                            'A `div` with a click handler might work with a mouse. Adding `tabindex="0"` may allow keyboard focus to reach it, but it does not automatically provide expected activation behavior.',
+                            'A native `button` already supports the interaction behavior users expect. Start with the native control when it fits the task.',
+                        ],
+                        'quick_test' => 'Can you focus it, activate it, and continue the task using the expected keys?',
+                        'emphasis' => 'Native controls already know how to behave.',
+                        'references' => [
+                            [
+                                'label' => 'Understanding WCAG 2.2: 2.1.1 Keyboard',
+                                'href' => 'https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html',
+                                'description' => 'Keyboard access applies to functionality, not only to whether an element can receive focus.',
+                            ],
+                        ],
+                    ],
+                    [
+                        'slug' => 'you-have-to-be-able-to-get-back-out',
+                        'title' => 'You Have to Be Able to Get Back Out',
+                        'summary' => 'If keyboard focus can enter an interaction, keyboard users need a predictable way to leave it.',
+                        'examples' => [
+                            'Dialogs, custom widgets, and embedded interactions can become traps if keyboard focus cannot leave normally or the user is not told how to leave.',
+                        ],
+                        'quick_test' => 'Tab into it. Use it. Can you keep going?',
+                        'references' => [
+                            [
+                                'label' => 'Understanding WCAG 2.2: 2.1.2 No Keyboard Trap',
+                                'href' => 'https://www.w3.org/WAI/WCAG22/Understanding/no-keyboard-trap.html',
+                                'description' => 'Users need a way to move focus away from every component using only the keyboard.',
+                            ],
+                        ],
+                    ],
+                    [
+                        'slug' => 'do-not-require-one-particular-input-method',
+                        'title' => 'Do Not Require One Particular Input Method',
+                        'summary' => 'Dragging, hovering, swiping, and precise pointing should not be the only route to success.',
+                        'examples' => [
+                            'Drag and drop with no Move Up or Move Down alternative.',
+                            'Important controls visible only on hover.',
+                            'Swipe-only navigation and very small or tightly packed targets.',
+                            'Interactions that require precise pointer movement when a simpler method could work.',
+                        ],
+                        'quick_test' => 'What other input method could complete the same task?',
+                        'references' => [
+                            [
+                                'label' => 'Understanding WCAG 2.2: 2.5.1 Pointer Gestures',
+                                'href' => 'https://www.w3.org/WAI/WCAG22/Understanding/pointer-gestures.html',
+                                'description' => 'Pointer gesture functionality should have a simpler single-pointer alternative unless the gesture is essential.',
+                            ],
+                            [
+                                'label' => 'Understanding WCAG 2.2: 2.5.7 Dragging Movements',
+                                'href' => 'https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html',
+                                'description' => 'Dragging functionality should have an alternative pointer method unless dragging is essential.',
+                            ],
+                            [
+                                'label' => 'Understanding WCAG 2.2: 2.5.8 Target Size (Minimum)',
+                                'href' => 'https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html',
+                                'description' => 'Targets should be large enough or spaced well enough to operate reliably, subject to the criterion exceptions.',
+                            ],
+                        ],
+                    ],
+                ],
+            ],
         ];
     }
 
