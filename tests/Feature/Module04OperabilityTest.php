@@ -46,11 +46,24 @@ it('publishes Module 04 and keeps Session 07 as quiz day', function () {
     $this->get('/modules/4/session-9')
         ->assertOk()
         ->assertSee('What happens when an interaction assumes precise pointing, dragging, or one particular input method?')
+        ->assertSee('Precision Gauntlet')
         ->assertSee('Target Size (Minimum)')
         ->assertSee('Dragging')
         ->assertSee('Gestures')
         ->assertSee('Key Concept: Do Not Require One Particular Input Method')
         ->assertSee('Finish Challenge 04');
+
+    $this->get('/experiences/module-04/precision-gauntlet')
+        ->assertOk()
+        ->assertSee('Precision Gauntlet')
+        ->assertSee('Tiny Targets')
+        ->assertSee('Drag It')
+        ->assertSee('Gesture Required')
+        ->assertSee('Swipe to confirm')
+        ->assertSee('USE A SIMPLE CONTROL')
+        ->assertSee('What changed?')
+        ->assertSee('WCAG 2.5.1 Pointer Gestures')
+        ->assertSee('The Disappearing Tooltip');
 
     $conceptSlugs = [
         'everything-interactive-needs-a-keyboard-path',

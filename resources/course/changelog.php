@@ -2,6 +2,12 @@
 
 return [
     [
+        'date' => '2026-09-30',
+        'title' => 'Redesigned the Session 09 Gesture Required demo and clarified the Pointer Gestures lesson',
+        'description' => 'Updated the Session 09 Precision Gauntlet to replace the nonfunctional abstract path-tracing exercise with a realistic swipe-to-confirm example. The new Gesture Required demo requires a directional pointer gesture to complete a reservation flow, while the comparison control shows the same successful outcome with a simple button and no directional gesture requirement. This change more clearly illustrates WCAG 2.5.1 Pointer Gestures and distinguishes path-based pointer gestures from the neighboring Drag It example that demonstrates dragging and alternative input methods.',
+        'modules' => ['Module 04'],
+    ],
+    [
         'date' => '2026-09-14',
         'title' => 'Updated Challenge 03 for Quiz 1 study guide',
         'description' => 'Updated Challenge 03 to create a cumulative Quiz 1 study guide covering Modules 01–03, with new cross-module team assignments, evidence requirements, and workshop sessions.',

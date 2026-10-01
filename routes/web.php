@@ -56,6 +56,9 @@ Route::get('/experiences/module-04/task-prioritizer', [ExperienceController::cla
 Route::get('/experiences/module-04/event-browser', [ExperienceController::class, 'module04EventBrowser'])
     ->name('experiences.module04.event-browser');
 
+Route::get('/experiences/module-04/precision-gauntlet', [ExperienceController::class, 'module04PrecisionGauntlet'])
+    ->name('experiences.module04.precision-gauntlet');
+
 Route::get('/modules/{module}/media-lab', [CourseController::class, 'mediaLab'])
     ->whereNumber('module')
     ->name('modules.media-lab');

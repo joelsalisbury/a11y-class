@@ -107,6 +107,18 @@ return [
                     ],
                 ],
                 [
+                    'title' => 'Precision Gauntlet',
+                    'paragraphs' => [
+                        'How precise does the interface expect you to be? Try each interaction before analyzing it. Pay attention to what the interface assumes about how accurately, quickly, or consistently you can operate a pointer.',
+                    ],
+                    'emphasis' => [
+                        'Try each interaction before analyzing it. What assumption did the interface make about the user?',
+                    ],
+                    'actions' => [
+                        ['label' => 'Open Precision Gauntlet →', 'href' => route('experiences.module04.precision-gauntlet'), 'new_tab' => true],
+                    ],
+                ],
+                [
                     'title' => 'Small Targets',
                     'paragraphs' => [
                         'Very small or tightly packed controls can be difficult for users with limited precision. Target size is part of whether a pointer or touch interaction can be completed reliably.',

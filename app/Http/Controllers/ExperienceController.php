@@ -24,6 +24,11 @@ class ExperienceController extends Controller
         return view('experiences.module04-event-browser');
     }
 
+    public function module04PrecisionGauntlet()
+    {
+        return view('experiences.module04-precision-gauntlet');
+    }
+
     public function campusEventRegistration()
     {
         return view('experiences.campus-event-registration');
