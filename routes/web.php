@@ -41,6 +41,18 @@ Route::get('/changelog', [CourseController::class, 'changelog'])->name('changelo
 Route::get('/experiences/campus-event-registration', [ExperienceController::class, 'campusEventRegistration'])
     ->name('experiences.campus-event-registration');
 
+Route::get('/experiences/module-05/design-futures-registration', [ExperienceController::class, 'module05DesignFuturesRegistration'])
+    ->name('experiences.module05.design-futures-registration');
+
+Route::get('/experiences/module-05/screen-reader-lab', [ExperienceController::class, 'module05ScreenReaderLab'])
+    ->name('experiences.module05.screen-reader-lab');
+
+Route::get('/experiences/module-05/form-clarity-lab', [ExperienceController::class, 'module05FormClarityLab'])
+    ->name('experiences.module05.form-clarity-lab');
+
+Route::get('/experiences/module-05/error-recovery-lab', [ExperienceController::class, 'module05ErrorRecoveryLab'])
+    ->name('experiences.module05.error-recovery-lab');
+
 Route::get('/experiences/campus-study-space-finder', [ExperienceController::class, 'campusStudySpaceFinder'])
     ->name('experiences.campus-study-space-finder');
 

@@ -2,6 +2,12 @@
 
 return [
     [
+        'date' => '2026-10-05',
+        'title' => 'Restructured Module 05 around forms, recovery, screen-reader use, and the cumulative accessibility review',
+        'description' => 'Simplified Module 05 to a shorter two-session flow focused on form clarity, recovery, and practical screen-reader testing; the cumulative individual accessibility review remains the core challenge touchstone for the module.',
+        'modules' => ['Module 05'],
+    ],
+    [
         'date' => '2026-09-30',
         'title' => 'Redesigned the Session 09 Gesture Required demo and clarified the Pointer Gestures lesson',
         'description' => 'Updated the Session 09 Precision Gauntlet to replace the nonfunctional abstract path-tracing exercise with a realistic swipe-to-confirm example. The new Gesture Required demo requires a directional pointer gesture to complete a reservation flow, while the comparison control shows the same successful outcome with a simple button and no directional gesture requirement. This change more clearly illustrates WCAG 2.5.1 Pointer Gestures and distinguishes path-based pointer gestures from the neighboring Drag It example that demonstrates dragging and alternative input methods.',

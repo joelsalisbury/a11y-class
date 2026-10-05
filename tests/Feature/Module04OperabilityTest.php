@@ -2,12 +2,12 @@
 
 use App\Support\Course;
 
-it('publishes Module 04 and keeps Session 07 as quiz day', function () {
+it('publishes Module 04 and keeps the current course state on Module 05 / Session 10', function () {
     $this->get('/')
         ->assertOk()
-        ->assertSee('Module 04')
-        ->assertSee('Session 08')
-        ->assertSee('Challenge 04');
+        ->assertSee('Module 05')
+        ->assertSee('Session 10')
+        ->assertSee('Challenge 05');
 
     $this->get('/modules/3/session-7')
         ->assertOk()
@@ -152,6 +152,6 @@ it('publishes Module 04 and keeps Session 07 as quiz day', function () {
         ->assertSee('Dragging is the only way to reorder the five cards.')
         ->assertSee('Location and time details are revealed only on hover.');
 
-    expect(Course::current())->toBe(['module' => 4, 'session' => 8]);
+    expect(Course::current())->toBe(['module' => 5, 'session' => 10]);
     expect(Course::module(4)['challenge']['class_work'])->toHaveCount(3);
 });

@@ -87,9 +87,9 @@
                                     @endif
 
                                     @if (!empty($section['actions']))
-                                        <div>
+                                        <div class="mt-4 flex flex-wrap items-center gap-2">
                                             @foreach ($section['actions'] as $action)
-                                                <a href="{{ isset($action['route']) ? route($action['route'], $action['params'] ?? []) : $action['href'] }}" @if (!empty($action['new_tab'])) target="_blank" rel="noopener noreferrer" @endif class="inline-flex text-sm font-medium text-accent-cyan hover:text-accent-cyan-strong focus-visible:focus-ring rounded-sm">
+                                                <a href="{{ isset($action['route']) ? route($action['route'], $action['params'] ?? []) : $action['href'] }}" @if (!empty($action['new_tab'])) target="_blank" rel="noopener noreferrer" @endif class="inline-flex items-center rounded-md border border-slate-300 bg-slate-100 px-3 py-1.5 text-sm font-medium text-slate-900 hover:border-slate-400 hover:bg-slate-200 hover:text-slate-950 focus-visible:focus-ring">
                                                     {{ $action['label'] }}
                                                 </a>
                                             @endforeach

@@ -58,7 +58,7 @@
 
                 @if (!empty($module['key_concepts']))
                     <section class="space-y-5">
-                        <x-section-heading title="Key Concepts" description="Six short concepts to revisit while you work through Module 04." />
+                        <x-section-heading title="Key Concepts" description="Six short concepts to revisit while you work through this module." />
 
                         <div class="grid gap-3 md:grid-cols-2">
                             @foreach ($module['key_concepts'] as $concept)

@@ -188,7 +188,7 @@
                             Team membership is assigned and managed in HuskyCT/Blackboard. The course website may refer to team identities and team challenge work, but it is not the source of team membership records.
                         </p>
                         <p>
-                            The course includes 10 team challenges. These are team challenges or module challenges, not weekly challenges, and they are not tied to a rigid calendar schedule. Teams investigate, test, discuss, and then produce a concise deliverable that can later be archived as shared study material in the module's Class Work area.
+                            The course includes 9 challenges total. These are module challenges and cumulative assessment moments, not weekly challenges, and they are not tied to a rigid calendar schedule. Teams investigate, test, discuss, and then produce a concise deliverable that can later be archived as shared study material in the module's Class Work area.
                         </p>
                         <p>
                             Teams generally do not give formal presentations for each challenge. Instead, challenges are used to support investigation, critique, and synthesis.
@@ -252,7 +252,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>10 Team Challenges</td>
+                                    <td>9 Challenges Total</td>
                                     <td>35%</td>
                                 </tr>
                                 <tr>

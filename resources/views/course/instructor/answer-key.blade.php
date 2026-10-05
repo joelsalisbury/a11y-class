@@ -50,6 +50,58 @@
                 </section>
             @endif
 
+            @if (!empty($module['sample_experience']['answer_key']))
+                <section class="space-y-5">
+                    <x-section-heading title="Sample experience defect key" description="Intentional candidate findings in the Design Futures registration experience." />
+
+                    @foreach ($module['sample_experience']['answer_key'] as $item)
+                        <article class="panel space-y-5">
+                            <div>
+                                <p class="meta-label">{{ $item['stage'] ?? 'Stage' }} · {{ $item['module'] ?? 'Module' }}</p>
+                                <h2 class="mt-2 text-xl font-semibold text-ink">{{ $item['number'] ?? '' }}. {{ $item['issue'] }}</h2>
+                            </div>
+
+                            <dl class="grid gap-4 text-sm md:grid-cols-2">
+                                <div>
+                                    <dt class="font-semibold text-ink">Where it appears</dt>
+                                    <dd class="mt-1 leading-7 text-ink-muted">{{ $item['where'] ?? '' }}</dd>
+                                </div>
+                                <div>
+                                    <dt class="font-semibold text-ink">Why it matters</dt>
+                                    <dd class="mt-1 leading-7 text-ink-muted">{{ $item['why_it_matters'] ?? '' }}</dd>
+                                </div>
+                                <div>
+                                    <dt class="font-semibold text-ink">Relevant source</dt>
+                                    <dd class="mt-1 leading-7 text-ink-muted">{{ $item['source'] ?? $item['likely_sc'] ?? '' }}</dd>
+                                </div>
+                                <div>
+                                    <dt class="font-semibold text-ink">Expected verification</dt>
+                                    <dd class="mt-1 leading-7 text-ink-muted">{{ $item['verification'] ?? '' }}</dd>
+                                </div>
+                            </dl>
+
+                            <div class="grid gap-4 border-t border-subtle pt-4 text-sm md:grid-cols-2">
+                                <p class="leading-7 text-ink-muted"><strong class="text-ink">Expected remediation:</strong> {{ $item['remediation'] ?? '' }}</p>
+                                <p class="leading-7 text-ink-muted"><strong class="text-ink">Grading nuance:</strong> {{ $item['grading_nuance'] ?? '' }}</p>
+                            </div>
+                        </article>
+                    @endforeach
+                </section>
+            @endif
+
+            @if (!empty($module['sample_experience']['non_failures']))
+                <section class="space-y-5">
+                    <x-section-heading title="Non-failures / Acceptable design choices" description="Features intentionally implemented correctly or that may be criticized as design preference rather than accessibility failure." />
+
+                    @foreach ($module['sample_experience']['non_failures'] as $item)
+                        <article class="panel space-y-2">
+                            <h2 class="text-xl font-semibold text-ink">{{ $item['title'] }}</h2>
+                            <p class="leading-7 text-ink-muted">{{ $item['why'] }}</p>
+                        </article>
+                    @endforeach
+                </section>
+            @endif
+
             @if (!empty($module['experience_notes']))
                 <section class="space-y-5">
                     <x-section-heading title="Interaction Lab barrier notes" description="Intentional defects in the controlled Module 04 experiences." />
@@ -84,7 +136,7 @@
                     @foreach ($module['sample_experience']['answer_key'] as $item)
                         <article class="panel space-y-5">
                             <div>
-                                <p class="meta-label">{{ $item['lens'] ?? 'Sample experience' }}</p>
+                                <p class="meta-label">{{ $item['module'] ?? ($item['lens'] ?? 'Sample experience') }}</p>
                                 <h2 class="mt-2 text-xl font-semibold text-ink">{{ $item['issue'] }}</h2>
                             </div>
 

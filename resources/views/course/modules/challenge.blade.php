@@ -58,7 +58,7 @@
 
                 @if (!empty($challenge['team_assignment']))
                     <section id="challenge-team-assignment" class="course-section module-anchor">
-                        <x-section-heading title="Team Assignment" />
+                        <x-section-heading :title="$challenge['assignment_title'] ?? 'Team Assignment'" />
                         <div class="course-copy">
                             <p>{{ $challenge['team_assignment'] }}</p>
 
@@ -78,7 +78,7 @@
                     </section>
                 @else
                     <section id="challenge-team-assignments" class="course-section module-anchor">
-                        <x-section-heading title="Team Assignments" description="All three team assignments are visible below so you can see the full challenge structure." />
+                        <x-section-heading :title="$challenge['assignment_title'] ?? 'Team Assignments'" description="All three team assignments are visible below so you can see the full challenge structure." />
 
                         <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
                             @foreach ($challenge['teams'] as $team)
@@ -106,6 +106,20 @@
                                         </ul>
                                     @endif
                                 </x-team-card>
+                            @endforeach
+                        </div>
+                    </section>
+                @endif
+
+                @if (!empty($challenge['assessment_cases']))
+                    <section id="challenge-assessment-cases" class="course-section module-anchor">
+                        <x-section-heading title="Cumulative Assessment Cases" description="This individual challenge synthesizes five realistic cases from the full Module 05 sequence." />
+                        <div class="space-y-4">
+                            @foreach ($challenge['assessment_cases'] as $case)
+                                <section class="rounded-lg border border-subtle bg-surface-3 p-4">
+                                    <h3 class="text-lg font-semibold text-ink">{{ $case['title'] }}</h3>
+                                    <p class="mt-2 text-sm leading-7 text-ink-muted">{{ $case['description'] }}</p>
+                                </section>
                             @endforeach
                         </div>
                     </section>
@@ -229,7 +243,7 @@
                 </section>
 
                 <section id="challenge-evaluation" class="course-section module-anchor">
-                    <x-section-heading title="Evaluation" description="The challenge is worth 10 points." />
+                    <x-section-heading title="Evaluation" :description="'The challenge is worth ' . ($challenge['evaluation_total'] ?? 10) . ' points.'" />
 
                     <div class="course-copy">
                         <ul>
