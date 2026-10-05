@@ -2,7 +2,7 @@
 
 return [
     'module' => 'MODULE 05',
-    'title' => 'What Does the Interface Actually Say?',
+    'title' => 'What Is the Interface Actually Made Of?',
     'not_public' => true,
 
     'sample_experience' => [

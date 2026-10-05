@@ -62,9 +62,9 @@ return [
             'central_question' => 'Can users successfully operate an interface using different methods of input and interaction?',
         ],
         5 => [
-            'title' => 'What Does the Interface Actually Say?',
+            'title' => 'What Is the Interface Actually Made Of?',
             'status' => 'current',
-            'central_question' => 'Can a user understand, operate, and recover from an interface when they are not relying on its visual presentation?',
+            'central_question' => 'When two interfaces look the same, what makes them different to the browser and assistive technology?',
         ],
         6 => [
             'title' => 'Why Is This So Hard to Use?',

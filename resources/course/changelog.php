@@ -3,8 +3,8 @@
 return [
     [
         'date' => '2026-10-05',
-        'title' => 'Restructured Module 05 around forms, recovery, screen-reader use, and the cumulative accessibility review',
-        'description' => 'Simplified Module 05 to a shorter two-session flow focused on form clarity, recovery, and practical screen-reader testing; the cumulative individual accessibility review remains the core challenge touchstone for the module.',
+        'title' => 'Session 11 now provides guided screen-reader practice and a concrete Challenge 05 review handoff',
+        'description' => 'Session 11 now gives students a hands-on screen-reader setup and guided practice across the same Structure, Controls, and Form demo pages from Session 10, then moves directly into the Challenge 05 review with explicit screen-reader observations and evidence gathering.',
         'modules' => ['Module 05'],
     ],
     [

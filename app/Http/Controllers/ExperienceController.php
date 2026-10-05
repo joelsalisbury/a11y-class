@@ -39,19 +39,24 @@ class ExperienceController extends Controller
         return view('experiences.design-futures-registration');
     }
 
-    public function module05ScreenReaderLab()
+    public function module05StructureDemo()
     {
-        return view('experiences.module05-screen-reader-lab');
+        return view('experiences.module05-structure-demo');
     }
 
-    public function module05FormClarityLab()
+    public function module05ControlsDemo()
     {
-        return view('experiences.module05-form-clarity-lab');
+        return view('experiences.module05-controls-demo');
     }
 
-    public function module05ErrorRecoveryLab()
+    public function module05ScheduleDemo()
     {
-        return view('experiences.module05-error-recovery-lab');
+        return view('experiences.module05-schedule-demo');
+    }
+
+    public function module05FormDemo()
+    {
+        return view('experiences.module05-form-demo');
     }
 
     public function campusStudySpaceFinder()

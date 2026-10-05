@@ -44,14 +44,17 @@ Route::get('/experiences/campus-event-registration', [ExperienceController::clas
 Route::get('/experiences/module-05/design-futures-registration', [ExperienceController::class, 'module05DesignFuturesRegistration'])
     ->name('experiences.module05.design-futures-registration');
 
-Route::get('/experiences/module-05/screen-reader-lab', [ExperienceController::class, 'module05ScreenReaderLab'])
-    ->name('experiences.module05.screen-reader-lab');
+Route::get('/experiences/module-05/structure-demo', [ExperienceController::class, 'module05StructureDemo'])
+    ->name('experiences.module05.structure-demo');
 
-Route::get('/experiences/module-05/form-clarity-lab', [ExperienceController::class, 'module05FormClarityLab'])
-    ->name('experiences.module05.form-clarity-lab');
+Route::get('/experiences/module-05/controls-demo', [ExperienceController::class, 'module05ControlsDemo'])
+    ->name('experiences.module05.controls-demo');
 
-Route::get('/experiences/module-05/error-recovery-lab', [ExperienceController::class, 'module05ErrorRecoveryLab'])
-    ->name('experiences.module05.error-recovery-lab');
+Route::get('/experiences/module-05/schedule', [ExperienceController::class, 'module05ScheduleDemo'])
+    ->name('experiences.module05.schedule-demo');
+
+Route::get('/experiences/module-05/form-demo', [ExperienceController::class, 'module05FormDemo'])
+    ->name('experiences.module05.form-demo');
 
 Route::get('/experiences/campus-study-space-finder', [ExperienceController::class, 'campusStudySpaceFinder'])
     ->name('experiences.campus-study-space-finder');
