@@ -34,9 +34,9 @@ class ExperienceController extends Controller
         return view('experiences.campus-event-registration');
     }
 
-    public function module05DesignFuturesRegistration()
+    public function makerMap()
     {
-        return view('experiences.design-futures-registration');
+        return view('experiences.makermap');
     }
 
     public function module05StructureDemo()

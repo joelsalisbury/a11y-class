@@ -197,7 +197,7 @@
                             </section>
                             <section class="rounded-lg border border-subtle bg-surface-3 p-4">
                                 <h3 class="text-lg font-semibold text-ink">Apply It</h3>
-                                <p class="mt-2 text-sm leading-7 text-ink-muted">Explain how your findings affect the evaluation of the Design Futures registration experience.</p>
+                                <p class="mt-2 text-sm leading-7 text-ink-muted">Explain how your findings affect the evaluation of the interactive experience.</p>
                             </section>
                             <section class="rounded-lg border border-subtle bg-surface-3 p-4">
                                 <h3 class="text-lg font-semibold text-ink">What We Still Don't Know</h3>

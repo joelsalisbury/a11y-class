@@ -2,6 +2,12 @@
 
 return [
     [
+        'date' => '2026-10-06',
+        'title' => 'Expanded MakerMap for a comprehensive Challenge 05 review',
+        'description' => 'Expanded MakerMap for an individual review that requires identifying all deliberate accessibility issues. Strengthened media, form, and semantic coverage; Challenge 05 is worth 10 points.',
+        'modules' => ['Module 05'],
+    ],
+    [
         'date' => '2026-10-05',
         'title' => 'Session 11 now provides guided screen-reader practice and a concrete Challenge 05 review handoff',
         'description' => 'Session 11 now gives students a hands-on screen-reader setup and guided practice across the same Structure, Controls, and Form demo pages from Session 10, then moves directly into the Challenge 05 review with explicit screen-reader observations and evidence gathering.',

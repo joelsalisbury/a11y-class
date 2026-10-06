@@ -52,7 +52,13 @@
 
             @if (!empty($module['sample_experience']['answer_key']))
                 <section class="space-y-5">
-                    <x-section-heading title="Sample experience defect key" description="Intentional candidate findings in the Design Futures registration experience." />
+                    <x-section-heading
+                        title="Intentional candidate findings"
+                        :description="'Findings in the ' . ($module['sample_experience']['title'] ?? 'sample experience') . ' experience.'"
+                    />
+                    @if (($module['sample_experience']['title'] ?? null) === 'MakerMap')
+                        <p class="course-emphasis">Total deliberate issues: 20</p>
+                    @endif
 
                     @foreach ($module['sample_experience']['answer_key'] as $item)
                         <article class="panel space-y-5">
@@ -82,8 +88,23 @@
 
                             <div class="grid gap-4 border-t border-subtle pt-4 text-sm md:grid-cols-2">
                                 <p class="leading-7 text-ink-muted"><strong class="text-ink">Expected remediation:</strong> {{ $item['remediation'] ?? '' }}</p>
-                                <p class="leading-7 text-ink-muted"><strong class="text-ink">Grading nuance:</strong> {{ $item['grading_nuance'] ?? '' }}</p>
+                                @if (!empty($item['grading_nuance']))
+                                    <p class="leading-7 text-ink-muted"><strong class="text-ink">Grading nuance:</strong> {{ $item['grading_nuance'] }}</p>
+                                @endif
                             </div>
+                        </article>
+                    @endforeach
+                </section>
+            @endif
+
+            @if (!empty($module['sample_experience']['intentionally_correct']))
+                <section class="space-y-5">
+                    <x-section-heading title="Intentionally Correct Features" description="Major features implemented correctly to support balanced evaluation." />
+
+                    @foreach ($module['sample_experience']['intentionally_correct'] as $item)
+                        <article class="panel space-y-2">
+                            <h2 class="text-xl font-semibold text-ink">{{ $item['title'] }}</h2>
+                            <p class="leading-7 text-ink-muted">{{ $item['why'] }}</p>
                         </article>
                     @endforeach
                 </section>
@@ -91,7 +112,11 @@
 
             @if (!empty($module['sample_experience']['non_failures']))
                 <section class="space-y-5">
-                    <x-section-heading title="Non-failures / Acceptable design choices" description="Features intentionally implemented correctly or that may be criticized as design preference rather than accessibility failure." />
+                    @if (($module['sample_experience']['title'] ?? null) === 'MakerMap')
+                        <x-section-heading title="Not Automatically Failures" description="Reasonable product choices that may be disliked without being established accessibility failures." />
+                    @else
+                        <x-section-heading title="Non-failures / Acceptable design choices" description="Features intentionally implemented correctly or that may be criticized as design preference rather than accessibility failure." />
+                    @endif
 
                     @foreach ($module['sample_experience']['non_failures'] as $item)
                         <article class="panel space-y-2">
@@ -131,7 +156,10 @@
 
             @if (empty($module['challenge_answer_key']) && !empty($module['sample_experience']['answer_key']))
                 <section class="space-y-5">
-                    <x-section-heading title="Sample experience defect key" description="Intentional findings in the Design Futures registration experience." />
+                    <x-section-heading
+                        title="Sample experience defect key"
+                        :description="'Intentional findings in the ' . ($module['sample_experience']['title'] ?? 'sample') . ' experience.'"
+                    />
 
                     @foreach ($module['sample_experience']['answer_key'] as $item)
                         <article class="panel space-y-5">

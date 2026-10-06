@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 660" role="img" aria-labelledby="map-title map-description">
+  <title id="map-title">Campus Creative District map</title>
+  <desc id="map-description">A diagram showing four creative spaces along the Central Walk pedestrian route, a parking and drop-off area, an accessible entrance at the north plaza, and the Northlight Center elevator.</desc>
+  <rect width="1200" height="660" fill="#edf1e8"/>
+  <path d="M0 110h1200M0 550h1200M170 0v660M1040 0v660" stroke="#d7dfd2" stroke-width="2"/>
+  <path d="M180 495C300 420 355 365 475 340s165-65 280-45 135 70 250 20" fill="none" stroke="#fff" stroke-width="62" stroke-linecap="round"/>
+  <path d="M180 495C300 420 355 365 475 340s165-65 280-45 135 70 250 20" fill="none" stroke="#789276" stroke-width="4" stroke-dasharray="14 12" stroke-linecap="round"/>
+  <text x="424" y="410" fill="#415b48" font-family="Arial, sans-serif" font-size="21" font-weight="700" transform="rotate(-12 424 410)">CENTRAL WALK</text>
+  <g fill="#d9e1d5" stroke="#a9b9a5" stroke-width="2">
+    <rect x="238" y="116" width="235" height="112" rx="10"/>
+    <rect x="695" y="113" width="240" height="115" rx="10"/>
+    <rect x="255" y="430" width="230" height="115" rx="10"/>
+    <rect x="725" y="430" width="230" height="115" rx="10"/>
+  </g>
+  <g fill="#284c3a" font-family="Arial, sans-serif" font-size="20" font-weight="700">
+    <text x="260" y="158">Foundry Commons</text>
+    <text x="260" y="190" font-size="16" font-weight="400">Digital Fabrication Lab</text>
+    <text x="716" y="155">Northlight Center</text>
+    <text x="716" y="187" font-size="16" font-weight="400">Media Production Studio</text>
+    <text x="278" y="473">Signal House</text>
+    <text x="278" y="505" font-size="16" font-weight="400">Electronics Workshop</text>
+    <text x="746" y="473">Willow Design House</text>
+    <text x="746" y="505" font-size="16" font-weight="400">Textiles &amp; Prototyping Lab</text>
+  </g>
+  <g fill="#cfdacb" stroke="#8da18b" stroke-width="2">
+    <rect x="63" y="250" width="166" height="102" rx="9"/>
+    <rect x="977" y="280" width="160" height="104" rx="9"/>
+  </g>
+  <g fill="#294c3b" font-family="Arial, sans-serif" font-size="17" font-weight="700">
+    <text x="83" y="289">Visitor parking</text>
+    <text x="83" y="318" font-size="15" font-weight="400">Drop-off · 10 min</text>
+    <text x="996" y="319">North Plaza</text>
+    <text x="996" y="348" font-size="15" font-weight="400">Accessible entrance</text>
+  </g>
+  <path d="M1060 278v-57h-38" fill="none" stroke="#b45b43" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="1022" cy="221" r="8" fill="#b45b43"/>
+  <rect x="893" y="151" width="24" height="24" rx="3" fill="#b45b43"/>
+  <path d="M905 155v16M900 160l5-5 5 5M900 166l5 5 5-5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="820" y="101" fill="#654137" font-family="Arial, sans-serif" font-size="15" font-weight="700">Elevator · Northlight lobby</text>
+  <g transform="translate(1035 78)">
+    <path d="M0 35 18 0l18 35z" fill="#42664b"/>
+    <text x="14" y="59" fill="#42664b" font-family="Arial, sans-serif" font-size="18" font-weight="700">N</text>
+  </g>
+  <g transform="translate(66 592)">
+    <path d="M0 0h80" stroke="#45624a" stroke-width="5"/>
+    <path d="M0 -7v14M80 -7v14" stroke="#45624a" stroke-width="3"/>
+    <text x="0" y="30" fill="#526552" font-family="Arial, sans-serif" font-size="15">0</text>
+    <text x="65" y="30" fill="#526552" font-family="Arial, sans-serif" font-size="15">200 m</text>
+  </g>
+  <text x="1060" y="620" fill="#667468" font-family="Arial, sans-serif" font-size="13">Illustrative campus district</text>
+</svg>

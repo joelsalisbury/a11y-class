@@ -24,7 +24,7 @@ it('publishes the current Module 05 content and the semantic-structure teaching 
         ->assertSee('What Is the Interface Actually Made Of?')
         ->assertSee('When two interfaces look the same, what makes them different to the browser and assistive technology?')
         ->assertSee('CSS controls appearance. HTML communicates structure.')
-        ->assertSee('Native controls already know how to behave.')
+        ->assertSee('CSS can make controls look alike. HTML determines what the control actually is.')
         ->assertSee('Start Your Review')
         ->assertSee('two or three candidate observations')
         ->assertSee('Do not begin by dumping an automated-tool report into your assignment.')
@@ -58,18 +58,42 @@ it('publishes the current Module 05 content and the semantic-structure teaching 
         ->assertSee('Are These in the Same Group?')
         ->assertSee('Is This the Main Content?');
 
-    $this->get('/experiences/module-05/controls-demo')
+    $controlsDemo = $this->get('/experiences/module-05/controls-demo')
         ->assertOk()
+        ->assertSee('<title>Semantic Controls</title>', false)
+        ->assertSee('<h1>Semantic Controls</h1>', false)
+        ->assertSee('CSS can make almost anything look like a control.')
         ->assertSee('Link or Button?')
         ->assertSee('What Comes For Free?')
-        ->assertSee('They can look almost identical. Are they the same control?')
-        ->assertSee('Appearance does not determine semantics.')
-        ->assertSee('Native controls already know how to behave.')
+        ->assertSee('Is This Actually a Checkbox?')
+        ->assertSee('Are These One Question?')
+        ->assertSee('Is This Actually an Input?')
+        ->assertSee('What State Is It In?')
+        ->assertSee('What Is This Control Called?')
+        ->assertSee('<input type="checkbox">', false)
+        ->assertSee('<input type="radio" name="level" value="beginner" checked>', false)
+        ->assertSee('<input class="text-input" id="email-demo" type="email" autocomplete="email" value="mira@example.org">', false)
+        ->assertSee('aria-label="Share workshop"', false)
+        ->assertSee('focusable="false"', false)
+        ->assertSee('Start with the native element that matches the interaction.')
+        ->assertDontSee('Semantic Controls Bench')
         ->assertDontSee('What Is This Button Called?')
-        ->assertDontSee('What State Is It In?')
         ->assertDontSee('Course actions')
         ->assertDontSee('Look at these actions carefully.')
         ->assertDontSee('Name, role, and state are information about an interaction, not decoration.');
+
+    expect(substr_count($controlsDemo->getContent(), 'class="example"'))->toBe(7);
+    expect(substr_count($controlsDemo->getContent(), '<details class="reveal">'))->toBe(7);
+
+    $this->get('/modules/5/session-11')
+        ->assertSee('link and button')
+        ->assertSee('What can you reach and activate from the keyboard')
+        ->assertSee('checkbox role and checked or unchecked state')
+        ->assertSee('radio controls, selection, and group or question context where exposed')
+        ->assertSee('editable field semantics, value, and type where exposed')
+        ->assertSee('expanded or collapsed state')
+        ->assertSee('has no accessible name')
+        ->assertSee('Exact spoken wording varies by screen reader, browser, and settings.');
 
     $this->get('/experiences/module-05/form-demo')
         ->assertOk()
@@ -97,22 +121,29 @@ it('publishes the current Module 05 content and the semantic-structure teaching 
         ->assertOk()
         ->assertSee('Challenge 05: Accessibility Review')
         ->assertSee('What can you establish about the accessibility of an interactive experience, and what evidence supports your conclusions?')
-        ->assertSee('Individual Challenge · 20 points')
+        ->assertSee('Individual Challenge · 10 points')
         ->assertSee('AI output is not evidence.')
-        ->assertSee('5–7 pages');
+        ->assertSee('MakerMap contains 20 deliberate accessibility issues')
+        ->assertSee('All 20 Findings')
+        ->assertDontSee('eight strongest findings')
+        ->assertSee('Open MakerMap')
+        ->assertDontSee('Design Futures');
 
     $this->get('/experiences/module-05/design-futures-registration')
+        ->assertNotFound();
+
+    $this->get('/experiences/makermap')
         ->assertOk()
-        ->assertSee('Design Futures 2026 Registration')
-        ->assertSee('Explore the Event')
-        ->assertSee('Choose a Workshop')
-        ->assertSee('Register')
-        ->assertSee('Review and Submit');
+        ->assertSee('<h1 id="maker-title">MakerMap</h1>', false)
+        ->assertSee('Find the right campus creative space for your project.')
+        ->assertSee('Return to Challenge 05');
 
     $this->get('/instructor/modules/5/answer-key')
         ->assertOk()
         ->assertSee('Instructor-only reference')
-        ->assertSee('Sample experience defect key')
+        ->assertSee('Intentional candidate findings')
+        ->assertSee('Intentionally Correct Features')
+        ->assertSee('Not Automatically Failures')
         ->assertSee('Module 01')
         ->assertSee('Module 05');
 });

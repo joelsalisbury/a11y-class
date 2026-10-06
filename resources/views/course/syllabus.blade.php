@@ -193,6 +193,10 @@
                         <p>
                             Teams generally do not give formal presentations for each challenge. Instead, challenges are used to support investigation, critique, and synthesis.
                         </p>
+                        <h3 class="text-lg font-semibold text-ink">Challenge 05: Accessibility Review</h3>
+                        <p>
+                            Challenge 05 is an individual, 10-point comprehensive accessibility review cumulative across Modules 01–05. Students identify all deliberate issues in a custom interactive experience using visual, media, keyboard, semantic, form/error, screen-reader, and assisted testing, then submit evidence-based findings, recommendations, verification plans, and priorities.
+                        </p>
                     </div>
 
                     <div class="mt-6 space-y-4">

@@ -41,8 +41,8 @@ Route::get('/changelog', [CourseController::class, 'changelog'])->name('changelo
 Route::get('/experiences/campus-event-registration', [ExperienceController::class, 'campusEventRegistration'])
     ->name('experiences.campus-event-registration');
 
-Route::get('/experiences/module-05/design-futures-registration', [ExperienceController::class, 'module05DesignFuturesRegistration'])
-    ->name('experiences.module05.design-futures-registration');
+Route::get('/experiences/makermap', [ExperienceController::class, 'makerMap'])
+    ->name('experiences.makermap');
 
 Route::get('/experiences/module-05/structure-demo', [ExperienceController::class, 'module05StructureDemo'])
     ->name('experiences.module05.structure-demo');

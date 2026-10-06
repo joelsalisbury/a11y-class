@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Support\Course;
+use App\Support\KeyConcepts;
 
 class CourseController extends Controller
 {
@@ -52,6 +53,13 @@ class CourseController extends Controller
 
         abort_unless($moduleData['challenge'], 404);
 
+        if ($module === 5) {
+            return view('course.modules.challenge05', [
+                'module' => $moduleData,
+                'challenge' => $moduleData['challenge'],
+            ]);
+        }
+
         return view('course.modules.challenge', [
             'module' => $moduleData,
             'challenge' => $moduleData['challenge'],
@@ -88,7 +96,7 @@ class CourseController extends Controller
 
     public function keyConceptsIndex(int $module)
     {
-        $collection = \App\Support\KeyConcepts::collection($module);
+        $collection = KeyConcepts::collection($module);
 
         return view('course.key-concepts.index', [
             'module' => $module,
@@ -98,7 +106,7 @@ class CourseController extends Controller
 
     public function keyConcept(int $module, string $slug)
     {
-        $context = \App\Support\KeyConcepts::concept($module, $slug);
+        $context = KeyConcepts::concept($module, $slug);
 
         return view('course.key-concepts.show', [
             'module' => $module,

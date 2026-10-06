@@ -13,7 +13,7 @@ return [
             'status' => 'current',
             'summary' => 'Introduce semantic structure, native controls, and form communication, then reserve the final part of class for students to begin the individual Challenge 05 review.',
             'question' => 'When two interfaces look the same, what makes them different to the browser and assistive technology?',
-            'overview' => 'This session introduces the idea that a webpage has both a visual presentation and an underlying semantic structure communicated by HTML and browser accessibility information. Students inspect structure, controls, and forms briefly, then begin the individual Challenge 05 review with a concrete first pass before they return to the same experience with a screen reader in the next class.',
+            'overview' => 'This session introduces the idea that a webpage has both a visual presentation and an underlying semantic structure communicated by HTML and browser accessibility information. Students inspect structure, controls, and forms briefly, then begin the individual MakerMap review with a concrete first pass before they return to the same experience with a screen reader in the next class.',
             'sections' => [
                 [
                     'title' => 'Look at the page, then look underneath',
@@ -38,16 +38,17 @@ return [
                     'title' => 'Controls matter too',
                     'paragraphs' => [
                         'The same principle applies to interaction. A link, a button, a checkbox, and a text field are not just decorative shapes. They carry information about purpose, behavior, and state that the browser and assistive technology can expose.',
-                        'Use the Controls demo to show link versus button, native control versus clickable generic element, accessible name, and state. The goal is practical: students should see that name, role, and state are information the browser can share, not a separate ARIA-only topic that needs a long lecture.',
+                        'Browse the Controls demo selectively: compare a link and button, a native button and clickable div, a checkbox, a radio group, an email input, a disclosure, and an icon-only button. The goal is practical: students should see that HTML communicates purpose, behavior, grouping, name, and state.',
                     ],
                     'emphasis' => [
-                        'Native controls already know how to behave.',
+                        'CSS can make controls look alike. HTML determines what the control actually is.',
                     ],
-                    'bullets_intro' => 'Focus on a few practical observations:',
+                    'bullets_intro' => 'Choose a few examples for live discussion; the rest are available to explore:',
                     'bullets' => [
                         'Is this a link or a button?',
-                        'Does the control have an accessible name?',
-                        'What state does the user need to know?',
+                        'What does the native control already know how to do?',
+                        'Do these choices belong to one question?',
+                        'What name or state does the browser understand?',
                     ],
                     'actions' => [
                         ['label' => 'Controls demo', 'route' => 'experiences.module05.controls-demo', 'new_tab' => true],
@@ -76,8 +77,8 @@ return [
                 [
                     'title' => 'Challenge 05: Accessibility Review',
                     'paragraphs' => [
-                        'Now students have enough methods to begin the review, but not enough to finish it. The challenge is cumulative and individual: they will start the review in Session 10, continue after Session 11 once they have practiced using a screen reader, and then return to the same experience with a new testing lens.',
-                        'This is not a single tool check and not a team assignment. Students should begin by understanding the task, testing the experience in multiple ways, and documenting what they observe before they rely on automated or AI-assisted output.',
+                        'Challenge 05 is a 10-point individual review. MakerMap contains 20 deliberate issues across Modules 01–05; students identify all 20 in the completed assignment, not during either class session.',
+                        'Begin by understanding the task and testing MakerMap in multiple ways. Automated output is not proof of accessibility, and AI output is not evidence.',
                     ],
                     'actions' => [
                         ['label' => 'Open Challenge 05 →', 'route' => 'modules.challenge', 'params' => ['module' => 5]],
@@ -86,29 +87,32 @@ return [
                 [
                     'title' => 'Start Your Review',
                     'paragraphs' => [
-                        'Use the design futures experience as a real review target and keep the first pass methodical rather than exhaustive.',
+                        'Open MakerMap and keep the first pass methodical. Session 10 begins the review; it is not a requirement to complete the assignment in class.',
                     ],
                     'ordered_intro' => 'Follow this first-pass procedure:',
                     'ordered' => [
-                        'Complete the experience normally. Open Design Futures 2026, learn about the event, choose a workshop, and move through the registration flow. Do not run WAVE yet. Your first job is to understand the task.',
+                        'Complete the task normally. Use MakerMap to find a creative space for a project, compare resources, review location and orientation information, and request an orientation.',
                         'Start your Review Record. Record normal use, browser/device, and one meaningful observation. Use the Challenge 05 Review Record format.',
-                        'Make a visual/media pass. Look at contrast, color, meaningful images, video/media, and enlargement or reflow where relevant. Use tools only when they help answer a specific question.',
+                        'Make a visual/media pass. Review contrast, color dependence, text enlargement and reflow, the meaningful map, and the prerecorded orientation video.',
                         'Put the pointer away. Try the important task again using the keyboard. Pay attention to what you can reach, what you can activate, where focus is, and whether any interaction assumes a pointer.',
-                        'Make a mistake. Use the registration form again. Intentionally enter or omit something incorrectly. Observe what the form expected, how the error is communicated, what is preserved, and how you recover.',
-                        'Record candidate findings. Before class ends, record at least two or three candidate observations. These do not need to become final findings. For each, write only what happened and what you need to investigate further. Do not require complete WCAG citations during this first pass.',
+                        'Make a mistake in the orientation form. Observe its labels, instructions, group context, error communication, preserved work, and recovery.',
+                        'Record two or three candidate observations before class ends. They do not need to become final findings; note what happened and what you need to investigate further. Do not try to identify all 20 or finish the assignment during this session.',
                     ],
                     'challenge_reference' => [
                         'intro' => 'Starting in Session 10?',
                         'title' => 'Challenge 05: Accessibility Review',
-                        'description' => 'Complete Steps 1–5 of the testing process first. Screen-reader testing follows Session 11.',
+                        'description' => 'Begin the multi-method review and record candidate observations. Screen-reader testing follows Session 11; completing all 20 is not expected during class.',
                         'link_label' => 'Open the challenge',
+                    ],
+                    'actions' => [
+                        ['label' => 'Open MakerMap →', 'route' => 'experiences.makermap', 'new_tab' => true],
                     ],
                     'note' => 'The purpose is to begin the investigation, not to finish it.',
                 ],
                 [
                     'title' => 'Not yet',
                     'paragraphs' => [
-                        'Do not worry about completing the screen-reader portion today. We will learn and practice screen-reader navigation in Session 11. You will then return to Design Futures and add that testing to your review.',
+                        'Do not worry about screen-reader testing today. We will practice screen-reader navigation in Session 11, then return to MakerMap and add that testing to your review.',
                         'Do not begin by dumping an automated-tool report into your assignment. Students should understand the task before automated testing begins.',
                     ],
                     'emphasis' => [
@@ -118,7 +122,7 @@ return [
                 [
                     'title' => 'Next: Test What You Cannot See',
                     'paragraphs' => [
-                        'Next class you will choose a screen reader, learn enough of its navigation model to use it deliberately, practice on our demo pages, and then return to Design Futures for the screen-reader portion of your review.',
+                        'Next class you will choose a screen reader, learn enough of its navigation model to use it deliberately, practice on our demo pages, and then return to MakerMap for the screen-reader portion of your review.',
                     ],
                     'actions' => [
                         ['label' => 'UConn Accessibility Tools', 'href' => 'https://accessibility.its.uconn.edu/accessibility-tools/', 'new_tab' => true],
@@ -142,7 +146,7 @@ return [
             'status' => 'upcoming',
             'summary' => 'Choose a screen reader, revisit the Structure, Controls, and Form demo pages, and add a screen-reader pass to the beginning of the Challenge 05 review.',
             'question' => 'What does the interface communicate when you navigate it primarily through a screen reader?',
-            'overview' => 'This session reuses the same three demo pages from Session 10 and tests them again with a different method. Students choose a screen reader, learn only the basic commands they need, and then complete three guided passes before returning to Design Futures and recording the new observations they gather.',
+            'overview' => 'This session reuses the same three demo pages from Session 10 and tests them again with a different method. Students choose a screen reader, learn only the basic commands they need, and then complete three guided passes before returning to MakerMap and recording the new observations they gather.',
             'sections' => [
                 [
                     'title' => 'Today, listen to the interface',
@@ -230,9 +234,13 @@ return [
                     'ordered_intro' => 'Task:',
                     'ordered' => [
                         'Open the Controls page.',
-                        'Navigate through the interactive controls without pointing with the mouse.',
-                        'For each control, listen for the name, type or role, and state when relevant.',
-                        'Find the link, the native button, the custom control, the icon-only control, and the expand or collapse control.',
+                        'Compare the link and button. Notice the link versus button role.',
+                        'Compare the native button and clickable div. What can you reach and activate from the keyboard, and which is exposed as a button?',
+                        'Use the checkbox and listen for checkbox role and checked or unchecked state.',
+                        'Navigate the radio group. Listen for radio controls, selection, and group or question context where exposed.',
+                        'Inspect the email field for its label, editable field semantics, value, and type where exposed.',
+                        'Open and close the disclosure. Notice its control and expanded or collapsed state.',
+                        'Compare the icon buttons: one has a useful Share workshop name; the other has no accessible name.',
                     ],
                     'bullets_intro' => 'Ask:',
                     'bullets' => [
@@ -243,6 +251,7 @@ return [
                     ],
                     'emphasis' => [
                         'Name, role, and state are part of the interface.',
+                        'Exact spoken wording varies by screen reader, browser, and settings. Compare the information exposed, not a transcript.',
                     ],
                     'actions' => [
                         ['label' => 'Controls demo', 'route' => 'experiences.module05.controls-demo', 'new_tab' => true],
@@ -302,19 +311,20 @@ return [
                 [
                     'title' => 'Return to your review',
                     'paragraphs' => [
-                        'Reopen Design Futures 2026 and add the screen-reader pass to your Challenge 05 review.',
+                        'Reopen MakerMap and add the screen-reader pass to your Challenge 05 review.',
                     ],
                     'ordered_intro' => 'Before class ends:',
                     'ordered' => [
                         'Open your Challenge 05 Review Record.',
                         'Add your screen-reader setup: screen reader, operating system, browser, and what you tested.',
-                        'Navigate the Design Futures experience by headings and controls.',
-                        'Test the registration form.',
-                        'Record at least two new observations from the screen-reader pass.',
+                        'Navigate MakerMap page structure and controls.',
+                        'Test the orientation form.',
+                        'Record at least two observations from the screen-reader pass.',
                         'Revisit one observation from Session 10 and decide whether your conclusion changed.',
                     ],
-                    'note' => 'Students are gathering and refining evidence. Do not require final findings yet.',
+                    'note' => 'Students are adding a screen-reader pass and refining evidence. Do not require all 20 findings during class.',
                     'actions' => [
+                        ['label' => 'Open MakerMap →', 'route' => 'experiences.makermap', 'new_tab' => true],
                         ['label' => 'Open Challenge 05 →', 'route' => 'modules.challenge', 'params' => ['module' => 5]],
                         ['label' => 'Screen Reader Guides →', 'route' => 'field-guide'],
                     ],
@@ -334,34 +344,34 @@ return [
         'label' => 'CHALLENGE 05',
         'title' => 'Challenge 05: Accessibility Review',
         'status' => 'current',
-        'summary' => 'Conduct an accessibility review of the Design Futures 2026 experience using the methods practiced across Modules 01–05. This is a substantial cumulative individual checkpoint in which students test deliberately, identify meaningful findings, support them with evidence, and decide what matters most.',
+        'summary' => 'Conduct an individual, cumulative accessibility review of MakerMap. Identify all 20 deliberate issues across Modules 01–05 and support them with evidence, recommendations, and verification plans.',
         'question' => 'What can you establish about the accessibility of an interactive experience, and what evidence supports your conclusions?',
-        'problem_title' => 'Design Futures 2026',
-        'problem' => 'Learn about the event, choose a workshop, complete the registration, and move through the review and confirmation process. Test the experience more than once and in more than one way, then document the strongest eight findings supported by evidence.',
-        'assignment_title' => 'Individual Challenge · 20 points',
-        'team_assignment' => 'Challenge 05 is not a team challenge, not a midterm, and not a single-checker exercise. It is a substantial cumulative individual checkpoint covering Modules 01–05. Students begin the review during Session 10 and continue it after Session 11, once they have practiced using a screen reader. The goal is not to find every possible problem. The goal is to test deliberately, identify meaningful findings, support them with evidence, and decide what matters most.',
+        'problem_title' => 'Challenge 05: Accessibility Review',
+        'problem' => 'MakerMap contains 20 deliberate accessibility issues based on material from Modules 01–05. Conduct a complete accessibility review and identify all 20. Use multiple testing methods, support your conclusions with evidence, recommend corrections, and explain how you would verify them.',
+        'assignment_title' => 'Individual Challenge · 10 points',
+        'team_assignment' => 'This is a fully individual, cumulative challenge across Modules 01–05 and the most substantial individual assignment in the course so far. Begin during Session 10, then return after Session 11 for screen-reader testing.',
         'experience_under_review' => [
             'title' => 'Experience Under Review',
-            'name' => 'Design Futures 2026',
-            'link' => ['label' => 'Open the experience ->', 'route' => 'experiences.module05.design-futures-registration', 'new_tab' => true],
+            'name' => 'MakerMap',
+            'link' => ['label' => 'Open MakerMap ->', 'route' => 'experiences.makermap', 'new_tab' => true],
         ],
         'investigation' => [
-            'First pass: use it normally and understand the task, the content, and the choices the user makes.',
+            'First pass: use MakerMap normally and understand the task, content, and choices.',
             'Visual review: evaluate contrast, use of color, visual hierarchy, and any relevant enlargement or reflow behavior.',
-            'Media review: evaluate the meaningful image, diagram, and video information using the Module 03 question about what is lost without the relevant perception path.',
+            'Media review: evaluate the meaningful map and prerecorded orientation video, asking what information would be lost without each media type.',
             'Keyboard review: complete the important interactions without a mouse or trackpad and evaluate reachability, activation, focus, and ordering.',
-            'Forms and recovery: complete the registration again, intentionally make at least one mistake, and observe labels, instructions, grouping, required information, error messages, correction, preserved work, and review before submission.',
-            'Screen-reader review: after the Session 11 screen-reader work, return to the experience and inspect page structure, controls, form fields, names, instructions, and status changes.',
+            'Forms and recovery: complete the orientation form, intentionally make an error, and observe labels, instructions, grouping, correction, preserved work, and submission status.',
+            'Screen-reader review: after Session 11, return to MakerMap and inspect page structure, controls, form fields, names, states, errors, and status changes.',
             'Tool-assisted inspection: use at least one appropriate supporting tool such as WAVE, a browser accessibility inspector, or an accessibility bookmarklet.',
             'Verify your claims: reproduce the issue, decide whether it is an accessibility issue, find authoritative evidence, and propose a meaningful remediation.',
         ],
         'investigation_note' => 'Automated output is not proof that an experience is accessible, and AI output is not evidence. Students remain responsible for reproducing findings, checking authority, and making their own judgment.',
         'deliverable' => [
-            'summary' => 'Submit one individual PDF through HuskyCT. Target length: 5–7 pages. Screenshots may make the submission somewhat longer. The report includes a review record, eight findings, and an overall judgment section.',
+            'summary' => 'Submit one individual PDF through HuskyCT. Make it as long as necessary to document all 20 findings clearly and concisely. Screenshots may be used where useful.',
             'items' => [
-                ['title' => 'Section 1: Review Record', 'description' => 'Provide a concise table with Method, Tool / setup, What I tested, and One useful observation for normal use, visual review, media review, keyboard review, forms/recovery, screen-reader review, and tool-assisted inspection.'],
-                ['title' => 'Section 2: Eight Findings', 'description' => 'Submit the eight strongest findings, each with observation, impact, evidence, recommendation, and verification. The findings must demonstrate breadth across Modules 01–05.'],
-                ['title' => 'Section 3: Overall Judgment', 'description' => 'Write a brief overall assessment, rank the top three priorities, and explain one thing that is not confidently an accessibility failure.'],
+                ['title' => 'Section 1: Review Record', 'description' => 'Briefly record method/tool, browser or device where relevant, and what part of MakerMap you tested.'],
+                ['title' => 'Section 2: All 20 Findings', 'description' => 'Document all 20 with observation, evidence, recommendation, and verification. Keep entries concise and reproducible.'],
+                ['title' => 'Section 3: Overall Judgment', 'description' => 'Rank the Top Five priorities and explain one aspect you would improve but cannot confidently call an accessibility failure.'],
             ],
         ],
         'format_note' => 'This challenge is completed individually and submitted through HuskyCT/Blackboard. AI output is not evidence. For each finding, support the claim with direct testing and authoritative evidence rather than a single checker result or a guessed issue.',
@@ -370,13 +380,13 @@ return [
             'body' => 'Complete Steps 1–5 of the testing process first. Screen-reader testing follows Session 11.',
         ],
         'evaluation_criteria' => [
-            ['title' => 'Review process', 'points' => 4, 'description' => 'The student used multiple required testing methods and showed deliberate review rather than a single-checker pass.'],
-            ['title' => 'Findings', 'points' => 8, 'description' => 'The student submitted eight substantially accurate, meaningful, and reproducible findings and avoided invented, duplicate, or unsupported problems.'],
-            ['title' => 'Evidence, recommendations, and verification', 'points' => 4, 'description' => 'Evidence actually supports the claim, the recommendation addresses the issue, and the verification method would retest the corrected version meaningfully.'],
-            ['title' => 'Judgment and prioritization', 'points' => 3, 'description' => 'The student provided a clear overall assessment, ranked the top three priorities, and distinguished accessibility failures from issues they merely dislike.'],
-            ['title' => 'Communication and AI Use Note', 'points' => 1, 'description' => 'The brief is clear, concise, and includes a brief AI Use Note that keeps the rule that AI output is not evidence.'],
+            ['title' => 'Coverage and accuracy', 'points' => 4, 'description' => 'Use judgment across essentially all 20 reproducible issues: full credit for near-complete accurate coverage; reduce for material gaps, inaccurate/duplicate findings, limited work, or non-completion.'],
+            ['title' => 'Evidence', 'points' => 2, 'description' => 'Evaluate whether claims consistently match authoritative sources, measurements, or direct testing evidence.'],
+            ['title' => 'Recommendations and verification', 'points' => 2, 'description' => 'Evaluate whether recommendations address actual barriers and retests would meaningfully confirm correction.'],
+            ['title' => 'Testing process', 'points' => 1, 'description' => 'Credible use of multiple relevant methods, including screen-reader testing.'],
+            ['title' => 'Prioritization, communication, and AI Use Note', 'points' => 1, 'description' => 'Top Five demonstrates judgment, communication is clear, the non-failure distinction is reasonable, and the AI Use Note is included.'],
         ],
-        'evaluation_total' => 20,
+        'evaluation_total' => 10,
         'class_work_section_title' => 'Challenge 05 Class Work',
         'class_work_section_description' => 'Use the review process below as the class-ready guide for Challenge 05.',
         'class_work_empty_message' => 'The Challenge 05 brief will appear here after the challenge cycle.',
