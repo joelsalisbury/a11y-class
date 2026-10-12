@@ -71,6 +71,9 @@ class Course
 
     public static function instructorModule(int $number): array
     {
+        // Module 06 is a file-only key until instructor authentication exists.
+        abort_if($number === 6, 404);
+
         $path = resource_path(sprintf('course/instructor/modules/%02d.php', $number));
 
         abort_unless(file_exists($path), 404);

@@ -1,3 +1,9 @@
+import { initSessionPresentation } from './session-presentation';
+
+for (const presentation of document.querySelectorAll('[data-session-presentation]')) {
+    initSessionPresentation(presentation);
+}
+
 const sessionNavLinks = Array.from(document.querySelectorAll('[data-session-nav-link]'));
 
 if (sessionNavLinks.length > 0 && 'IntersectionObserver' in window) {

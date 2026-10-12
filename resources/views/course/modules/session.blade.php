@@ -42,6 +42,7 @@
         />
 
         <div class="module-main">
+            <x-course.session-presentation :slides="$session['presentation_slides'] ?? []" :title="$session['title']">
             <x-page-heading
                 :label="'Module ' . str_pad((string) $module['number'], 2, '0', STR_PAD_LEFT) . ' · Session ' . str_pad((string) $sessionNumber, 2, '0', STR_PAD_LEFT)"
                 :title="$session['title']"
@@ -94,6 +95,10 @@
                                                 </a>
                                             @endforeach
                                         </div>
+                                    @endif
+
+                                    @if (!empty($section['example_view']))
+                                        @include($section['example_view'])
                                     @endif
 
                                     @if (!empty($section['image']))
@@ -286,6 +291,8 @@
                     </x-callout>
                 @endforeach
             </div>
+
+            </x-course.session-presentation>
 
             <x-course.module-pagination :module="$module" currentPage="session" :currentSessionNumber="$sessionNumber" />
         </div>

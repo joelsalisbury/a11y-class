@@ -85,3 +85,12 @@ Route::get('/modules/{module}/key-concepts', [CourseController::class, 'keyConce
 Route::get('/modules/{module}/key-concepts/{slug}', [CourseController::class, 'keyConcept'])
     ->whereNumber('module')
     ->name('modules.key-concepts.show');
+
+Route::get('/experiences/module-06/motion', [ExperienceController::class, 'module06Motion'])
+    ->name('experiences.module06.motion');
+
+Route::get('/experiences/module-06/cognition', [ExperienceController::class, 'module06Cognition'])
+    ->name('experiences.module06.cognition');
+
+Route::get('/experiences/gearshare', [ExperienceController::class, 'gearShare'])
+    ->name('experiences.gearshare');

@@ -2,6 +2,36 @@
 
 return [
     [
+        'date' => '2026-10-12',
+        'title' => 'Made Challenge 06 cumulative',
+        'description' => 'Challenge 06 now asks teams to investigate 12 deliberate issues, retaining the Module 06 emphasis while applying prior accessibility skills and the Module 01 evidence framework. Updated the brief and submission copy; the 10-point team rubric and redesign requirements remain intact.',
+        'modules' => ['Module 06'],
+    ],
+    [
+        'date' => '2026-10-12',
+        'title' => 'Rebuilt GearShare as an equipment-loan service',
+        'description' => 'Rebuilt GearShare as a more realistic equipment-loan experience. Challenge 06 now investigates realistic design decisions tied to motion, timing, predictability, cognitive accessibility, and consistency; its team structure and 10-point rubric remain intact.',
+        'modules' => ['Module 06'],
+    ],
+    [
+        'date' => '2026-10-12',
+        'title' => 'Added presentation mode to Sessions 12 and 13',
+        'description' => 'Sessions 12 and 13 now include presentation mode for in-class teaching while retaining the complete full-page View all mode for review.',
+        'modules' => ['Module 06'],
+    ],
+    [
+        'date' => '2026-10-12',
+        'title' => 'Rebuilt the Session 12 Motion and Timing demonstrations',
+        'description' => 'Replaced the demonstrations with equipment-desk announcements, a camera reservation with adjustable timing, static flash-frequency diagrams, and standard versus reduced-motion kit details.',
+        'modules' => ['Module 06'],
+    ],
+    [
+        'date' => '2026-10-12',
+        'title' => 'Developed Module 06: Why Is This So Hard to Use?',
+        'description' => 'Added Sessions 12 and 13 around motion, timing, safety, cognitive accessibility, and predictability. Expanded the Field Guide and resources, and created Challenge 06 as a 10-point team classification and redesign challenge.',
+        'modules' => ['Module 06'],
+    ],
+    [
         'date' => '2026-10-06',
         'title' => 'Expanded MakerMap for a comprehensive Challenge 05 review',
         'description' => 'Expanded MakerMap for an individual review that requires identifying all deliberate accessibility issues. Strengthened media, form, and semantic coverage; Challenge 05 is worth 10 points.',

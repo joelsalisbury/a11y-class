@@ -290,7 +290,10 @@
                     <div class="mt-6 space-y-6">
                         @foreach ($moduleRoadmap as $module)
                             <section class="rounded-xl border border-subtle bg-surface-2 p-5">
-                                <h3 class="text-lg font-semibold text-ink">Module {{ str_pad((string) $module['number'], 2, '0', STR_PAD_LEFT) }} — {{ $module['title'] }}</h3>
+                                <h3 class="text-lg font-semibold text-ink">Module {{ str_pad((string) $module['number'], 2, '0', STR_PAD_LEFT) }}{{ $module['number'] === 6 ? ': ' : ' — ' }}{{ $module['title'] }}</h3>
+                                @if (!empty($module['schedule_summary']))
+                                    <p class="mt-2 text-sm leading-7 text-ink-muted">{{ $module['schedule_summary'] }}</p>
+                                @endif
                                 @if (!empty($module['central_question']))
                                     <p class="mt-2 text-sm font-medium text-accent-cyan">Central question: {{ $module['central_question'] }}</p>
                                 @endif

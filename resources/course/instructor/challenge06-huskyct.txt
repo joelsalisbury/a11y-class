@@ -1,0 +1,19 @@
+Challenge 06: Reduce the Friction
+
+Work with your team to review GearShare, a fictional university equipment-loan service.
+
+You need a Camera Kit for a field shoot Thursday afternoon. Use GearShare to find an available kit, arrange pickup, and submit the request.
+
+GearShare contains 12 deliberate issues for you to investigate. Some map directly to accessibility requirements. Others require broader accessibility or inclusive-design judgment.
+
+Use authoritative evidence. Distinguish law, technical standards, institutional requirements, and broader guidance; make only claims your evidence supports. Automated-tool output and AI output are not proof. Do not label findings by module.
+
+Submit one team PDF containing:
+• Evaluation of all 12 issues, with Observation, Classification, Evidence, and Recommendation for each
+• One redesign artifact addressing at least two concerns
+• Top Two priorities
+• A brief AI Use Note
+
+10 points. Team submission.
+
+Use the course site for the full challenge instructions and GearShare experience. HuskyCT is authoritative for the submission deadline.

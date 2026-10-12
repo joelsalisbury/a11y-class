@@ -68,8 +68,9 @@ return [
         ],
         6 => [
             'title' => 'Why Is This So Hard to Use?',
+            'schedule_summary' => 'Session 12: motion, flashing, timing, and reduced motion. Session 13: cognitive accessibility, predictability, memory, and consistency. Challenge 06: team accessibility/inclusive-design evaluation and redesign, 10 points. Due dates are in HuskyCT.',
             'status' => 'upcoming',
-            'central_question' => 'Can an experience technically satisfy accessibility requirements and still be unnecessarily difficult or exclusionary?',
+            'central_question' => 'What can make an experience difficult, distracting, disorienting, or unsafe even when its basic controls work?',
         ],
         7 => [
             'title' => "The AI Says It's Accessible. Is It?",

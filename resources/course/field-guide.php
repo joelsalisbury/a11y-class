@@ -508,16 +508,14 @@ return [
                 [
                     'slug' => 'cognitive-accessibility',
                     'title' => 'Cognitive Accessibility',
-                    'summary' => 'Reducing unnecessary cognitive load through language, structure, and interaction clarity.',
-                    'status_note' => 'Expanded guidance will be added when we reach this topic.',
-                    'related_entries' => ['motion-timing'],
+                    'summary' => 'Reduce unnecessary interpretation and memory demands. See the Module 06 reference entries for clear content, predictable interaction, and repetition.',
+                    'related_entries' => ['clear-understandable-content', 'reduce-memory-repetition', 'predictable-interaction', 'failure-concern-preference'],
                 ],
                 [
                     'slug' => 'motion-timing',
                     'title' => 'Motion & Timing',
-                    'summary' => 'Animation, timing limits, and interruption behavior can create barriers if not carefully designed.',
-                    'status_note' => 'Expanded guidance will be added when we reach this topic.',
-                    'related_entries' => ['touch-mobile', 'cognitive-accessibility'],
+                    'summary' => 'Give people time and control over motion. See the Module 06 reference entries for timing, moving content, safety, and reduced motion.',
+                    'related_entries' => ['enough-time', 'pause-stop-hide', 'flashing-physical-reactions', 'reduced-motion'],
                 ],
                 [
                     'slug' => 'ai-accessibility',
@@ -539,6 +537,97 @@ return [
                     'summary' => 'A structured evaluation process combining standards mapping, manual testing, and prioritization.',
                     'status_note' => 'Expanded guidance will be added when we reach this topic.',
                     'related_entries' => ['testing-tools', 'toolkit', 'accessibility'],
+                ],
+            ],
+        ],
+        [
+            'title' => 'Motion, Cognition, and Predictability',
+            'entries' => [
+                [
+                    'slug' => 'enough-time',
+                    'title' => 'Enough Time',
+                    'summary' => 'Let users turn off, adjust, or extend unnecessary content-imposed time limits.',
+                    'standards_guidance' => ['2.2.1 Timing Adjustable is Level A and already part of WCAG 2.1. Essential and real-time exceptions need evidence. Resetting after expiry does not replace timing control.'],
+                    'resource_refs' => [
+                        ['module' => 6, 'resource_label' => 'Timing Adjustable'],
+                    ],
+                    'in_this_course' => [['label' => 'Module 06', 'route' => 'modules.show', 'params' => ['module' => 6]]],
+                ],
+                [
+                    'slug' => 'pause-stop-hide',
+                    'title' => 'Pause, Stop, Hide',
+                    'summary' => 'Let users control moving, blinking, scrolling, and auto-updating information.',
+                    'standards_guidance' => ['2.2.2 is Level A, already part of WCAG 2.1. Automatic movement alongside other content that lasts beyond five seconds needs control unless essential. Auto-updates have no five-second exemption.'],
+                    'resource_refs' => [
+                        ['module' => 6, 'resource_label' => 'Pause, Stop, Hide'],
+                    ],
+                    'in_this_course' => [['label' => 'Module 06', 'route' => 'modules.show', 'params' => ['module' => 6]]],
+                ],
+                [
+                    'slug' => 'flashing-physical-reactions',
+                    'title' => 'Flashing and Physical Reactions',
+                    'summary' => 'Treat flashing as a safety risk. Use static representations for teaching.',
+                    'standards_guidance' => ['2.3.1 Three Flashes or Below Threshold is Level A, already part of WCAG 2.1. Avoid flashing; uncertain frequency, area, brightness, or red-flash behavior requires validated analysis. A pause control cannot make unsafe exposure acceptable.'],
+                    'resource_refs' => [
+                        ['module' => 6, 'resource_label' => 'Three Flashes or Below Threshold'],
+                    ],
+                    'in_this_course' => [['label' => 'Module 06', 'route' => 'modules.show', 'params' => ['module' => 6]]],
+                ],
+                [
+                    'slug' => 'reduced-motion',
+                    'title' => 'Reduced Motion',
+                    'summary' => 'Reduce nonessential slide, zoom, and parallax effects that may cause physical discomfort.',
+                    'standards_guidance' => ['2.3.3 Animation from Interactions is AAA, not AA. CSS prefers-reduced-motion responds to system preferences; it is a strong practice, not itself a universal WCAG 2.1 AA requirement.'],
+                    'resource_refs' => [
+                        ['module' => 6, 'resource_label' => 'Animation from Interactions'],
+                        ['module' => 6, 'resource_label' => 'prefers-reduced-motion'],
+                    ],
+                    'in_this_course' => [['label' => 'Module 06', 'route' => 'modules.show', 'params' => ['module' => 6]]],
+                ],
+                [
+                    'slug' => 'predictable-interaction',
+                    'title' => 'Predictable Interaction',
+                    'summary' => 'Focus and input should let users explore without surprising changes of context.',
+                    'standards_guidance' => ['3.2.1 On Focus and 3.2.2 On Input are Level A, already part of WCAG 2.1. Changing content is not always changing context. 3.2.4 Consistent Identification is AA and concerns the same functionality within a set of pages; same-page inconsistency alone does not prove that failure.'],
+                    'resource_refs' => [
+                        ['module' => 6, 'resource_label' => 'On Focus'],
+                        ['module' => 6, 'resource_label' => 'On Input'],
+                        ['module' => 6, 'resource_label' => 'Consistent Identification'],
+                    ],
+                    'in_this_course' => [['label' => 'Module 06', 'route' => 'modules.show', 'params' => ['module' => 6]]],
+                ],
+                [
+                    'slug' => 'clear-understandable-content',
+                    'title' => 'Clear and Understandable Content',
+                    'summary' => 'Use familiar words, meaningful hierarchy, and instructions whose action is easy to find.',
+                    'standards_guidance' => ['W3C supplemental cognitive guidance supports reducing unnecessary interpretation. These recommendations are not themselves WCAG conformance requirements; unclear prose alone does not automatically establish an AA failure.'],
+                    'resource_refs' => [
+                        ['module' => 6, 'resource_label' => 'Use Clear and Understandable Content'],
+                    ],
+                    'in_this_course' => [['label' => 'Module 06', 'route' => 'modules.show', 'params' => ['module' => 6]]],
+                ],
+                [
+                    'slug' => 'reduce-memory-repetition',
+                    'title' => 'Reduce Memory and Repetition',
+                    'summary' => 'Reuse information from the same process, preserve progress, and make the current state and next action clear.',
+                    'standards_guidance' => ['3.3.7 Redundant Entry is Level A, added in WCAG 2.2. Auto-populate or make prior information available to select unless an exception applies. Broader guidance also supports resuming tasks without reconstructing progress from memory.'],
+                    'resource_refs' => [
+                        ['module' => 6, 'resource_label' => 'Redundant Entry'],
+                        ['module' => 6, 'resource_label' => 'Ensure Processes Do Not Rely on Memory'],
+                    ],
+                    'in_this_course' => [['label' => 'Module 06', 'route' => 'modules.show', 'params' => ['module' => 6]]],
+                ],
+                [
+                    'slug' => 'failure-concern-preference',
+                    'title' => 'Failure, Concern, or Preference?',
+                    'summary' => 'Classify the claim before proposing a fix. How do you know?',
+                    'standards_guidance' => ['Specific requirement: match observed behavior to a criterion, its level, version, and exceptions. Broader concern: use authoritative accessibility guidance without overstating conformance. Unsupported preference: name what evidence is missing. AI output is not evidence.'],
+                    'resource_refs' => [
+                        ['module' => 6, 'resource_label' => 'Redundant Entry'],
+                        ['module' => 6, 'resource_label' => 'Animation from Interactions'],
+                        ['module' => 6, 'resource_label' => 'Use Clear and Understandable Content'],
+                    ],
+                    'in_this_course' => [['label' => 'Module 06', 'route' => 'modules.show', 'params' => ['module' => 6]]],
                 ],
             ],
         ],

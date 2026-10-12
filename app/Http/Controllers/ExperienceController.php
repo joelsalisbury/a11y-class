@@ -2,8 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\View\View;
+
 class ExperienceController extends Controller
 {
+    public function module06Motion(): View
+    {
+        return view('experiences.module06-motion');
+    }
+
+    public function module06Cognition(): View
+    {
+        return view('experiences.module06-cognition');
+    }
+
+    public function gearShare(): View
+    {
+        return view('experiences.gearshare');
+    }
+
     public function module04Lab()
     {
         return view('experiences.interaction-lab');

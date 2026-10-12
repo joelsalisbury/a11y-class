@@ -414,3 +414,12 @@
     }
 
 }
+
+
+[data-session-presentation] [hidden] { display: none !important; }
+.session-slide { max-width: 58rem; min-height: 28rem; padding: 1rem 0 2rem; }
+.presentation-example > div { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); }
+@media print {
+    [data-presentation-controls], [data-presentation-deck] { display: none !important; }
+    [data-session-presentation] [data-session-review] { display: block !important; }
+}

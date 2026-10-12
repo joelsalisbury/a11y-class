@@ -12,12 +12,19 @@
                 :subtitle="'Central question: ' . ($challenge['question'] ?? $module['central_question'] ?? '')"
             />
 
+            @if (!empty($challenge['metadata']))
+                <p class="course-emphasis mt-6">{{ $challenge['metadata'] }}</p>
+            @endif
+
             <div class="course-flow">
                 <section id="challenge-problem" class="course-section module-anchor">
                     <x-section-heading :title="$challenge['problem_title'] ?? 'The Problem'" />
                     <div class="course-copy">
                         @if (!empty($challenge['problem']))
                             <p>{{ $challenge['problem'] }}</p>
+                            @if (!empty($challenge['problem_after']))
+                                <p>{{ $challenge['problem_after'] }}</p>
+                            @endif
                         @else
                             <p>A client asks:</p>
                             <p class="course-emphasis">“Is our digital experience accessible?”</p>
@@ -69,6 +76,10 @@
                                         <li>{{ $item }}</li>
                                     @endforeach
                                 </ol>
+                            @endif
+
+                            @if (!empty($challenge['evidence_scope']))
+                                <p>{{ $challenge['evidence_scope'] }}</p>
                             @endif
 
                             @if (!empty($challenge['investigation_note']))
@@ -140,7 +151,7 @@
 
                 @if (!empty($challenge['redesign']) || !empty($challenge['retest']))
                     <section id="challenge-solution" class="course-section module-anchor">
-                        <x-section-heading title="Redesign and Retest" />
+                        <x-section-heading :title="$challenge['solution_title'] ?? 'Redesign and Retest'" />
                         <div class="course-copy">
                             @if (!empty($challenge['redesign']))
                                 <h3>Redesign</h3>
@@ -152,6 +163,13 @@
                                 <p>{{ $challenge['retest'] }}</p>
                             @endif
                         </div>
+                    </section>
+                @endif
+
+                @if (!empty($challenge['priority']))
+                    <section id="challenge-priority" class="course-section module-anchor">
+                        <x-section-heading title="What Would You Fix First?" />
+                        <div class="course-copy"><p>{{ $challenge['priority'] }}</p></div>
                     </section>
                 @endif
 

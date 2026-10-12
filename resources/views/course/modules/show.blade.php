@@ -73,10 +73,13 @@
 
                 @if ($module['challenge'])
                     <section class="space-y-5">
-                        <x-section-heading title="Challenge {{ str_pad((string) $module['number'], 2, '0', STR_PAD_LEFT) }} — {{ $module['challenge']['title'] }}" />
+                        <x-section-heading :title="$module['challenge']['overview_heading'] ?? ('Challenge '.str_pad((string) $module['number'], 2, '0', STR_PAD_LEFT).' — '.$module['challenge']['title'])" />
 
                         <x-panel>
                             <div class="course-panel-copy">
+                                @if (!empty($module['challenge']['metadata']))
+                                    <p class="course-emphasis">{{ $module['challenge']['metadata'] }}</p>
+                                @endif
                                 <p>{{ $module['challenge']['summary'] ?? $module['challenge']['scenario'] ?? null }}</p>
                                 <a href="{{ route('modules.challenge', $module['number']) }}" class="inline-flex text-sm font-medium text-accent-cyan hover:text-accent-cyan-strong focus-visible:focus-ring rounded-sm">
                                     Open Challenge {{ str_pad((string) $module['number'], 2, '0', STR_PAD_LEFT) }} →
