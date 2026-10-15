@@ -37,10 +37,29 @@ it('renders Session 13 as cognitive-accessibility instruction and informal Chall
         ->assertSee('/modules/6/challenge')
         ->assertSee('/experiences/gearshare')
         ->assertSee('/experiences/module-06/cognition?slide=3')
-        ->assertSee('Quiz 3 — Thursday, October 29, 2026')
-        ->assertSee('Additional instructions will be provided before the quiz.')
+        ->assertSee('Looking Ahead: Accessibility Studio')
+        ->assertSee('Starting October 20')
+        ->assertSee('Each challenge will arrive alongside relevant instructional content')
+        ->assertSee('Keep attending and participating')
+        ->assertSee('Every Monday')
+        ->assertSee('October 22')
+        ->assertSee('Final project announced, including expectations and requirements')
+        ->assertSee('October 29')
+        ->assertSee('Quiz 3 at home. Attend and participate as usual')
+        ->assertSee('November–December')
+        ->assertSee('A/AA/AAA conformance')
+        ->assertSee('further instructions will be provided before the quiz.')
         ->assertDontSee('9:30–9:40')
         ->assertDontSee('Team critique');
+
+    $response = $this->get('/modules/6/session-13')->assertOk();
+    $document = new DOMDocument;
+    @$document->loadHTML($response->getContent());
+    $xpath = new DOMXPath($document);
+
+    $dateList = $xpath->query('//dl[@aria-label="Important dates"]')->item(0);
+    expect($dateList)->not->toBeNull();
+    expect($xpath->query('./div[dt and dd]', $dateList)->length)->toBe(4);
 });
 
 it('makes Session 13 the current class and publishes the upcoming assessment dates', function () {

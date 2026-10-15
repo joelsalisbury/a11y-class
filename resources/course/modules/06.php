@@ -195,13 +195,23 @@ $module = [
                     'note' => 'These prompts guide instructor check-ins only. Teams do not present to the whole class and do not submit additional work beyond Challenge 06.',
                 ],
                 [
-                    'title' => 'Quiz 3 — Thursday, October 29, 2026',
+                    'title' => 'Looking Ahead: Accessibility Studio',
                     'paragraphs' => [
-                        'At-home quiz.',
-                        'Covers course concepts and applied accessibility evaluation.',
-                        'Additional instructions will be provided before the quiz.',
+                        'Starting October 20, we’ll move to a studio-based rhythm: learn new content online at your own pace, then use class time to practice, collaborate, and develop your final project—with instructor support along the way.',
                     ],
-                    'note' => 'After Module 06, the course shifts toward accessibility evaluation and final-project studio work.',
+                    'bullets' => [
+                        'Learn asynchronously: New module content, examples, and resources will be available online.',
+                        'Take on weekly challenges: Each challenge will arrive alongside relevant instructional content.',
+                        'Make class time count: Keep attending and participating. Meetings will focus primarily on hands-on challenge and final-project work, collaboration, accessibility evaluation, and questions.',
+                        'Stay connected: I’ll join our regular class sessions to guide you and check progress, except October 29. Every Monday, look for a HuskyCT announcement with the week’s activities, expectations, and upcoming deadlines.',
+                    ],
+                    'date_rows' => [
+                        ['date' => 'October 20', 'details' => 'Begin the studio-based format.'],
+                        ['date' => 'October 22', 'details' => 'Final project announced, including expectations and requirements.'],
+                        ['date' => 'October 29', 'details' => 'Quiz 3 at home. Attend and participate as usual; I’ll be away due to a scheduling conflict.'],
+                        ['date' => 'November–December', 'details' => 'Weekly challenges, accessibility studio work, and final-project development.'],
+                    ],
+                    'note' => 'We’ll keep building practical skills: WCAG criteria and A/AA/AAA conformance; keyboard and screen-reader testing; documenting barriers; and designing, implementing, and verifying improvements. Quiz 3 covers course concepts and applied accessibility evaluation; further instructions will be provided before the quiz.',
                 ],
             ],
             'resources' => [...$cognitiveResources, ...$cognitiveCriteriaResources],
@@ -280,7 +290,7 @@ foreach ($session12['sections'][6]['ordered'] as $scenario) {
 }
 
 $session13 = $module['sessions'][13];
-$presentationSlideKeys = ['title', 'paragraphs', 'example_view', 'actions', 'bullets', 'question', 'evidence', 'note'];
+$presentationSlideKeys = ['title', 'paragraphs', 'example_view', 'actions', 'bullets', 'date_rows', 'question', 'evidence', 'note'];
 $module['sessions'][13]['presentation_slides'] = array_map(
     static fn (array $section): array => array_intersect_key($section, array_flip($presentationSlideKeys)),
     $session13['sections'],

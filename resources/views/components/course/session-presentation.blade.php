@@ -40,6 +40,16 @@
                                 @foreach ($slide['bullets'] as $item)<li>{{ $item }}</li>@endforeach
                             </ul>
                         @endif
+                        @if (!empty($slide['date_rows']))
+                            <dl aria-label="Important dates" class="overflow-hidden rounded-lg border border-subtle bg-surface-2 text-base leading-relaxed md:text-lg">
+                                @foreach ($slide['date_rows'] as $row)
+                                    <div class="grid gap-1 border-b border-subtle px-4 py-3 last:border-b-0 md:grid-cols-[minmax(8rem,0.8fr)_minmax(0,2fr)] md:gap-4">
+                                        <dt class="font-semibold text-accent-cyan">{{ $row['date'] }}</dt>
+                                        <dd class="text-ink-muted">{{ $row['details'] }}</dd>
+                                    </div>
+                                @endforeach
+                            </dl>
+                        @endif
                         @foreach ($slide['categories'] ?? [] as $category)
                             <h3 class="text-xl font-semibold text-ink md:text-2xl">{{ $category }}</h3>
                         @endforeach

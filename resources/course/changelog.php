@@ -2,6 +2,18 @@
 
 return [
     [
+        'date' => '2026-10-15',
+        'title' => 'Clarified Session 13 key dates',
+        'description' => 'Reformatted the Accessibility Studio slide dates into a responsive, screen-reader-friendly list so each date and its associated course event are easy to scan.',
+        'modules' => ['Module 06'],
+    ],
+    [
+        'date' => '2026-10-15',
+        'title' => 'Updated Session 13 to introduce the Accessibility Studio format',
+        'description' => 'Revised the closing slide with the October 20 studio transition, asynchronous learning and weekly challenge expectations, class participation and instructor support, Monday HuskyCT announcements, key dates, Quiz 3, and continuing practical accessibility priorities.',
+        'modules' => ['Module 06'],
+    ],
+    [
         'date' => '2026-10-14',
         'title' => 'Rebuilt the Session 13 cognitive-load demonstration',
         'description' => 'Replaced the disconnected cognition exercises with one keyboard-accessible camera-reservation task completed in high- and reduced-cognitive-load versions. Added an instructor-ready comparison and precise WCAG 2.2 applicability notes; Session 13 now invites students into the experience before explaining its design choices.',
