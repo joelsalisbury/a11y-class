@@ -2,6 +2,18 @@
 
 return [
     [
+        'date' => '2026-10-14',
+        'title' => 'Rebuilt the Session 13 cognitive-load demonstration',
+        'description' => 'Replaced the disconnected cognition exercises with one keyboard-accessible camera-reservation task completed in high- and reduced-cognitive-load versions. Added an instructor-ready comparison and precise WCAG 2.2 applicability notes; Session 13 now invites students into the experience before explaining its design choices.',
+        'modules' => ['Module 06'],
+    ],
+    [
+        'date' => '2026-10-14',
+        'title' => 'Revised Session 13 to restore cognitive accessibility instruction',
+        'description' => 'Removed the minute-by-minute agenda and formal presentations. Restored a focused cognitive-load lesson with verified WCAG 2.2 connections, a concrete interface comparison, informal Challenge 06 instructor check-ins, and the Quiz 3 announcement. Challenge 06 requirements, deliverables, rubric, and submission workflow remain unchanged.',
+        'modules' => ['Module 06'],
+    ],
+    [
         'date' => '2026-10-12',
         'title' => 'Made Challenge 06 cumulative',
         'description' => 'Challenge 06 now asks teams to investigate 12 deliberate issues, retaining the Module 06 emphasis while applying prior accessibility skills and the Module 01 evidence framework. Updated the brief and submission copy; the 10-point team rubric and redesign requirements remain intact.',

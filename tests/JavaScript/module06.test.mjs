@@ -217,37 +217,6 @@ test('kit-detail controls open and close the same information in both versions',
     }
 });
 
-test('cognition examples reuse contact, distinguish explicit review, and complete the task', () => {
-    const f = fixture('module06-cognition');
-    const kit = f.element('[name=stress-kit]:checked', { value: 'Audio Kit', name: 'stress-kit' });
-    f.get('#stress-form').child('[name=stress-kit]:checked', kit);
-    f.run();
-    f.get('#first-contact').value = 'student@example.edu';
-    f.get('#memory-start').fire('submit');
-    assert.equal(f.get('#reuse-contact').value, 'student@example.edu');
-    assert.equal(f.get('#repeat-contact').value, '');
-    assert.equal(f.get('#memory-start').hidden, true);
-    f.get('#jump-location').value = 'Art Building';
-    f.get('#jump-location').fire('change');
-    assert.equal(f.document.activeElement, f.get('#pickup-review'));
-    f.get('#back-location').fire('click');
-    f.get('#stay-location').value = 'Media Studio';
-    f.get('#stay-location').fire('change');
-    assert.equal(f.document.activeElement, f.get('#jump-location'));
-    f.get('#review-location').fire('click');
-    assert.match(f.get('#location-result').textContent, /Media Studio/);
-    f.get('#stress-window').value = 'Thursday 2 PM';
-    f.get('#stress-window').id = 'stress-window';
-    f.get('#stress-duration').value = 'Two days';
-    f.get('#stress-form').fire('change', f.get('#stress-window'));
-    assert.equal(f.document.activeElement, f.get('#stress-review'));
-    f.get('#stress-form').fire('submit');
-    assert.match(f.get('#stress-status').textContent, /Local request confirmed: Audio Kit; Thursday 2 PM/);
-    f.get('#stress-form').fire('reset');
-    assert.equal(f.get('#stress-status').textContent, 'Task reset.');
-});
-
-
 test('the spare-battery option works on pointer release but not native keyboard click activation', () => {
     const f = fixture('gearshare');
     f.run();

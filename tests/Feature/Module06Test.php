@@ -13,6 +13,47 @@ it('serves the Module 06 teaching pages and experience routes', function (string
     ['/experiences/gearshare', 'experiences.gearshare'],
 ]);
 
+it('renders Session 13 as cognitive-accessibility instruction and informal Challenge 06 studio', function () {
+    $this->get('/modules/6/session-13')->assertOk()
+        ->assertSee('Module 06 — Cognitive Accessibility & Challenge Studio')
+        ->assertSee('Thursday, October 15, 2026')
+        ->assertSee('Intrinsic load')
+        ->assertSee('Extraneous load')
+        ->assertSee('Germane load')
+        ->assertSee('People with ADHD, learning disabilities, memory impairments')
+        ->assertSee('1.3.1 Info and Relationships (A)')
+        ->assertSee('2.4.6 Headings and Labels (AA)')
+        ->assertSee('3.2.3 Consistent Navigation (AA)')
+        ->assertSee('3.3.2 Labels or Instructions (A)')
+        ->assertSee('3.3.3 Error Suggestion (AA)')
+        ->assertSee('3.3.7 Redundant Entry (A)')
+        ->assertSee('Teams do not present to the whole class')
+        ->assertSee('Open Challenge 06')
+        ->assertSee('How Much Can You Keep in Your Head?')
+        ->assertSee('/modules/6/challenge')
+        ->assertSee('/experiences/gearshare')
+        ->assertSee('/experiences/module-06/cognition?slide=3')
+        ->assertSee('Quiz 3 — Thursday, October 29, 2026')
+        ->assertSee('Additional instructions will be provided before the quiz.')
+        ->assertDontSee('9:30–9:40')
+        ->assertDontSee('Team critique');
+});
+
+it('makes Session 13 the current class and publishes the upcoming assessment dates', function () {
+    $this->get('/')->assertOk()->assertSee('Module 06 — Cognitive Accessibility & Challenge Studio');
+
+    $this->get('/syllabus')->assertOk()
+        ->assertSee('Quiz 3 is an at-home assessment on Thursday, October 29, 2026')
+        ->assertSee('existing course material and practical accessibility evaluation skills')
+        ->assertSee('around November 3')
+        ->assertSee('screen-reader proficiency')
+        ->assertSee('remediation and verification')
+        ->assertSee('9 Challenges Total')
+        ->assertSee('35%')
+        ->assertSee('5%')
+        ->assertSee('30%');
+});
+
 it('keeps the Module 06 instructor key unavailable over HTTP', function () {
     $this->get('/instructor/modules/6/answer-key')->assertNotFound();
 });
@@ -60,8 +101,36 @@ it('renders an accessible presentation with the full review available without Ja
 
 it('preserves the originating slide on Module 06 demo return links', function () {
     $this->get('/experiences/module-06/motion?slide=6')->assertOk()->assertSee('/modules/6/session-12#slide-6');
-    $this->get('/experiences/module-06/cognition?slide=4')->assertOk()->assertSee('/modules/6/session-13#slide-4');
+    $this->get('/experiences/module-06/cognition?slide=3')->assertOk()->assertSee('/modules/6/session-13#slide-3');
     $this->get('/experiences/module-06/motion?slide=999')->assertOk()->assertDontSee('#slide-999');
+});
+
+it('presents the cognition experience as one labeled two-version reservation task', function () {
+    $response = $this->get('/experiences/module-06/cognition')->assertOk()
+        ->assertSee('Camera Kit')
+        ->assertSee('Version A')
+        ->assertSee('Version B')
+        ->assertSee('Thursday morning')
+        ->assertSee('three-person documentary shoot')
+        ->assertSee('next day')
+        ->assertSee('An interface can satisfy applicable WCAG success criteria while still imposing unnecessary cognitive demands on its users.')
+        ->assertSee('3.2.3 Consistent Navigation (AA)')
+        ->assertSee('3.3.2 Labels or Instructions (A)')
+        ->assertSee('3.3.7 Redundant Entry (A)')
+        ->assertSee('2.4.6 Headings and Labels (AA)')
+        ->assertDontSee('student@example.edu');
+
+    $document = new DOMDocument;
+    @$document->loadHTML($response->getContent());
+    $xpath = new DOMXPath($document);
+
+    expect($xpath->query('//*[@data-reservation-form="high"]')->length)->toBe(1);
+    expect($xpath->query('//*[@data-reservation-form="low"]')->length)->toBe(1);
+    expect($xpath->query('//*[@data-progress="low"]/li')->length)->toBe(4);
+
+    foreach ($xpath->query('//form//select|//form//input') as $control) {
+        expect($xpath->query('//label[@for="'.$control->getAttribute('id').'"]')->length)->toBe(1);
+    }
 });
 
 it('presents GearShare as an equipment service with labeled controls and local illustrations', function () {

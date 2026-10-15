@@ -19,18 +19,25 @@ $cognitiveResources = [
     ['label' => 'Use Clear and Understandable Content', 'href' => 'https://www.w3.org/WAI/WCAG2/supplemental/objectives/o3-clear-content/', 'meta' => 'W3C · Supplemental cognitive guidance'],
     ['label' => 'Ensure Processes Do Not Rely on Memory', 'href' => 'https://www.w3.org/WAI/WCAG2/supplemental/objectives/o6-memory/', 'meta' => 'W3C · Supplemental cognitive guidance'],
 ];
+$cognitiveCriteriaResources = [
+    $resource('Info and Relationships', 'info-and-relationships', 'WCAG 2.2 · 1.3.1 · A'),
+    $resource('Headings and Labels', 'headings-and-labels', 'WCAG 2.2 · 2.4.6 · AA'),
+    $resource('Consistent Navigation', 'consistent-navigation', 'WCAG 2.2 · 3.2.3 · AA'),
+    $resource('Labels or Instructions', 'labels-or-instructions', 'WCAG 2.2 · 3.3.2 · A'),
+    $resource('Error Suggestion', 'error-suggestion', 'WCAG 2.2 · 3.3.3 · AA'),
+];
 
 $module = [
     'label' => 'MODULE 06',
     'title' => 'Why Is This So Hard to Use?',
     'central_question' => 'What can make an experience difficult, distracting, disorienting, or unsafe even when its basic controls work?',
     'overview' => 'An interface can be keyboard accessible, correctly labeled, and technically functional while still demanding too much from the user. Motion can distract or cause physical discomfort. Flashing can create a safety risk. Time limits can prevent someone from completing a task. Dense or unpredictable interfaces can demand unnecessary memory and interpretation. This module looks at accessibility where safety, cognition, predictability, and usability overlap.',
-    'status' => 'upcoming',
+    'status' => 'current',
     'sessions' => [
         12 => [
             'label' => 'SESSION 12',
             'title' => 'When Does Motion Become a Barrier?',
-            'status' => 'upcoming',
+            'status' => 'complete',
             'question' => 'When do motion, flashing, updating content, or time limits become accessibility problems rather than mere annoyances?',
             'summary' => 'Test moving content and time pressure, discuss flashing safely, and compare motion with a reduced-motion alternative.',
             'overview' => 'Movement gets attention. Sometimes that is useful. Sometimes it competes with the task, creates time pressure, makes an interface difficult to follow, or causes physical discomfort.',
@@ -89,62 +96,115 @@ $module = [
         ],
         13 => [
             'label' => 'SESSION 13',
-            'title' => 'Why Is This So Hard to Follow?',
-            'status' => 'upcoming',
-            'question' => 'When does an interface make the user remember, interpret, or manage more than necessary?',
-            'summary' => 'Compare content, memory demands, predictability, and consistency, then begin the team classification and redesign challenge.',
-            'overview' => 'Some barriers are easy to measure. Others appear when a technically functional interface asks the user to remember too much, interpret unclear language, predict unexpected behavior, or recover from unnecessary complexity.',
+            'title' => 'Module 06 — Cognitive Accessibility & Challenge Studio',
+            'status' => 'current',
+            'question' => 'How can we reduce unnecessary cognitive effort while distinguishing usability from WCAG conformance?',
+            'summary' => 'Explore cognitive load and WCAG 2.2, then finish Challenge 06 during open studio.',
+            'overview' => 'Thursday, October 15, 2026. Conclude Module 06 with a focused look at cognitive load and inclusive interface design, then use open studio time to finish the existing Challenge 06 work. Cognitive accessibility is important, but neither a checklist nor conformance level guarantees that an interface is easy to understand or use.',
             'sections' => [
                 [
-                    'title' => 'What Does the Interface Ask of You?',
-                    'emphasis' => ['If the interface technically works, what evidence tells us it still creates an accessibility problem?'],
-                    'paragraphs_after' => ['Cognitive load includes keeping track of choices, interpreting instructions, and remembering the next step. Notice what work belongs to the task and what work the interface adds.'],
+                    'title' => 'Cognitive load is part of the experience',
+                    'paragraphs' => [
+                        'Thursday, October 15, 2026.',
+                        'Cognitive load is the mental effort a person uses to understand information, make decisions, remember details, and complete a task. In interactive media, every unclear instruction, unexpected change, or detail a user must keep in mind adds work beyond the task itself.',
+                        'People with ADHD, learning disabilities, memory impairments, and other cognitive differences can face particular barriers when interfaces demand sustained attention, working memory, or interpretation. Clearer, more predictable experiences often help everyone, especially when people are tired, interrupted, unfamiliar with a system, or using it under stress.',
+                    ],
+                    'question' => 'Can an interface work technically and still ask too much of the person using it?',
                 ],
                 [
-                    'title' => 'Can You Find the Action?',
-                    'paragraphs' => ['Compare the two versions of the pickup instructions. They contain the same information. Which makes the action, deadline, and location easier to find?'],
+                    'title' => 'Three kinds of mental effort',
+                    'paragraphs' => ['One useful learning model separates cognitive load into three kinds. It helps us ask what work a task requires and what work the interface adds; it is a design lens, not a WCAG classification.'],
+                    'bullets' => [
+                        'Intrinsic load: effort inherent in the task. Comparing three camera kits means considering their actual differences.',
+                        'Extraneous load: avoidable effort caused by presentation or interaction. Unclear pickup instructions, inconsistent control labels, or choices scattered across the page make the same task harder.',
+                        'Germane load: effort that helps a person build a useful understanding. A clear comparison of kit features can help someone make a confident choice.',
+                    ],
+                    'question' => 'Which effort belongs to the task, and which does the interface unnecessarily add?',
+                ],
+                [
+                    'title' => 'How Much Can You Keep in Your Head?',
+                    'paragraphs' => ['Working memory holds information in mind while we make a decision or complete a task. Try the same equipment reservation twice and notice how the interface changes the mental work.'],
+                    'actions' => [['label' => 'Try the cognitive-load reservation demo →', 'route' => 'experiences.module06.cognition', 'new_tab' => true]],
+                    'bullets' => [
+                        'What information did you have to remember?',
+                        'When did you feel uncertain about your progress or earlier choices?',
+                        'Which changes made the second attempt easier?',
+                    ],
+                    'note' => 'Cognitive accessibility is a broader design goal. WCAG sets specific, testable requirements; meeting applicable criteria does not guarantee low cognitive load.',
+                ],
+                [
+                    'title' => 'A clearer request flow',
+                    'paragraphs' => ['Compare the same equipment-pickup information presented as one dense paragraph and as a short sequence with descriptive headings. The task has not changed; the second version makes the steps and conditions easier to locate and remember.'],
                     'example_view' => 'course.modules.module06-clear-content',
-                    'paragraphs_after' => ['W3C cognitive-accessibility guidance recommends familiar language, manageable chunks, and clear instructions. A clearer rewrite can reduce barriers for people with cognitive and learning disabilities. Not every writing recommendation maps directly to a WCAG AA failure.'],
+                    'question' => 'What mental work does the clearer version remove, and what information must it still preserve?',
+                    'note' => 'Clear organization can reduce extraneous load. The example illustrates good design; it is not, on its own, a conformance test.',
                 ],
                 [
-                    'title' => 'Why Am I Entering This Again?',
-                    'paragraphs' => ['In the memory comparison, enter a fictional contact address, then complete pickup details. Compare entering it again with reusing the earlier value.', 'WCAG 2.2 added 3.3.7 Redundant Entry (Level A). Information required again in the same process should be auto-populated or available to select, unless an exception applies, such as essential re-entry, security, or information that is no longer valid. This was not a WCAG 2.1 requirement.'],
-                    'actions' => [['label' => 'Open cognitive-accessibility examples →', 'route' => 'experiences.module06.cognition', 'new_tab' => true]],
-                    'emphasis' => ['Do not make users remember information the interface already knows.'],
+                    'title' => 'WCAG supports structure and orientation',
+                    'paragraphs' => ['These WCAG 2.2 criteria address specific aspects of how people find and understand information across a page or site:'],
+                    'bullets' => [
+                        '1.3.1 Info and Relationships (A): relationships conveyed visually, such as headings, lists, and form groups, must also be programmatically determinable or available in text. This helps preserve meaning when presentation changes.',
+                        '2.4.6 Headings and Labels (AA): headings and labels that are present must describe their topic or purpose. They help users orient themselves; the criterion does not require headings or labels to exist.',
+                        '3.2.3 Consistent Navigation (AA): repeated navigation mechanisms appear in the same relative order across pages in a set. Predictable placement can reduce relearning.',
+                    ],
+                    'actions' => [
+                        ['label' => '1.3.1 Info and Relationships', 'href' => 'https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html', 'new_tab' => true],
+                        ['label' => '2.4.6 Headings and Labels', 'href' => 'https://www.w3.org/WAI/WCAG22/Understanding/headings-and-labels.html', 'new_tab' => true],
+                        ['label' => '3.2.3 Consistent Navigation', 'href' => 'https://www.w3.org/WAI/WCAG22/Understanding/consistent-navigation.html', 'new_tab' => true],
+                    ],
                 ],
                 [
-                    'title' => 'Did I Ask It to Do That?',
-                    'paragraphs' => ['In the predictability comparison, change a pickup location. One version moves focus to the request section immediately; the other waits for an explicit button.', 'WCAG 3.2.1 On Focus and 3.2.2 On Input are Level A. Focus alone must not change context. Changing a setting must not automatically change context unless the user was advised beforehand. Updating related content is not always a change of context; moving focus elsewhere is.'],
-                    'emphasis' => ['Can you explore an option without committing to something else?'],
+                    'title' => 'WCAG supports clear input and recovery',
+                    'paragraphs' => ['These criteria reduce specific kinds of ambiguity, correction effort, and short-term memory demand in processes:'],
+                    'bullets' => [
+                        '3.3.2 Labels or Instructions (A): when content requires user input, labels or instructions are provided so people know what is expected.',
+                        '3.3.3 Error Suggestion (AA): when an input error is automatically detected and a correction is known, suggest it, unless doing so would jeopardize security or the content’s purpose.',
+                        '3.3.7 Redundant Entry (A): information already entered in the same process is auto-populated or available to select, unless re-entry is essential, required for security, or the information is no longer valid.',
+                    ],
+                    'actions' => [
+                        ['label' => '3.3.2 Labels or Instructions', 'href' => 'https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions.html', 'new_tab' => true],
+                        ['label' => '3.3.3 Error Suggestion', 'href' => 'https://www.w3.org/WAI/WCAG22/Understanding/error-suggestion.html', 'new_tab' => true],
+                        ['label' => '3.3.7 Redundant Entry', 'href' => 'https://www.w3.org/WAI/WCAG22/Understanding/redundant-entry.html', 'new_tab' => true],
+                    ],
+                    'note' => 'These are specific WCAG requirements with defined scope and exceptions, not a general guarantee that every interaction will be cognitively easy.',
                 ],
                 [
-                    'title' => 'Is This the Same Action?',
-                    'paragraphs' => ['Imagine the same save function labeled Save on a project page, Store on its settings page, and Keep on its review page. The user has to decide whether these mean the same thing.', 'WCAG 3.2.4 Consistent Identification (Level AA) concerns components with the same functionality within a set of web pages. Consistency also helps within a single page, but a same-page label comparison alone does not establish the full criterion. Different labels can be appropriate when purpose or context differs.'],
-                    'emphasis' => ['Is the user learning one interface, or relearning the same thing repeatedly?'],
+                    'title' => 'Conformance is not the whole experience',
+                    'paragraphs' => [
+                        'WCAG success criteria address important, testable requirements. They do not measure every source of cognitive load or guarantee that an experience is clear, efficient, or inclusive. A user may still face excessive choices, confusing language, distracting complexity, or a demanding task even when applicable criteria are met.',
+                        'Use criteria to support precise claims, and use observation and user impact to identify broader usability concerns. Reduce unnecessary effort without removing the meaningful thinking the task itself requires.',
+                    ],
+                    'question' => 'Which friction in your Challenge 06 investigation is covered by a criterion, and which needs a broader usability explanation?',
                 ],
                 [
-                    'title' => 'Same Task, More Work',
-                    'paragraphs' => ['Choose a production-equipment kit and a pickup window in the contained teaching experience. Complete the task once before analyzing it.'],
-                    'actions' => [['label' => 'Open Same Task, More Work →', 'route' => 'experiences.module06.cognition', 'new_tab' => true]],
-                    'ordered' => ['What made the task harder?', 'Is there a specific standard or criterion?', 'Is there broader W3C guidance?', 'Is this simply a design preference?', 'What would you change first?'],
-                    'note' => 'A preference can suggest a useful change. It cannot establish an accessibility failure without supporting evidence.',
+                    'title' => 'Challenge 06 open studio',
+                    'paragraphs' => ['Continue in your existing three HuskyCT-managed teams and use the remaining class time to finish the existing Challenge 06 work. Work from the original instructions, deliverables, 10-point rubric, and HuskyCT submission workflow.'],
+                    'bullets_intro' => 'Instructor check-ins are informal conversations as I visit each team:',
+                    'bullets' => [
+                        'What have you discovered so far?',
+                        'What accessibility or usability problems are emerging?',
+                        'Which findings can you connect to WCAG criteria?',
+                        'Are there cognitive-load issues WCAG does not fully address?',
+                        'What are you proposing to improve, and why?',
+                    ],
+                    'challenge_reference' => ['title' => 'Challenge 06: Reduce the Friction', 'description' => 'Return to the existing challenge brief; no new deliverables are added for this studio.', 'link_label' => 'Open Challenge 06 →'],
+                    'actions' => [
+                        ['label' => 'Open Challenge 06 →', 'route' => 'modules.challenge', 'params' => ['module' => 6]],
+                        ['label' => 'Open GearShare →', 'route' => 'experiences.gearshare', 'new_tab' => true],
+                    ],
+                    'note' => 'These prompts guide instructor check-ins only. Teams do not present to the whole class and do not submit additional work beyond Challenge 06.',
                 ],
                 [
-                    'title' => 'Can You Pick Up Where You Left Off?',
-                    'paragraphs' => ['Start the same task with these details: an Audio Kit, Thursday 2 PM, a two-person interview, and a two-day loan. Before requesting it, stop and look away. Briefly discuss which information should remain visible, then return to the task. This is an interruption test.'],
-                    'bullets' => ['Is the current state obvious?', 'Is the next action obvious?', 'Did the interface preserve progress?', 'Does the user have to reconstruct information from memory?'],
-                    'paragraphs_after' => ['A visible summary, a clear next action, and preserved progress can reduce memory demands. Support that recommendation with W3C guidance rather than claiming every interrupted task automatically fails AA.'],
-                ],
-                [
-                    'title' => 'Begin Challenge 06: Reduce the Friction',
-                    'paragraphs' => ['Use your existing HuskyCT-managed team. Challenge 06 is a 10-point team evaluation and redesign. GearShare contains 12 deliberate issues; evaluate all 12 in the final submission.'],
-                    'ordered' => ['Open GearShare and request a Camera Kit for a field shoot Thursday afternoon.', 'Identify at least two candidate design decisions.', 'Begin classifying them and finding supporting guidance.', 'Choose a meaningful part your team may redesign.'],
-                    'challenge_reference' => ['title' => 'Reduce the Friction', 'description' => 'Classify with evidence, redesign one part, and choose your Top Two priorities.', 'link_label' => 'Open Challenge 06 →'],
-                    'actions' => [['label' => 'Open GearShare →', 'route' => 'experiences.gearshare', 'new_tab' => true]],
-                    'note' => 'Begin in class. Submit the team PDF through HuskyCT by its official deadline; no submission is required today.',
+                    'title' => 'Quiz 3 — Thursday, October 29, 2026',
+                    'paragraphs' => [
+                        'At-home quiz.',
+                        'Covers course concepts and applied accessibility evaluation.',
+                        'Additional instructions will be provided before the quiz.',
+                    ],
+                    'note' => 'After Module 06, the course shifts toward accessibility evaluation and final-project studio work.',
                 ],
             ],
-            'resources' => $cognitiveResources,
+            'resources' => [...$cognitiveResources, ...$cognitiveCriteriaResources],
         ],
     ],
     'challenge' => [
@@ -152,7 +212,7 @@ $module = [
         'title' => 'Reduce the Friction',
         'metadata' => 'Team Challenge · 10 points',
         'overview_heading' => 'Challenge 06: Reduce the Friction',
-        'status' => 'upcoming',
+        'status' => 'current',
         'summary' => 'Investigate 12 deliberate issues with evidence, redesign one meaningful part, and choose two priorities.',
         'question' => 'What kind of accessibility problem are you looking at, and what would you change?',
         'problem_title' => 'The Task',
@@ -220,16 +280,10 @@ foreach ($session12['sections'][6]['ordered'] as $scenario) {
 }
 
 $session13 = $module['sessions'][13];
-$module['sessions'][13]['presentation_slides'] = [
-    ['title' => $session13['title'], 'paragraphs' => [$session13['overview']], 'question' => $session13['question']],
-    ['title' => $session13['sections'][0]['title'], 'paragraphs' => $session13['sections'][0]['paragraphs_after'], 'question' => $session13['sections'][0]['emphasis'][0]],
-    ['title' => $session13['sections'][1]['title'], 'example_view' => $session13['sections'][1]['example_view'], 'question' => 'Which version makes the action, deadline, and location easier to find?', 'evidence' => 'W3C supplemental cognitive-accessibility guidance', 'note' => 'Clear content and instructions reduce interpretation. These recommendations are not themselves WCAG AA conformance requirements.'],
-    ['title' => $session13['sections'][2]['title'], 'paragraphs' => [$session13['sections'][2]['paragraphs'][0]], 'actions' => $session13['sections'][2]['actions'], 'question' => $session13['sections'][2]['emphasis'][0], 'evidence' => 'WCAG 2.2 · 3.3.7 Redundant Entry · Level A', 'note' => 'Added in WCAG 2.2. In the same process, auto-populate earlier information or make it available to select, unless an exception applies.'],
-    ['title' => $session13['sections'][3]['title'], 'paragraphs' => [$session13['sections'][3]['paragraphs'][0]], 'actions' => $session13['sections'][2]['actions'], 'question' => $session13['sections'][3]['emphasis'][0], 'evidence' => '3.2.1 On Focus / 3.2.2 On Input · Level A', 'note' => 'Focus alone must not change context. Changing a setting must not automatically change context without advance advice. A content update is not always a context change.'],
-    ['title' => $session13['sections'][4]['title'], 'paragraphs' => [$session13['sections'][4]['paragraphs'][0]], 'question' => $session13['sections'][4]['emphasis'][0], 'evidence' => '3.2.4 Consistent Identification · Level AA', 'note' => 'The criterion concerns the same functionality within a set of web pages. Same-page inconsistency alone does not establish the full criterion.'],
-    ['title' => $session13['sections'][5]['title'], 'paragraphs' => $session13['sections'][5]['paragraphs'], 'actions' => $session13['sections'][5]['actions'], 'bullets' => $session13['sections'][5]['ordered'], 'question' => 'What would you change first?', 'note' => $session13['sections'][5]['note']],
-    ['title' => $session13['sections'][6]['title'], 'paragraphs' => [$session13['sections'][6]['paragraphs'][0]], 'bullets' => $session13['sections'][6]['bullets'], 'question' => 'What must you reconstruct from memory?', 'evidence' => 'W3C supplemental guidance: reduce memory demands', 'note' => 'This is an interruption test. Preserve state, make progress visible, and clarify the next action.'],
-    ['title' => $session13['sections'][7]['title'], 'paragraphs' => $session13['sections'][7]['paragraphs'], 'bullets' => $session13['sections'][7]['ordered'], 'actions' => [...$session13['sections'][7]['actions'], ['label' => 'Open Challenge 06 →', 'route' => 'modules.challenge', 'params' => ['module' => 6]]], 'question' => 'Which part might your team redesign?', 'note' => $session13['sections'][7]['note']],
-];
+$presentationSlideKeys = ['title', 'paragraphs', 'example_view', 'actions', 'bullets', 'question', 'evidence', 'note'];
+$module['sessions'][13]['presentation_slides'] = array_map(
+    static fn (array $section): array => array_intersect_key($section, array_flip($presentationSlideKeys)),
+    $session13['sections'],
+);
 
 return $module;

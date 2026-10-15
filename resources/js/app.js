@@ -1,7 +1,12 @@
 import { initSessionPresentation } from './session-presentation';
+import { initCognitiveLoadDemo } from './cognitive-load-demo';
 
 for (const presentation of document.querySelectorAll('[data-session-presentation]')) {
     initSessionPresentation(presentation);
+}
+
+for (const demo of document.querySelectorAll('[data-cognitive-load-demo]')) {
+    initCognitiveLoadDemo(demo);
 }
 
 const sessionNavLinks = Array.from(document.querySelectorAll('[data-session-nav-link]'));

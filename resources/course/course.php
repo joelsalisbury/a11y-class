@@ -36,8 +36,8 @@ return [
     ],
 
     'current' => [
-        'module' => 5,
-        'session' => 10,
+        'module' => 6,
+        'session' => 13,
     ],
 
     'modules' => [
@@ -63,13 +63,13 @@ return [
         ],
         5 => [
             'title' => 'What Is the Interface Actually Made Of?',
-            'status' => 'current',
+            'status' => 'complete',
             'central_question' => 'When two interfaces look the same, what makes them different to the browser and assistive technology?',
         ],
         6 => [
             'title' => 'Why Is This So Hard to Use?',
-            'schedule_summary' => 'Session 12: motion, flashing, timing, and reduced motion. Session 13: cognitive accessibility, predictability, memory, and consistency. Challenge 06: team accessibility/inclusive-design evaluation and redesign, 10 points. Due dates are in HuskyCT.',
-            'status' => 'upcoming',
+            'schedule_summary' => 'Session 12 covered motion, flashing, timing, and reduced motion. Thursday, October 15: Session 13 concludes Module 06 with cognitive accessibility, WCAG, and Challenge 06 open studio with informal team check-ins. Quiz 3 is an at-home assessment on Thursday, October 29. The remaining semester shifts toward practical accessibility evaluation studios and final-project work; the final project is expected to launch around November 3.',
+            'status' => 'current',
             'central_question' => 'What can make an experience difficult, distracting, disorienting, or unsafe even when its basic controls work?',
         ],
         7 => [

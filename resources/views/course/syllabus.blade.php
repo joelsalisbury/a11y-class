@@ -229,6 +229,9 @@
                         <p>
                             Quizzes are checkpoints for reading and reasoning, not memorization exercises. They ask students to explain how evidence supports an accessibility judgment.
                         </p>
+                        <p>
+                            Quiz 3 is an at-home assessment on Thursday, October 29, 2026. It covers existing course material and practical accessibility evaluation skills consistent with the curriculum. Check HuskyCT for official quiz information.
+                        </p>
                     </div>
                 </section>
 
@@ -240,6 +243,9 @@
                         </p>
                         <p>
                             The point of the project is not merely to check accessibility boxes. Students are expected to make an experience meaningfully better and provide convincing evidence for that work.
+                        </p>
+                        <p>
+                            The final project is expected to launch around November 3. Its existing assessment structure and grading remain unchanged; further project information will be shared through the official course channels.
                         </p>
                     </div>
                 </section>
@@ -302,18 +308,13 @@
                     </div>
 
                     <div class="mt-6 course-copy">
-                        <p>Synthesis, assessment, and final studio time are woven around the challenge sequence. In practice, the course also includes:</p>
+                        <p>The remaining semester transitions toward accessibility evaluation studios, team challenges, and final-project work. The upcoming focus includes:</p>
                         <ul>
-                            <li>Quiz #1, Quiz #2, and Quiz #3 at appropriate checkpoints;</li>
-                            <li>synthesis of accessibility evaluation methods;</li>
-                            <li>automated versus manual testing;</li>
-                            <li>sustainable accessibility and design systems;</li>
-                            <li>organizational accessibility;</li>
-                            <li>emerging AI practices;</li>
-                            <li>advanced assistive-technology work;</li>
-                            <li>flexible catch-up studio time where useful;</li>
-                            <li>preparation for the final project;</li>
-                            <li>approximately two weeks of final-project studio, critique, testing, refinement, and presentation.</li>
+                            <li>Quiz 3, an at-home assessment on Thursday, October 29;</li>
+                            <li>WCAG success criteria and conformance levels;</li>
+                            <li>manual accessibility evaluation and screen-reader proficiency;</li>
+                            <li>remediation and verification; and</li>
+                            <li>final-project work, expected to launch around November 3.</li>
                         </ul>
                     </div>
                 </section>
