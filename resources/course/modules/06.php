@@ -115,9 +115,9 @@ $module = [
                     'title' => 'Three kinds of mental effort',
                     'paragraphs' => ['One useful learning model separates cognitive load into three kinds. It helps us ask what work a task requires and what work the interface adds; it is a design lens, not a WCAG classification.'],
                     'bullets' => [
-                        'Intrinsic load: effort inherent in the task. Comparing three camera kits means considering their actual differences.',
-                        'Extraneous load: avoidable effort caused by presentation or interaction. Unclear pickup instructions, inconsistent control labels, or choices scattered across the page make the same task harder.',
-                        'Germane load: effort that helps a person build a useful understanding. A clear comparison of kit features can help someone make a confident choice.',
+                        'Intrinsic load: mental effort inherent in the task itself. Understanding unfamiliar information, solving a problem, or making a complex decision requires cognitive effort.',
+                        'Extraneous load: additional mental effort imposed by how information or interactions are designed. Confusing navigation, inconsistent terminology, and unclear instructions make tasks harder than necessary.',
+                        'Germane load: mental effort devoted to developing understanding and building useful knowledge. Recognizing patterns, connecting ideas, and learning how a system works can make future interactions easier.',
                     ],
                     'question' => 'Which effort belongs to the task, and which does the interface unnecessarily add?',
                 ],
