@@ -1,0 +1,16 @@
+Challenge 07: Prove It
+
+Choose one approved UConn webpage and review it using:
+• WAVE
+• Chrome Lighthouse
+• Manual testing
+• One generative AI assistant
+
+Explore the automated reports, validate three findings, perform at least two manual checks and document one manual observation, verify three AI claims or recommendations, and support your conclusions with at least three relevant WCAG success criteria.
+
+Submit one concise individual PDF through HuskyCT, including your findings, evidence, short final reflection, and brief AI Use Note. Screenshots are encouraged where useful. No remediation implementation is required.
+
+10 points. Individual submission.
+
+Use the course site for the full instructions and approved page list: /modules/7/challenge
+HuskyCT is authoritative for the submission deadline.

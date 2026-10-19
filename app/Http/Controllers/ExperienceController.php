@@ -6,6 +6,11 @@ use Illuminate\Contracts\View\View;
 
 class ExperienceController extends Controller
 {
+    public function module07Tools(): View
+    {
+        return view('experiences.module07-tools');
+    }
+
     public function module06Motion(): View
     {
         return view('experiences.module06-motion');

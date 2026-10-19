@@ -1,0 +1,4 @@
+<p>Choose one approved UConn page and review it using <a href="https://wave.webaim.org/" class="text-accent-cyan underline focus-visible:focus-ring">WAVE</a>, <a href="https://developer.chrome.com/docs/lighthouse/accessibility/scoring" class="text-accent-cyan underline focus-visible:focus-ring">Chrome Lighthouse</a>, manual testing, and one generative AI assistant.</p>
+<p>Your goal is not to collect as many errors as possible. Explore what the tools report, check whether selected findings are actually supported, look for things automation may have missed, and use WCAG evidence to support your conclusions.</p>
+<p class="course-emphasis">Explore → Validate → Manually test → Ask AI → Verify → Cite evidence</p>
+<p>No paid tools, additional browser extensions, advanced coding, or remediation implementation are required.</p>

@@ -94,3 +94,6 @@ Route::get('/experiences/module-06/cognition', [ExperienceController::class, 'mo
 
 Route::get('/experiences/gearshare', [ExperienceController::class, 'gearShare'])
     ->name('experiences.gearshare');
+
+Route::get('/experiences/module-07/studio-booking', [ExperienceController::class, 'module07Tools'])
+    ->name('experiences.module07.tools');

@@ -2,6 +2,18 @@
 
 return [
     [
+        'date' => '2026-10-19',
+        'title' => 'Rebuilt Challenge 07 as a live UConn page review',
+        'description' => 'Students choose one approved public UConn page, explore WAVE and Lighthouse, validate three findings, perform manual checks, verify three AI claims, and cite at least three relevant WCAG criteria. The individual 10-point submission is now one PDF; no remediation implementation is required. Session teaching samples remain available.',
+        'modules' => ['Module 07'],
+    ],
+    [
+        'date' => '2026-10-19',
+        'title' => 'Added Module 07: The AI Says It’s Accessible. Is It?',
+        'description' => 'Added independent WAVE and Lighthouse evaluation activities, AI claim verification, two working course samples, Field Guide references, and the individual 10-point Prove It challenge. Sessions 14–15 support presentation mode and View all.',
+        'modules' => ['Module 07'],
+    ],
+    [
         'date' => '2026-10-15',
         'title' => 'Clarified Session 13 key dates',
         'description' => 'Reformatted the Accessibility Studio slide dates into a responsive, screen-reader-friendly list so each date and its associated course event are easy to scan.',

@@ -36,8 +36,8 @@ return [
     ],
 
     'current' => [
-        'module' => 6,
-        'session' => 13,
+        'module' => 7,
+        'session' => 14,
     ],
 
     'modules' => [
@@ -69,13 +69,13 @@ return [
         6 => [
             'title' => 'Why Is This So Hard to Use?',
             'schedule_summary' => 'Session 12 covered motion, flashing, timing, and reduced motion. Thursday, October 15: Session 13 concludes Module 06 with cognitive accessibility, WCAG, and Challenge 06 open studio with informal team check-ins. Quiz 3 is an at-home assessment on Thursday, October 29. The remaining semester shifts toward practical accessibility evaluation studios and final-project work; the final project is expected to launch around November 3.',
-            'status' => 'current',
+            'status' => 'complete',
             'central_question' => 'What can make an experience difficult, distracting, disorienting, or unsafe even when its basic controls work?',
         ],
         7 => [
-            'title' => "The AI Says It's Accessible. Is It?",
-            'status' => 'upcoming',
-            'central_question' => 'What can AI and automated tools actually determine about accessibility, and what still requires human judgment or testing?',
+            'title' => 'The AI Says It’s Accessible. Is It?',
+            'status' => 'current',
+            'central_question' => 'What can a tool tell you about accessibility, and what still has to be established through evidence and testing?',
         ],
         8 => [
             'title' => 'Build the Accessible Version',

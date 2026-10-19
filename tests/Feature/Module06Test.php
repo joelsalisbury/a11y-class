@@ -62,9 +62,7 @@ it('renders Session 13 as cognitive-accessibility instruction and informal Chall
     expect($xpath->query('./div[dt and dd]', $dateList)->length)->toBe(4);
 });
 
-it('makes Session 13 the current class and publishes the upcoming assessment dates', function () {
-    $this->get('/')->assertOk()->assertSee('Module 06 — Cognitive Accessibility & Challenge Studio');
-
+it('publishes the upcoming assessment dates', function () {
     $this->get('/syllabus')->assertOk()
         ->assertSee('Quiz 3 is an at-home assessment on Thursday, October 29, 2026')
         ->assertSee('existing course material and practical accessibility evaluation skills')

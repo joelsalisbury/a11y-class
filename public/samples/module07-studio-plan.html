@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Studio Plan — Course Sample</title>
+    <style>
+        body { margin: 0; background: #f8fafc; color: #0f172a; font: 1rem/1.6 system-ui, sans-serif; }
+        main { max-width: 42rem; margin: auto; padding: 2rem 1.25rem; }
+        .panel { padding: 1.5rem; background: white; border: 1px solid #cbd5e1; border-radius: 1rem; }
+        .heading { font-size: 1.5rem; font-weight: 700; }
+        img { display: block; width: 100%; height: auto; }
+        label { display: block; font-weight: 600; }
+        select { max-width: 100%; padding: .6rem; color: #0f172a; background: white; border: 1px solid #64748b; font: inherit; }
+        .save { display: inline-block; margin-top: 1rem; padding: .6rem 1rem; background: #0f172a; color: white; border: 2px solid #0f172a; border-radius: .4rem; cursor: pointer; font: inherit; }
+        :focus-visible { outline: 3px solid #0369a1; outline-offset: 4px; }
+    </style>
+</head>
+<body>
+<main>
+    <p>Campus Media Studio · Fictional course sample</p>
+    <h1>Plan your studio visit</h1>
+    <p>Choose a session. Use the room layout to find the entrance, then save your plan.</p>
+    <div class="panel">
+        <p class="heading">Choose your session</p>
+        <label for="session">Session</label>
+        <select id="session">
+            <option>Tuesday, 10:00–11:00 AM</option>
+            <option>Thursday, 2:00–3:00 PM</option>
+        </select>
+        <h2>Room layout</h2>
+        <img width="600" height="250" alt="Studio diagram" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='250' viewBox='0 0 600 250'%3E%3Crect width='600' height='250' fill='%23e2e8f0'/%3E%3Crect x='30' y='30' width='400' height='190' fill='white' stroke='%230f172a' stroke-width='3'/%3E%3Ctext x='60' y='75' font-size='24' font-family='sans-serif' fill='%230f172a'%3ERecording studio%3C/text%3E%3Ctext x='60' y='135' font-size='22' font-family='sans-serif' fill='%230f172a'%3EEnter through the east door%3C/text%3E%3Cpath d='M350 170h130m-20-15 20 15-20 15' fill='none' stroke='%230f172a' stroke-width='5'/%3E%3Ctext x='450' y='75' font-size='24' font-family='sans-serif' fill='%230f172a'%3EEast door%3C/text%3E%3C/svg%3E">
+        <div class="save" role="button" tabindex="0" onclick="savePlan()">Save</div>
+        <p id="save-message"></p>
+    </div>
+    <p>This sample does not send or store data. Save creates an on-page confirmation.</p>
+</main>
+<script>
+    function savePlan() {
+        document.getElementById('save-message').textContent =
+            'Plan saved: ' + document.getElementById('session').value;
+    }
+</script>
+</body>
+</html>
