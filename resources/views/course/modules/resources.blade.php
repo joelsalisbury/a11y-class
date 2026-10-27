@@ -13,7 +13,9 @@
             />
 
             <div class="mt-10 space-y-10">
-                @if (!empty($module['resource_collections']))
+                @if ((int) $module['number'] === 8)
+                    @include('course.modules.module08-markup-resources')
+                @elseif (!empty($module['resource_collections']))
                     <section id="module-resources" class="course-section module-anchor">
                         <x-section-heading title="Resources" description="Credible starting points for investigation." />
 

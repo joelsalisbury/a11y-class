@@ -36,8 +36,14 @@ return [
     ],
 
     'current' => [
-        'module' => 7,
-        'session' => 14,
+        'module' => 8,
+        'session' => 16,
+    ],
+
+    'schedule' => [
+        ['date' => 'Tuesday, October 27, 2026', 'details' => 'Module 08 opens. Session 16: Practice and Studio. Challenge 08 released. No new lecture; use class time for practice, Quiz 2 preparation, questions, or catching up.'],
+        ['date' => 'Thursday, October 29, 2026', 'details' => 'Quiz 2 at home through HuskyCT. No in-person class. Final Project released.'],
+        ['date' => 'Tuesday, November 3, 2026', 'details' => 'Challenge 08 due by end of day: complete all a11yphant challenges and submit evidence through HuskyCT. Final Project and studio work continue, with questions and individual or team check-ins.'],
     ],
 
     'modules' => [
@@ -68,19 +74,19 @@ return [
         ],
         6 => [
             'title' => 'Why Is This So Hard to Use?',
-            'schedule_summary' => 'Session 12 covered motion, flashing, timing, and reduced motion. Thursday, October 15: Session 13 concludes Module 06 with cognitive accessibility, WCAG, and Challenge 06 open studio with informal team check-ins. Quiz 3 is an at-home assessment on Thursday, October 29. The remaining semester shifts toward practical accessibility evaluation studios and final-project work; the final project is expected to launch around November 3.',
+            'schedule_summary' => 'Session 12 covered motion, flashing, timing, and reduced motion. Thursday, October 15: Session 13 concludes Module 06 with cognitive accessibility, WCAG, and Challenge 06 open studio with informal team check-ins. Quiz 2 is an at-home assessment on Thursday, October 29. There is no in-person class that day. The remaining semester shifts toward practical accessibility evaluation studios and final-project work; the Final Project will be released October 29.',
             'status' => 'complete',
             'central_question' => 'What can make an experience difficult, distracting, disorienting, or unsafe even when its basic controls work?',
         ],
         7 => [
             'title' => 'The AI Says It’s Accessible. Is It?',
-            'status' => 'current',
+            'status' => 'complete',
             'central_question' => 'What can a tool tell you about accessibility, and what still has to be established through evidence and testing?',
         ],
         8 => [
             'title' => 'Build the Accessible Version',
-            'status' => 'upcoming',
-            'central_question' => 'What changes when accessibility is treated as a design and development requirement from the beginning?',
+            'status' => 'current',
+            'central_question' => 'What does good accessible markup look like when you build it from the beginning?',
         ],
         9 => [
             'title' => 'What Would You Fix First?',

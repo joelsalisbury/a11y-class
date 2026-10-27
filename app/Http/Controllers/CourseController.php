@@ -29,7 +29,7 @@ class CourseController extends Controller
 
     public function module(int $module)
     {
-        return view('course.modules.show', [
+        return view($module === 8 ? 'course.modules.module08' : 'course.modules.show', [
             'module' => Course::module($module),
         ]);
     }
@@ -60,7 +60,7 @@ class CourseController extends Controller
             ]);
         }
 
-        return view('course.modules.challenge', [
+        return view($module === 8 ? 'course.modules.challenge08' : 'course.modules.challenge', [
             'module' => $moduleData,
             'challenge' => $moduleData['challenge'],
         ]);

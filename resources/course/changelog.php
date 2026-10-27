@@ -2,6 +2,12 @@
 
 return [
     [
+        'date' => '2026-10-27',
+        'title' => 'Rebuilt Module 08 as asynchronous implementation practice',
+        'description' => 'Session 16 is now Practice and Studio with no new lecture. Individual Challenge 08 requires all a11yphant challenges by end of day Tuesday, November 3, with all 10 points awarded for completion and evidence submitted through HuskyCT. Styled the Visit a11yphant action link. Added practical accessible-markup resources, noted Quiz 2 at home with no in-person class October 29, and set the Final Project release note to October 29.',
+        'modules' => ['Module 08'],
+    ],
+    [
         'date' => '2026-10-19',
         'title' => 'Rebuilt Challenge 07 as a live UConn page review',
         'description' => 'Students choose one approved public UConn page, explore WAVE and Lighthouse, validate three findings, perform manual checks, verify three AI claims, and cite at least three relevant WCAG criteria. The individual 10-point submission is now one PDF; no remediation implementation is required. Session teaching samples remain available.',

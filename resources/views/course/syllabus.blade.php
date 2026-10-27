@@ -230,7 +230,7 @@
                             Quizzes are checkpoints for reading and reasoning, not memorization exercises. They ask students to explain how evidence supports an accessibility judgment.
                         </p>
                         <p>
-                            Quiz 3 is an at-home assessment on Thursday, October 29, 2026. It covers existing course material and practical accessibility evaluation skills consistent with the curriculum. Check HuskyCT for official quiz information.
+                            Quiz 2 is an at-home assessment on Thursday, October 29, 2026. It covers existing course material and practical accessibility evaluation skills consistent with the curriculum. Check HuskyCT for official quiz information.
                         </p>
                     </div>
                 </section>
@@ -245,7 +245,7 @@
                             The point of the project is not merely to check accessibility boxes. Students are expected to make an experience meaningfully better and provide convincing evidence for that work.
                         </p>
                         <p>
-                            The final project is expected to launch around November 3. Its existing assessment structure and grading remain unchanged; further project information will be shared through the official course channels.
+                            The Final Project will be released Thursday, October 29. Its existing assessment structure and grading remain unchanged; further project information will be shared through the official course channels.
                         </p>
                     </div>
                 </section>
@@ -307,14 +307,23 @@
                         @endforeach
                     </div>
 
+                    <dl class="mt-6 space-y-4" aria-label="Course schedule">
+                        @foreach (\App\Support\Course::config()['schedule'] as $event)
+                            <div>
+                                <dt class="font-semibold text-ink">{{ $event['date'] }}</dt>
+                                <dd class="mt-1 text-ink-muted">{{ $event['details'] }}</dd>
+                            </div>
+                        @endforeach
+                    </dl>
+
                     <div class="mt-6 course-copy">
                         <p>The remaining semester transitions toward accessibility evaluation studios, team challenges, and final-project work. The upcoming focus includes:</p>
                         <ul>
-                            <li>Quiz 3, an at-home assessment on Thursday, October 29;</li>
+                            <li>Quiz 2 at home through HuskyCT on Thursday, October 29, with no in-person class;</li>
                             <li>WCAG success criteria and conformance levels;</li>
                             <li>manual accessibility evaluation and screen-reader proficiency;</li>
                             <li>remediation and verification; and</li>
-                            <li>final-project work, expected to launch around November 3.</li>
+                            <li>Final Project released October 29, followed by studio work.</li>
                         </ul>
                     </div>
                 </section>

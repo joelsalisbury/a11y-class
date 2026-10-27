@@ -91,26 +91,6 @@ it('returns to a valid originating slide without accepting an arbitrary fragment
     ['?slide=999', '/modules/7/session-14', '#slide-999'],
 ]);
 
-it('features Module 07, Session 14, and Challenge 07 on the homepage', function () {
-    $this->get('/')->assertOk()
-        ->assertSee('Module 07 — The AI Says It’s Accessible. Is It?')
-        ->assertSee('Session 14 — What Can the Tool Actually Tell You?')
-        ->assertSee('Challenge 07 — Prove It')
-        ->assertViewHas('sessionNumber', 14)
-        ->assertViewHas('module', fn (array $module): bool => $module['number'] === 7 && $module['status'] === 'current');
-});
-
-it('marks only Module 07 current on the module index', function () {
-    $this->get('/modules')->assertOk()
-        ->assertViewHas('modules', function (array $modules): bool {
-            $current = array_filter($modules, fn (array $module): bool => $module['status'] === 'current');
-
-            return array_keys($current) === [7]
-                && $modules[6]['status'] === 'complete'
-                && $modules[8]['status'] === 'upcoming';
-        });
-});
-
 it('links the live review to approved UConn pages and the WAVE lesson section', function () {
     $response = $this->get('/modules/7/challenge')->assertOk();
     $document = new DOMDocument;

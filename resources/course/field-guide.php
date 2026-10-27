@@ -3,6 +3,27 @@
 return [
     'categories' => [
         [
+            'title' => 'Implementation',
+            'entries' => [
+                [
+                    'slug' => 'good-markup',
+                    'title' => 'Good Markup Resources',
+                    'summary' => 'Practical references for building accessible interfaces with native HTML.',
+                    'in_this_course' => [
+                        ['label' => 'Module 08: Build the Accessible Version', 'route' => 'modules.show', 'params' => ['module' => 8]],
+                    ],
+                    'resource_refs' => [
+                        ['module' => 8, 'resource_label' => 'Semantic HTML'],
+                        ['module' => 8, 'resource_label' => 'Forms and labels'],
+                        ['module' => 8, 'resource_label' => 'Buttons and links'],
+                        ['module' => 8, 'resource_label' => 'Images and alternative text'],
+                        ['module' => 8, 'resource_label' => 'Keyboard and focus'],
+                        ['module' => 8, 'resource_label' => 'ARIA: read this first'],
+                    ],
+                ],
+            ],
+        ],
+        [
             'title' => 'Foundations',
             'entries' => [
                 [
