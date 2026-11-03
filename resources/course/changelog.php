@@ -2,6 +2,36 @@
 
 return [
     [
+        'date' => '2026-11-03',
+        'title' => 'Opened Module 09 and published Quiz 03 and the expanded Final Project requirements',
+        'description' => 'Added Session 17 on task completion, evidence, and prioritization, including an interactive triage exercise with unrelated fictional examples. Published Quiz 03 as an individual Course Selection usability test in the existing three-quiz category, with report instructions and HuskyCT submission guidance; no Challenge 09 or separate grade category was added. Updated the Final Project investigation requirements for WAVE on three pages or states, two screen-reader tasks, eight to twelve findings, verified AI claims, prioritization, and a single PDF submission while retaining its 30% weight and 100-point rubric. Advanced the current course position to Module 09 / Session 17. Challenge 08 requirements remain unchanged.',
+        'modules' => ['Module 09', 'Final Project'],
+    ],
+    [
+        'date' => '2026-11-03',
+        'title' => 'Refined Course Selection accessibility revisions',
+        'description' => 'Updated the deliberately seeded Course Selection accessibility concerns and instructor evidence for the 15 straightforward, 7 intermediate, and 3 nuanced issue distribution. Added regression coverage for course-add checklist/removal synchronization, same-section availability and day filtering, tooltip dismissal, and failed-search recovery. Fixed these four incidental issues without changing the catalog, team scenarios, business rules, or the student final-project assignment and rubric. Local browser checks verified the revised findings; native assistive-technology and 400% zoom testing remain outstanding.',
+        'modules' => ['Final Project'],
+    ],
+    [
+        'date' => '2026-11-02',
+        'title' => 'Revised Course Selection as an institutional registration interface',
+        'description' => 'Renamed the student-facing CoursePath application to Course Selection and replaced its branding, large hero, editorial typography, decorative artwork, and promotional language with a compact institutional header, Requirements / Course Search / My Schedule navigation, a practical program overview, denser course results, and conventional registration copy. Updated the final-project target name in current course materials. Retained the 40-course, 54-section catalog, three team scenarios, scheduling and validation logic, submission, confirmation, and revision. Kept meaningful media in a modest Registration Help panel and restyled workload graphics without changing their instructional information. Preserved the intentional accessibility mechanisms: moved the motion concern into registration notices and retained complex policy language in the Enrollment policy disclosure, with revised locations and severity documented privately. Existing routes and internal identifiers remain unchanged. Workflow tests, JavaScript checks, asset build, and Blade compilation pass; live browser and assistive-technology review remain outstanding.',
+        'modules' => ['Final Project'],
+    ],
+    [
+        'date' => '2026-11-02',
+        'title' => 'Replaced StudioWorks with CoursePath and published the individual final project',
+        'description' => 'Replaced the previous final-project portal with CoursePath at /coursepath and removed its obsolete routes, assets, and tests. Added 40 authored courses and 54 sections, the three standing-team advising scenarios, searchable and sortable catalog filters, course details, section selection, a weekly schedule, shared credit/eligibility/conflict/requirements validation, fictional student information, proposal review, confirmation, and revision. Published Make It Better: CoursePath Accessibility Case Study at /final-project, including individual deliverables, non-code remediation options, the exact 100-point rubric, a November 3 launch, and formative studio checkpoints. Updated Today, the current syllabus/schedule, and the Module 08 release note; earlier teaching materials and historical entries remain intact. The product mixes accessibility strengths and concerns across the curriculum; its instructor coverage inventory stays private and untracked. Added an instructor-issued signed entry for supported planning. Feature and handler tests cover all paths, fifteen valid schedule examples, validation, state, revisions, and access boundaries; build and Blade checks pass. Existing unrelated course-test failures remain. Browser/assistive-technology acceptance testing and confirmation of the authoritative final-submission deadline remain instructor review items.',
+        'modules' => ['Final Project'],
+    ],
+    [
+        'date' => '2026-11-02',
+        'title' => 'Added StudioWorks for the individual final project',
+        'description' => 'Added the Final Project entry page and a standalone fictional creative-services portal at /studioworks, with five space records, searchable exploration and comparison, room details, local illustrations and media, a four-step session-backed reservation flow, and reservation changes and cancellation. New StudioWorks Blade components and isolated Vite assets preserve existing course experiences. The experience deliberately mixes accessibility strengths and concerns for evidence-based evaluation; instructor documentation stays outside public routes and version control. Uses fixed November 9–13 demo availability, fictional borrower profiles, one active reservation per browser session, and no accounts, email, payment, or real bookings. The formal assignment remains in HuskyCT.',
+        'modules' => ['Final Project'],
+    ],
+    [
         'date' => '2026-10-27',
         'title' => 'Rebuilt Module 08 as asynchronous implementation practice',
         'description' => 'Session 16 is now Practice and Studio with no new lecture. Individual Challenge 08 requires all a11yphant challenges by end of day Tuesday, November 3, with all 10 points awarded for completion and evidence submitted through HuskyCT. Styled the Visit a11yphant action link. Added practical accessible-markup resources, noted Quiz 2 at home with no in-person class October 29, and set the Final Project release note to October 29.',

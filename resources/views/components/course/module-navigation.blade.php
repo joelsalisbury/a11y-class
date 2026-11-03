@@ -32,6 +32,14 @@
         ];
     }
 
+    if (!empty($module['quiz'])) {
+        $items[] = [
+            'label' => $module['quiz']['nav_label'] ?? 'Quiz '.str_pad((string) ($module['quiz']['number'] ?? ''), 2, '0', STR_PAD_LEFT),
+            'href' => route('modules.show', ['module' => $moduleNumber]).'#'.($module['quiz']['id'] ?? 'quiz'),
+            'active' => $currentPage === 'quiz',
+        ];
+    }
+
     if (!empty($module['challenge'])) {
         $items[] = [
             'label' => 'Challenge '.str_pad((string) $moduleNumber, 2, '0', STR_PAD_LEFT),
@@ -68,12 +76,11 @@
                             <a
                                 href="{{ $item['href'] }}"
                                 @if ($item['active']) aria-current="page" @endif
+                                data-module-nav-link
                                 class="module-nav-link {{ $item['active'] ? 'is-active' : '' }}"
                             >
                                 <span>{{ $item['label'] }}</span>
-                                @if ($item['active'])
-                                    <span class="module-nav-current-mark">Current</span>
-                                @endif
+                                <span class="module-nav-current-mark" @if (!$item['active']) hidden @endif>Current</span>
                             </a>
                         </li>
                     @endforeach
@@ -109,12 +116,11 @@
                             <a
                                 href="{{ $item['href'] }}"
                                 @if ($item['active']) aria-current="page" @endif
+                                data-module-nav-link
                                 class="module-nav-link {{ $item['active'] ? 'is-active' : '' }}"
                             >
                                 <span>{{ $item['label'] }}</span>
-                                @if ($item['active'])
-                                    <span class="module-nav-current-mark">Current</span>
-                                @endif
+                                <span class="module-nav-current-mark" @if (!$item['active']) hidden @endif>Current</span>
                             </a>
                         </li>
                     @endforeach

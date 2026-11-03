@@ -3,7 +3,7 @@
 return [
     'number' => 8,
     'title' => 'Build the Accessible Version',
-    'status' => 'current',
+    'status' => 'complete',
     'central_question' => 'What does good accessible markup look like when you build it from the beginning?',
     'introduction' => [
         'Much of the course so far has focused on finding, explaining, and verifying accessibility problems. This module turns toward implementation.',
@@ -54,5 +54,5 @@ return [
         'date' => 'Thursday, October 29, 2026',
         'description' => 'Quiz 2 is completed at home through HuskyCT. There is no in-person class meeting Thursday. HuskyCT is the authoritative location for Quiz 2.',
     ],
-    'final_project_note' => 'Final Project released October 29.',
+    'final_project_note' => 'Final Project released Tuesday, November 3, 2026.',
 ];

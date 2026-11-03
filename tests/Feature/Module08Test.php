@@ -6,14 +6,17 @@ it('serves the compact Module 08 and its references', function (string $path) {
     $this->get($path)->assertOk();
 })->with(['/modules/8', '/modules/8/session-16', '/modules/8/challenge', '/modules/8/resources', '/field-guide/good-markup']);
 
-it('opens Module 08 and Practice and Studio on Today and the module index', function () {
+it('keeps Module 08 available and advances Today to Module 09', function () {
     $this->get('/')->assertOk()
-        ->assertSee('Module 08 — Build the Accessible Version')
-        ->assertSee('Session 16 — Practice and Studio')
-        ->assertSee('Challenge 08 — Build It Right')
-        ->assertViewHas('sessionNumber', 16);
+        ->assertSee('Module 09 — What Would You Fix First?')
+        ->assertSee('Session 17 — Can You Actually Complete the Task?')
+        ->assertViewHas('sessionNumber', 17);
+    $this->get('/modules/8')->assertOk()
+        ->assertSee('Build the Accessible Version')
+        ->assertSee('Session 16')
+        ->assertSee('Practice and Studio');
     $current = array_filter(Course::modules(), fn (array $module): bool => $module['status'] === 'current');
-    expect(array_keys($current))->toBe([8]);
+    expect(array_keys($current))->toBe([9]);
 });
 
 it('keeps Session 16 free of a deck, worksheet, or mandatory activities', function () {
@@ -48,20 +51,20 @@ it('requires all a11yphant challenges by November 3 with completion as the only 
         ->assertDontSee('WCAG citations');
 });
 
-it('shows consistent quiz and release dates without publishing a project assignment', function () {
+it('keeps quiz details intact while publishing the revised final project launch', function () {
     $this->get('/modules/8')->assertOk()
         ->assertSee('Thursday, October 29, 2026')
         ->assertSee('Quiz 2 is completed at home through HuskyCT.')
         ->assertSee('There is no in-person class meeting Thursday.')
-        ->assertSee('Final Project released October 29.')
+        ->assertSee('Final Project released Tuesday, November 3, 2026.')
         ->assertSee('Good Markup Resources')
         ->assertDontSee('Class Work')
         ->assertDontSee('Presentation mode');
     $this->get('/syllabus')->assertOk()
         ->assertSee('Tuesday, October 27, 2026')
         ->assertSee('Challenge 08 released.')
-        ->assertSee('Quiz 2 at home through HuskyCT. No in-person class. Final Project released.')
+        ->assertSee('Quiz 2 at home through HuskyCT. No in-person class.')
         ->assertSee('Challenge 08 due by end of day: complete all a11yphant challenges and submit evidence through HuskyCT.')
-        ->assertDontSee('around November 3')
-        ->assertDontSee('Quiz 3');
+        ->assertSee('Quiz 03 is an individual, practical Course Selection task-completion and usability test.')
+        ->assertDontSee('around November 3');
 });

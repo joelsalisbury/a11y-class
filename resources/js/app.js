@@ -9,6 +9,36 @@ for (const demo of document.querySelectorAll('[data-cognitive-load-demo]')) {
     initCognitiveLoadDemo(demo);
 }
 
+const moduleNavLinks = Array.from(document.querySelectorAll('[data-module-nav-link]'));
+const defaultModuleNavLinks = new Set(moduleNavLinks.filter(link => link.hasAttribute('aria-current')));
+
+if (moduleNavLinks.length > 0) {
+    const updateModuleNavigation = () => {
+        const currentUrl = new URL(window.location.href);
+        const fragmentLinks = moduleNavLinks.filter(link => {
+            const target = new URL(link.getAttribute('href'), currentUrl);
+
+            return target.pathname === currentUrl.pathname && target.hash !== '' && target.hash === currentUrl.hash;
+        });
+        const activeLinks = fragmentLinks.length > 0 ? new Set(fragmentLinks) : defaultModuleNavLinks;
+
+        for (const link of moduleNavLinks) {
+            const active = activeLinks.has(link);
+            link.classList.toggle('is-active', active);
+            link.querySelector('.module-nav-current-mark').hidden = !active;
+
+            if (active) {
+                link.setAttribute('aria-current', fragmentLinks.length > 0 ? 'location' : 'page');
+            } else {
+                link.removeAttribute('aria-current');
+            }
+        }
+    };
+
+    updateModuleNavigation();
+    window.addEventListener('hashchange', updateModuleNavigation);
+}
+
 const sessionNavLinks = Array.from(document.querySelectorAll('[data-session-nav-link]'));
 
 if (sessionNavLinks.length > 0 && 'IntersectionObserver' in window) {
@@ -24,18 +54,25 @@ if (sessionNavLinks.length > 0 && 'IntersectionObserver' in window) {
 			continue;
 		}
 
-		linksById.set(id, link);
+		if (!linksById.has(id)) {
+			linksById.set(id, []);
+		}
+
+		linksById.get(id).push(link);
 	}
 
 	const setActiveSection = (id) => {
-		for (const [sectionId, link] of linksById.entries()) {
+		for (const [sectionId, links] of linksById.entries()) {
 			const isActive = sectionId === id;
-			link.classList.toggle('is-active', isActive);
 
-			if (isActive) {
-				link.setAttribute('aria-current', 'location');
-			} else {
-				link.removeAttribute('aria-current');
+			for (const link of links) {
+				link.classList.toggle('is-active', isActive);
+
+				if (isActive) {
+					link.setAttribute('aria-current', 'location');
+				} else {
+					link.removeAttribute('aria-current');
+				}
 			}
 		}
 	};

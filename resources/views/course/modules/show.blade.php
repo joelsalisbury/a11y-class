@@ -29,6 +29,19 @@
                 </div>
             @endif
 
+            @if (!empty($module['learning_objectives']))
+                <section class="mt-8 max-w-3xl space-y-4">
+                    <x-section-heading title="Learning Objectives" />
+                    <div class="course-copy">
+                        <ul>
+                            @foreach ($module['learning_objectives'] as $objective)
+                                <li>{{ $objective }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </section>
+            @endif
+
             <div class="mt-10 space-y-10">
                 <section class="space-y-5">
                     <x-section-heading title="Sessions" />
@@ -55,6 +68,39 @@
                         </x-panel>
                     @endif
                 </section>
+
+                @if (!empty($module['quiz']))
+                    <section id="{{ $module['quiz']['id'] ?? 'quiz' }}" class="space-y-5">
+                        <x-section-heading :title="$module['quiz']['title']" :description="$module['quiz']['metadata'] ?? null" />
+
+                        <x-panel>
+                            <div class="course-panel-copy">
+                                @if (!empty($module['quiz']['available']))
+                                    <p><strong>Available:</strong> {{ $module['quiz']['available'] }}</p>
+                                @endif
+                                <p>{{ $module['quiz']['summary'] }}</p>
+                                @if (!empty($module['quiz']['requirements']))
+                                    <ol>
+                                        @foreach ($module['quiz']['requirements'] as $requirement)
+                                            <li>{{ $requirement }}</li>
+                                        @endforeach
+                                    </ol>
+                                @endif
+                                @if (!empty($module['quiz']['grading_note']))
+                                    <p>{{ $module['quiz']['grading_note'] }}</p>
+                                @endif
+                                <div class="flex flex-wrap gap-4">
+                                    <a href="{{ route('coursepath.welcome') }}" class="inline-flex text-sm font-medium text-accent-cyan hover:text-accent-cyan-strong focus-visible:focus-ring rounded-sm">
+                                        Open Course Selection →
+                                    </a>
+                                    <a href="{{ route('final-project') }}" class="inline-flex text-sm font-medium text-accent-cyan hover:text-accent-cyan-strong focus-visible:focus-ring rounded-sm">
+                                        Open the Final Project →
+                                    </a>
+                                </div>
+                            </div>
+                        </x-panel>
+                    </section>
+                @endif
 
                 @if (!empty($module['key_concepts']))
                     <section class="space-y-5">
