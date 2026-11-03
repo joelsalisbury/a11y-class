@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\CoursePathController;
 use App\Http\Controllers\ExperienceController;
 use Illuminate\Support\Facades\Route;
 
@@ -37,6 +38,25 @@ Route::get('/field-guide/{entry}', [CourseController::class, 'fieldGuideEntry'])
 Route::get('/syllabus', [CourseController::class, 'syllabus'])->name('syllabus');
 
 Route::get('/changelog', [CourseController::class, 'changelog'])->name('changelog');
+
+Route::view('/final-project', 'course.final-project')->name('final-project');
+
+Route::prefix('coursepath')->name('coursepath.')->group(function () {
+    Route::get('/', [CoursePathController::class, 'welcome'])->name('welcome');
+    Route::post('/team', [CoursePathController::class, 'team'])->name('team');
+    Route::get('/catalog', [CoursePathController::class, 'catalog'])->name('catalog');
+    Route::get('/courses/{course}', [CoursePathController::class, 'course'])->name('course');
+    Route::get('/plan', [CoursePathController::class, 'plan'])->name('plan');
+    Route::post('/plan', [CoursePathController::class, 'add'])->name('add');
+    Route::delete('/plan/{course}', [CoursePathController::class, 'remove'])->name('remove');
+    Route::get('/student', [CoursePathController::class, 'student'])->name('student');
+    Route::post('/student', [CoursePathController::class, 'saveStudent'])->name('save-student');
+    Route::get('/review', [CoursePathController::class, 'review'])->name('review');
+    Route::post('/submit', [CoursePathController::class, 'submit'])->name('submit');
+    Route::get('/confirmation', [CoursePathController::class, 'confirmation'])->name('confirmation');
+    Route::post('/revise', [CoursePathController::class, 'revise'])->name('revise');
+    Route::get('/guided-entry', [CoursePathController::class, 'guided'])->middleware('signed')->name('guided');
+});
 
 Route::get('/experiences/campus-event-registration', [ExperienceController::class, 'campusEventRegistration'])
     ->name('experiences.campus-event-registration');

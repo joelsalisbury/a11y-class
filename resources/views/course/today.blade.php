@@ -14,6 +14,7 @@
     @endphp
 
     <div class="max-w-4xl space-y-6">
+        <section class="panel space-y-3"><p class="meta-label">Individual Final Project · Released November 3</p><h2 class="text-2xl font-semibold text-ink">Make It Better: Course Selection Accessibility Case Study</h2><p class="text-ink-muted">Investigate, prioritize, and propose evidence-based accessibility improvements. Your team determines the scenario; the work is individual.</p><a href="{{ route('final-project') }}" class="inline-flex font-medium text-accent-cyan">Open assignment and rubric →</a></section>
         <x-page-heading
             label="Course Home"
             :title="$courseMeta['short_title']"

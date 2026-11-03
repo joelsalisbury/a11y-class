@@ -232,6 +232,9 @@
                         <p>
                             Quiz 2 is an at-home assessment on Thursday, October 29, 2026. It covers existing course material and practical accessibility evaluation skills consistent with the curriculum. Check HuskyCT for official quiz information.
                         </p>
+                        <p>
+                            Quiz 03 is an individual, practical Course Selection task-completion and usability test. Submit a short report through HuskyCT and follow the Quiz 03 scale and official availability and deadline posted there. It remains within the existing three-quiz category worth 30% of the course grade; it is not a Challenge or a separate grade category. <a href="{{ route('modules.show', ['module' => 9]) }}#quiz-03" class="font-medium text-accent-cyan">Read the Quiz 03 instructions</a>.
+                        </p>
                     </div>
                 </section>
 
@@ -239,14 +242,10 @@
                     <h2 class="text-2xl font-semibold tracking-tight text-ink">Final Project</h2>
                     <div class="course-copy">
                         <p>
-                            The final project receives approximately the final two weeks of instructional time. Students independently apply the course process: Investigate → identify barriers → establish evidence → prioritize → redesign → test → defend.
+                            The individual final project is Make It Better: Course Selection Accessibility Case Study, worth 30% of the course grade. Investigate a fictional course-planning journey, establish evidence, prioritize barriers, propose accessibility solutions, and explain how to verify them.
                         </p>
-                        <p>
-                            The point of the project is not merely to check accessibility boxes. Students are expected to make an experience meaningfully better and provide convincing evidence for that work.
-                        </p>
-                        <p>
-                            The Final Project will be released Thursday, October 29. Its existing assessment structure and grading remain unchanged; further project information will be shared through the official course channels.
-                        </p>
+                        <p>Team membership determines the advising scenario only; every student submits individual work. Annotated screenshots, mockups, and written specifications are acceptable; code, working implementations, and formal presentations are not required.</p>
+                        <p>The Final Project is released Tuesday, November 3, 2026, with formative investigation, prioritization, and remediation checkpoints through November. <a href="{{ route('final-project') }}" class="font-medium text-accent-cyan">Read the final-project assignment and rubric</a>. Submit through HuskyCT using its authoritative final deadline.</p>
                     </div>
                 </section>
 
@@ -317,13 +316,13 @@
                     </dl>
 
                     <div class="mt-6 course-copy">
-                        <p>The remaining semester transitions toward accessibility evaluation studios, team challenges, and final-project work. The upcoming focus includes:</p>
+                        <p>The current focus is accessibility evaluation, evidence-based prioritization, and individual final-project work. The upcoming course activities include:</p>
                         <ul>
-                            <li>Quiz 2 at home through HuskyCT on Thursday, October 29, with no in-person class;</li>
-                            <li>WCAG success criteria and conformance levels;</li>
-                            <li>manual accessibility evaluation and screen-reader proficiency;</li>
-                            <li>remediation and verification; and</li>
-                            <li>Final Project released October 29, followed by studio work.</li>
+                            <li>Session 17 on task completion, evidence, and prioritization;</li>
+                            <li>Quiz 03, an individual Course Selection usability test submitted through HuskyCT;</li>
+                            <li>Challenge 08 completion evidence due Tuesday, November 3;</li>
+                            <li>the Final Project release on November 3, followed by individual investigation and studio work; and</li>
+                            <li>continued work on WCAG, accessibility evaluation, screen-reader proficiency, remediation and verification.</li>
                         </ul>
                     </div>
                 </section>

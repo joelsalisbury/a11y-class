@@ -1,0 +1,2 @@
+@props(['assessment'])
+<div class="cp-submission-list">@foreach($assessment['rows'] as $slug => $course)<div><div><p class="cp-eyebrow">{{ $course['code'] }} / SECTION {{ $course['section']['label'] }}</p><h3><a href="{{ route('coursepath.course', $slug) }}">{{ $course['title'] }}</a></h3><p>{{ \App\Support\CoursePath::meeting($course['section']) }}<br>{{ $course['section']['room'] }} · {{ $course['section']['instructor'] }}</p></div><strong>{{ $course['credits'] }} credits</strong></div>@endforeach</div>

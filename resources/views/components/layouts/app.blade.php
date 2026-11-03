@@ -30,6 +30,7 @@
                             <x-nav-link href="{{ route('modules.index') }}" :active="request()->routeIs('modules.*')">Modules</x-nav-link>
                             <x-nav-link href="{{ route('field-guide') }}" :active="request()->routeIs('field-guide*')">Field Guide</x-nav-link>
                             <x-nav-link href="{{ route('syllabus') }}" :active="request()->routeIs('syllabus')">Syllabus</x-nav-link>
+                            <x-nav-link href="{{ route('final-project') }}" :active="request()->routeIs('final-project')">Final Project</x-nav-link>
                         </nav>
                     </div>
                 </div>

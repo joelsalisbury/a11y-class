@@ -66,7 +66,7 @@ it('publishes the upcoming assessment dates', function () {
     $this->get('/syllabus')->assertOk()
         ->assertSee('Quiz 2 is an at-home assessment on Thursday, October 29, 2026')
         ->assertSee('existing course material and practical accessibility evaluation skills')
-        ->assertSee('The Final Project will be released Thursday, October 29.')
+        ->assertSee('The Final Project is released Tuesday, November 3, 2026,')
         ->assertSee('screen-reader proficiency')
         ->assertSee('remediation and verification')
         ->assertSee('9 Challenges Total')
